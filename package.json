@@ -1,0 +1,57 @@
+{
+  "name": "grooo-mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saito-kazuma0719/grooo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-datepicker": "^1.9.0",
+    "bulma": "^0.9.1",
+    "flatpickr": "^4.6.3",
+    "flexbox-grid-mixins": "^0.2.1",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "jquery": "^3.5.1",
+    "jquery-datepicker": "^1.12.3",
+    "jquery-match-height": "^0.7.2",
+    "jquery-migrate": "^3.3.1",
+    "parsleyjs": "^2.9.2",
+    "remodal": "^1.1.1",
+    "slick": "^1.12.2",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^5.4.5",
+    "tailwindcss": "^1.3.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.12",
+    "connect-ssi": "^1.1.1",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-ejs": "^5.1.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-ssi": "^0.1.5",
+    "gulp-uglify": "^3.0.2",
+    "node-sass-package-importer": "^5.3.2",
+    "normalize.css": "^8.0.1",
+    "postcss": "^8.2.1",
+    "postcss-flexbugs-fixes": "^5.0.2"
+  }
+}

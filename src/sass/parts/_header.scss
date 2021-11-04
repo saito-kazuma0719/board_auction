@@ -1,0 +1,114 @@
+.header{
+	padding-right: percentage(80/1200);
+	&_inner{
+		@include flexbox(flex-start,flex-end);
+	}
+	&_title{
+		margin: 46px 0 0 120px;
+		a{
+			@include font-en;
+			@include fts(28,28);
+			text-decoration: none;
+			color: $black;
+			font-weight: 700;
+			@include link_transition(all,.3s,ease-out);
+			&:hover{
+				@include opacity(.75);
+			}
+		}
+	}
+	&_utility{
+		margin-left: auto;
+		@include flexbox(flex-start,flex-end);
+	}
+	&_menu{
+		@include flexbox(flex-start,flex-end);
+		li{
+			a{
+				@include fts(14,14);
+				font-weight: 500;
+				color: $black;
+				height: 28px;
+				@include flexbox(center,center);
+				text-decoration: none;
+				position: relative;
+				flex-direction: column;
+				padding-bottom: 4px;
+				@include link_transition(all,.3s,ease-out);
+				&:after{
+					@include link_transition(all,.3s,ease-out);
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					display: block;
+					width: 0;
+					height: 1px;
+					background: $black;
+					content: "";
+				}
+				&:hover{
+					opacity: .75;
+					&:after{
+						width: 100%;
+					}
+				}
+			}
+		}
+		li+li{margin-left: 24px;}
+	}
+	&_btn{
+		margin-left: 24px;
+		a{
+			@include flexbox(center,center);
+			height: 34px;
+			@include border-radius(17px);
+			border: 2px solid $black;
+			@include fts(14,14);
+			text-decoration: none;
+			font-weight: 500;
+			box-sizing: border-box;
+			padding: 0 28px 0 16px;
+			@include link_transition(all,.3s,ease-out);
+			position: relative;
+			color: $black;
+			&:after {
+				@include link_transition(all,.3s,ease-out);
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 10px;
+				width: 7px;
+				height: 7px;
+				margin-top: -4px;
+				border-top: solid 2px $black;
+				border-right: solid 2px $black;
+				-webkit-transform: rotate(45deg);
+				transform: rotate(45deg);
+				content: "";
+			}
+			&:hover{
+				background: $black;
+				color: #fff;
+				&:after{
+					border-top: solid 2px #fff;
+					border-right: solid 2px #fff;
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		padding: 0 0 0 24px;
+		&_title{
+			margin: 40px 0 11px 0px;
+			a{
+				@include fts(24,24);
+			}
+		}
+		&_utility{
+			display: none;
+		}
+	}
+	@include for-size(desktop-up){
+		padding-right: 80px;
+	}
+}

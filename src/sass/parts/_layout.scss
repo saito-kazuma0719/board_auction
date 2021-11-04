@@ -1,0 +1,397 @@
+.container{
+	padding: 80px 40px 120px 120px;
+	box-sizing: border-box;
+	max-width: 1200px;
+	margin: 0 auto;
+	@include for-size(phone-only){
+		padding: 80px 24px 120px;
+	}
+	@include for-size(big-desktop-up){
+		max-width: 1200px;
+		padding: 80px 40px 180px 40px;
+	}
+}
+
+
+
+.wrapper{
+	padding: 120px 0 0;
+	@include for-size(phone-only){
+		padding: 80px 0 0;
+	}
+}
+
+.single_content{
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.row{
+	&_head{
+		@include flexbox(flex-start,center);
+		margin-bottom: 12px;
+		p{
+			@include fts(15,23);
+			font-weight: 500;
+			span{
+				color: $red;
+				margin-left: 8px;
+				@include fts(15,20);
+			}
+			&.note{
+				margin-left: auto;
+				font-weight: 400;
+				span{
+					margin-right: 8px;
+				}
+			}
+		}
+	}
+	&_body{
+		@include flexbox(flex-start,flex-start);
+		flex-wrap: wrap;
+		.form_error{margin-top: 8px;}
+	}
+	&_group{
+		@include flexbox(flex-start,flex-start);
+		margin-bottom: 8px;
+		position: relative;
+	}
+	&_item{
+		&_col{
+			width: 48.5%;
+			flex-basis: 48.5%;
+			position: relative;
+			&:nth-child(even){margin-left: auto;}
+		}
+		&_full{
+			width: 100%;
+			flex-basis: 100%;
+		}
+		&_full+.form_error{margin-top: 8px;}
+
+	}
+	&_item+&_item{
+		margin-left: 20px;
+	}
+	&_container{
+		.row{
+			padding-top: 36px;
+			margin-top: 36px;
+			border-top: 1px dotted $pale;
+		}
+	}
+	@include for-size(phone-only){
+		&_group{
+			flex-direction: column;
+		}
+		&_item{
+			&_col{
+				width: 100%;
+				flex-basis: 100%;
+				margin-bottom: 8px;
+				&:nth-child(even){margin-left: 0;}
+			}
+			&_full{
+				width: 100%;
+				flex-basis: 100%;
+			}
+		}
+		&_container{
+			.row{
+				padding-top: 24px;
+				margin-top: 24px;
+			}
+		}
+	}
+}
+
+
+.row+.row{
+	margin-top: 36px;
+	@include for-size(phone-only){
+		margin-top: 28px;
+	}
+}
+
+.form{
+	&_radio{
+		display: none;
+	}
+	&_radio+label{
+		position: relative;
+		padding-left: 30px;
+		font-weight: 400;
+		&:before{
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -11px;
+			@include border-radius(50%);
+			width: 22px;
+			height: 22px;
+			border: 1px solid $pale;
+			content: "";
+		}
+	}
+	&_radio{
+		&:checked+label{
+			&:before{
+				border-color: $black;
+				background: $black;
+			}
+			&:after{
+				position: absolute;
+				left: 1px;
+				top: 50%;
+				margin-top: -10px;
+				display: block;
+				background: url(../images/common/ico_check.svg) no-repeat 0 0;
+				background-size: 22px 22px;
+				width: 22px;
+				height: 22px;
+				content: "";
+			}
+		}
+	}
+	&_input{
+		cursor: pointer;
+		border: 1px solid $pale;
+		background: none;
+		width: 100%;
+		height: 56px;
+		box-sizing: border-box;
+		padding: 18px 20px;
+		@include fts(15,15);
+		outline: none;
+		&::placeholder{
+			color: $greyish;
+		}
+		&:focus{
+			border-color: $black;
+			color: $black;
+		}
+		&:hover{
+			border-color: $greyish
+		}
+		&:disabled{
+			background: $pale;
+			border-color: $pale;
+			color: $greyish;
+		}
+		&.parsley-error{
+			border-color: $red;
+			color: $red;
+		}
+	}
+	&_select{
+		display: block;
+		cursor: pointer;
+		border: 1px solid $pale;
+		background: none;
+		width: 100%;
+		outline: none;
+		overflow: hidden;
+		position: relative;
+		box-sizing: border-box;
+		height: 56px;
+		&:after {
+			z-index: 10;
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			width: 7px;
+			height: 7px;
+			margin-top: -4px;
+			border-top: solid 1px $black;
+			border-right: solid 1px $black;
+			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg);
+			content: "";
+		}
+		&:focus{
+			border-color: $black;
+			color: $black;
+		}
+		&:hover{
+			border-color: $greyish
+		}
+		&:disabled{
+			background: $pale;
+			border-color: $pale;
+			color: $greyish;
+		}
+		&.parsley-error{
+			border-color: $red;
+			select{
+				color: $red;
+			}
+		}
+		select{
+			width: 110%;
+			height: 56px;
+			@include fts(15,15);
+			padding: 0 20px;
+			outline: none;
+			background: none;
+		}
+	}
+	&_checkbox{
+		display: none;
+		&+label{
+			@include fts(15,26);
+			position: relative;
+			padding-left: 30px;
+			&:before{
+				position: absolute;
+				left: 0;
+				top: 50%;
+				margin-top: -11px;
+				display: block;
+				width: 22px;
+				height: 22px;
+				background: none;
+				border: 1px solid $pale;
+				content: "";
+			}
+		}
+		&:checked{
+			&+label{
+				&:before{
+					background: $black;
+					border-color: $black;
+				}
+				&:after{
+					position: absolute;
+					left: 1px;
+					top: 50%;
+					margin-top: -10px;
+					display: block;
+					background: url(../images/common/ico_check.svg) no-repeat 0 0;
+					background-size: 22px 22px;
+					width: 22px;
+					height: 22px;
+					content: "";
+				}
+			}
+		}
+	}
+	&_eye{
+		position: absolute;
+		width: 22px;
+		height: 22px;
+		right: 20px;
+		top: 50%;
+		margin-top: -11px;
+		z-index: 100;
+		cursor: pointer;
+		svg{
+			width: 100%;
+			height: auto;
+		}
+	}
+	&_note{
+		@include fts(14,25);
+		color: $brown-grey;
+		margin-bottom: 16px;
+	}
+	&_file{
+		display: none;
+		&+label{
+			position: relative;
+			left: 0;
+			text-align: center;
+			display: block;
+			height: 36px;
+			width: 140px;
+			@include fts(14,36);
+			border: 1px solid $pale;
+			&:hover{
+				border-color: $greyish
+			}
+			&:after{
+				content: "選択されていません";
+				@include fts(14,25);
+				display: block;
+				position: absolute;
+				white-space: nowrap;
+				top: 50%;
+				left: 150px;
+				transform: translateY(-50%);
+			}
+			&.uploaded{
+				&:after{
+					display: none;
+					content: "";
+				}
+			}
+		}
+		&_text{
+			margin-left: 12px;
+			@include fts(15,36);
+		}
+	}
+	&_lower{
+		margin-top: 60px;
+		padding-top: 60px;
+		border-top: 1px solid $pale;
+	}
+	&_links{
+		@include flexbox(flex-start,flex-start);
+		margin-bottom: 25px;
+		p{
+			a{
+				color: $black;
+				@include fts(14,14);
+				text-decoration: underline;
+				@include link_transition(all,.3s,ease-out);
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+		p+p{
+			margin-left: 20px;
+		}
+	}
+	&_agree{
+		margin-bottom: 25px;
+	}
+	&_submit{
+		width: 360px;
+		height: 60px;
+		background: $black;
+		text-align: center;
+		color: #fff;
+		@include fts(16,16);
+		@include link_transition(all,.3s,ease-out);
+		cursor: pointer;
+		&:disabled{
+			cursor: default;
+			background: #E5E4E3;
+			color: #A5A4A3;
+		}
+		&:hover{
+			@include opacity(.8);
+		}
+		
+	}
+	&_error{
+		@include fts(15,23);
+		color: $red;
+	}
+	@include for-size(phone-only){
+		&_lower{
+			margin-top: 48px;
+			padding-top: 48px;
+		}
+		&_submit{
+			width: 100%;
+			height: 50px;
+		}
+		
+		
+	}
+}

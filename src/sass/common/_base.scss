@@ -1,0 +1,28 @@
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	@include font-jp;
+	@include fts(16,30);
+	background: $very-light-pink;
+}
+
+.only--pc{
+	display: none;
+	@include for-size(tablet-portrait-up){
+		display: block;
+	}
+}
+
+.only--sp{
+	display: block;
+	@include for-size(tablet-portrait-up){
+		display: none;
+	}
+}
+
+
+
+

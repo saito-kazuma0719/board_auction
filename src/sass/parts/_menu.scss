@@ -1,0 +1,84 @@
+.menu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 80px;
+	&_trigger{
+		height: 80px;
+		background: $black;
+		@include flexbox(center,center);
+		flex-direction: column;
+		width: 100%;
+		position: relative;
+		span{
+			display: block;
+			height: 2px;
+			width: 16px;
+			background: #fff;
+		}
+		span+span{margin-top: 8px;}
+	}
+	&_list{
+		margin-top: 18px;
+		li{
+			a{
+				height: 60px;
+				width: 80px;
+				@include flexbox(center,center);
+				@include link_transition(all,.3s,ease-out);
+				position: relative;
+				svg{
+					opacity: .6;
+				}
+				&:before{
+					opacity: 0;
+					visibility: hidden;
+					display: inline-block;
+					position: absolute;
+					right: 9px;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 3px 8px 3px 0;
+					border-color: transparent $black transparent transparent;					
+					content: "";
+				}
+				&:after{
+					opacity: 0;
+					visibility: hidden;
+					display: inline-block;
+					position: absolute;
+					left: 70px;
+					padding: 3px 12px 4px 17px;
+					color: #fff;
+					@include fts(12,17);
+					white-space: nowrap;
+					background: $black;
+					content: attr(data-label);
+				}
+				
+				&:before,&:after{
+					@include link_transition(all,.3s,ease-out);
+				}
+				&:hover{
+					svg{
+						opacity: 1;
+					}
+					&:before,&:after{
+						opacity: 1;
+						visibility: visible;
+					}
+					
+					
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		left: auto;
+		right: 0;
+		&_list{display: none;}
+	}
+}

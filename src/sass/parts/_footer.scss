@@ -1,0 +1,79 @@
+.footer{
+	background: $black;
+	padding: 60px 0 80px;
+	&_inner{
+		padding: 0 24px;
+	}
+	&_title{
+		color: #fff;
+		@include font-en;
+		font-weight: 700;
+		margin-bottom: 16px;
+		@include fts(24,24);
+	}
+	&_row{
+		@include flexbox(flex-start,flex-end);
+	}
+	&_menu{
+		@include flexbox(flex-start,flex-end);
+		width: 50%;
+		li{
+			a{
+				color: #fff;
+				@include fts(13,23);
+				text-decoration: none;
+			}
+		}
+		li+li{
+			margin-left: 16px;
+		}
+	}
+	&_copy{
+		width: 50%;
+		color: #fff;
+		text-align: right;
+		@include fts(13,23);
+	}
+	@include for-size(phone-only){
+		padding: 40px 0 100px;
+		&_title{
+			@include fts(24,24);
+			font-weight: 700;
+			text-align: center;
+		}
+		&_row{
+			flex-direction: column;
+		}
+		&_menu{
+			@include flexbox(center,center);
+			margin-bottom: 16px;
+			width: 100%;
+			li{
+				a{
+					color: #fff;
+					@include fts(12,12);
+					text-decoration: none;
+				}
+			}
+			li+li{
+				margin-left: percentage(16/414);
+			}
+		}
+		&_copy{
+			margin-left: 0;
+			width: 100%;
+			color: #fff;
+			text-align: center;
+			@include fts(12,12);
+		}
+	}
+	@include for-size(desktop-up){
+		&_inner{
+			max-width: 1360px;
+			margin: 0 auto;
+		}
+	}
+}
+
+
+

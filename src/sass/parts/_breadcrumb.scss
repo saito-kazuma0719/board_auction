@@ -1,0 +1,33 @@
+.breadcrumb{
+	&_list{
+		@include flexbox(flex-start,center);
+		li{
+			margin-right: 24px;
+			position: relative;
+			@include fts(14,14);
+			color: $black;
+			a{
+				img{
+					vertical-align: middle;
+					width: 18px;
+					height: 18px;
+				}
+			}
+		}
+		li+li{
+			position: relative;
+			&:before {
+				width: 12px;
+				height: 12px;
+				background: url(../images/common/ico_arrow_left.svg) no-repeat 0 0;
+				background-size: 12px 12px;
+				display: block;
+				position: absolute;
+				left: -16px;
+				margin-top: -5px;
+				top: 50%;
+				content: "";
+			}
+		}
+	}
+}

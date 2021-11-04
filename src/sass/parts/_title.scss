@@ -1,0 +1,13 @@
+.title{
+	@include fts(60,60);
+	&.en{
+		@include font-en;
+		font-weight: 600;
+		letter-spacing: -1.2px;
+		margin-bottom: 20px;
+	}
+	@include for-size(phone-only){
+		@include fts(44,44);
+	}
+	
+}
