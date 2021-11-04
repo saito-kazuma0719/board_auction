@@ -389,9 +389,114 @@
 		}
 		&_submit{
 			width: 100%;
-			height: 50px;
+			height: 56px;
 		}
 		
 		
+	}
+}
+
+.confirm{
+	>p{
+		color: $brown-grey;
+		@include fts(15,25);
+		margin-bottom: 28px;
+	}
+	&_row{
+		padding: 28px 0;
+		border-top: 1px solid $pale;
+		>p{
+			@include fts(15,25);
+			&.label{
+				font-weight: 500;
+				margin-bottom: 8px;
+			}
+		}
+	}
+	&_lower{
+		padding: 60px 0 0;
+		border-top: 1px solid $pale;
+		p{
+			margin-top: 24px;
+			a{
+				color: $black;
+				@include fts(14,25);
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	&_submit{
+		width: 360px;
+		height: 60px;
+		background: $black;
+		text-align: center;
+		color: #fff;
+		@include fts(16,16);
+		@include link_transition(all,.3s,ease-out);
+		cursor: pointer;
+		&:disabled{
+			cursor: default;
+			background: #E5E4E3;
+			color: #A5A4A3;
+		}
+		&:hover{
+			@include opacity(.8);
+		}
+		
+	}
+	@include for-size(phone-only){
+		&_lower{
+			padding-top: 48px;
+		}
+		&_submit{
+			width: 100%;
+			height: 56px;
+		}
+		
+		
+	}
+	
+}
+
+
+.complete{
+	&_box{
+		border: 1px solid $pale;
+		padding: 60px;
+		max-width: 720px;
+		margin: 70px auto 0;
+		box-sizing: border-box;
+		>p{
+			@include fts(15,26);
+			color: $brown-grey;
+			&.label{
+				color: $black;
+				font-weight: 600;
+				@include fts(28,39);
+				margin-bottom: 28px;
+			}
+			a{
+				color: $black;
+				text-decoration: underline;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+		>p+p{margin-top: 28px;}
+	}
+	@include for-size(phone-only){
+		&_box{
+			padding: 36px;
+			margin: 0;
+			>p{
+				@include fts(14,25);
+				&.label{
+					@include fts(20,28);
+				}
+			}
+		}
 	}
 }

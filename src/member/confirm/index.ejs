@@ -1,0 +1,85 @@
+<%
+var pageData = {
+	path: '../../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: '新規会員申請'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../../includes/_header', { data: pageData } ) %>
+			<div class="container registration">
+				<h2 class="title en">Confirmation</h2>
+				<%- include( '../../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper">
+					<div class="single_content confirm">
+						<p>内容をご確認の上、よろしければ「申請する」ボタンを選択してください。</p>
+						<form action="">
+							<div class="confirm_row">
+								<p class="label">法人名</p>
+								<p>株式会社 地新（カブシキカイシャ チシン）</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">代表者名</p>
+								<p>山田 太郎（ヤマダ タロウ）</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">屋号名</p>
+								<p>ー</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">住所</p>
+								<p>〒231-0007<br>神奈川県横浜市中区弁天通1-14 金港ビル2F</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">発送先</p>
+								<p>〒231-0007<br>神奈川県横浜市中区弁天通1-14 金港ビル2F</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">電話番号</p>
+								<p>045-222-3535</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">メールアドレス</p>
+								<p>sample@chishin-yokohama.com</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">パスワード</p>
+								<p>･･･････････</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">古物商免許証</p>
+								<p>サンプル画像.jpg</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">身分証明書</p>
+								<p>サンプル画像2.jpg</p>
+							</div>
+							<div class="confirm_row">
+								<p class="label">行商カード</p>
+								<p>ー</p>
+							</div>
+							<div class="confirm_lower">
+								<button type="submit" id="confirm_submit" class="form_submit">申請する</button>
+								<p><a href="javascript:history.back();">入力画面に戻る</a></p>
+							</div>
+							
+						</form>
+
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<%- include( '../../includes/_footer', { data: pageData } ) %>
+			<%- include( '../../includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>

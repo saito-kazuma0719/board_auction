@@ -931,7 +931,139 @@ body {
   }
   .form_submit {
     width: 100%;
-    height: 50px;
+    height: 56px;
+  }
+}
+
+.confirm > p {
+  color: #757473;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.66667;
+  margin-bottom: 28px;
+}
+
+.confirm_row {
+  padding: 28px 0;
+  border-top: 1px solid #e5e4e3;
+}
+
+.confirm_row > p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.66667;
+}
+
+.confirm_row > p.label {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.confirm_lower {
+  padding: 60px 0 0;
+  border-top: 1px solid #e5e4e3;
+}
+
+.confirm_lower p {
+  margin-top: 24px;
+}
+
+.confirm_lower p a {
+  color: #202020;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+}
+
+.confirm_lower p a:hover {
+  text-decoration: none;
+}
+
+.confirm_submit {
+  width: 360px;
+  height: 60px;
+  background: #202020;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.confirm_submit:disabled {
+  cursor: default;
+  background: #E5E4E3;
+  color: #A5A4A3;
+}
+
+.confirm_submit:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+@media (max-width: 767px) {
+  .confirm_lower {
+    padding-top: 48px;
+  }
+  .confirm_submit {
+    width: 100%;
+    height: 56px;
+  }
+}
+
+.complete_box {
+  border: 1px solid #e5e4e3;
+  padding: 60px;
+  max-width: 720px;
+  margin: 70px auto 0;
+  box-sizing: border-box;
+}
+
+.complete_box > p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  color: #757473;
+}
+
+.complete_box > p.label {
+  color: #202020;
+  font-weight: 600;
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 1.39286;
+  margin-bottom: 28px;
+}
+
+.complete_box > p a {
+  color: #202020;
+  text-decoration: underline;
+}
+
+.complete_box > p a:hover {
+  text-decoration: none;
+}
+
+.complete_box > p + p {
+  margin-top: 28px;
+}
+
+@media (max-width: 767px) {
+  .complete_box {
+    padding: 36px;
+    margin: 0;
+  }
+  .complete_box > p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+  }
+  .complete_box > p.label {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 1.4;
   }
 }
 
