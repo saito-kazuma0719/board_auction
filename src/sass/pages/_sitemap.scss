@@ -1,0 +1,73 @@
+.sitemap{
+	&_row{
+		padding: 41px 0 38px;
+		border-top: 1px solid $pale;
+		>a{
+			position: relative;
+			text-decoration: none;
+			@include fts(18,18);
+			color: $black;
+			font-weight: normal;
+			@include link_transition(all,.3s,ease-out);
+			&:after {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				margin-top: -10px;
+				top: 50%;
+				right: -39px;
+				background: url(../images/common/ico_arrow_left_gray.svg) no-repeat 0 0;
+				background-size: 20px 20px;
+				display: block;
+				content: "";
+			}
+			&:hover{
+				@include opacity(.8);
+			}
+		}
+		>ul{
+			@include flexbox(flex-start,flex-start);
+			flex-wrap: wrap;
+			margin-top: 23px;
+			>li{
+				margin-right: 24px;
+				>a{
+					text-decoration: underline;
+					@include fts(14,14);
+					color: $black;
+					@include link_transition(all,.3s,ease-out);
+					&:hover{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		&:last-child{
+			border-bottom: 1px solid $pale;
+			>ul{
+				margin-top: 0;
+			}
+		}
+	}
+	@include for-size(phone-only){
+		&_row{
+			padding: 37px 0 35px;
+			>a{
+				@include fts(16,16);
+				&:after{
+					width: 16px;
+					height: 16px;
+					margin-top: -8px;
+					right: -28px;
+					background-size: 16px 16px;
+				}
+			}
+			>ul{
+				margin-top: 23px;
+				li{
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+}

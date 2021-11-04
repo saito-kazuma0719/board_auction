@@ -1,0 +1,77 @@
+.terms{
+	&_content{
+		color: $black;
+		>p{
+			@include fts(15,26);
+		}
+		>h3{
+			display: block;
+			margin-top: 43px;
+			margin-bottom: 34px;
+			padding: 12px 20px;
+			@include fts(18,28);
+			background-color: $off-white;
+		}
+		>table{
+			width: 100%;
+			margin-top: 35px;
+			box-sizing: border-box;
+			border: 1px solid $pale;
+			border-collapse: collapse;
+			table-layout: fixed;
+			>tbody tr{
+				>th{
+					padding: 15px;
+					@include fts(15,23);
+					background-color: $off-white;
+					text-align: left;
+					border: 1px solid $pale;
+				}
+				>td{
+					padding: 15px;
+					@include fts(15,26);
+					text-align: left;
+					border: 1px solid $pale;
+				}
+			}
+		}
+	}
+	&_list{
+		&-num{
+			margin-left: 32px;
+			li{
+				margin-top: 22px;
+				list-style-type: none;
+				counter-increment: cnt;
+				@include fts(15,26);
+				&:before{
+					content: "(" counter(cnt) ")";
+					display:inline-block;
+					margin-left:-32px;
+					width: 32px;
+				}
+				>li{
+					&:before{
+						content: none;
+					}
+				}
+			}
+		}
+		&-alpha{
+			margin-left: 32px;
+			counter-reset : item;
+			li{
+				margin-top: 22px;
+				list-style-type: none;
+				counter-increment:item;
+				@include fts(15,26);
+				&:before{
+					content: "(" counter(item,lower-latin) ")";
+					display:inline-block;
+					margin-left:-32px;
+					width: 32px;
+				}
+			}
+		}
+	}
+}
