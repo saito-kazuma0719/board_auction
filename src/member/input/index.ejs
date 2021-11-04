@@ -50,7 +50,7 @@ var pageData = {
 										<input type="text" placeholder="例：カブシキカイシャチシン" class="form_input" data-parsley-required="true" data-parsley-required="true" data-parsley-error-message="法人名（カナ）を入力してください" data-parsley-errors-container="#error-name">
 									</div>
 								</div>
-								<div id="error-name" class="form_error"></div>
+								<div class="form_error"></div>
 							</div>
 							<div class="row">
 								<div class="row_head">
@@ -60,7 +60,7 @@ var pageData = {
 									<div class="row_item_full">
 										<input type="text" placeholder="例：山田 太郎" class="form_input" data-parsley-required="true" data-parsley-error-message="代表者名を入力してください" data-parsley-errors-container="#error-username">
 									</div>
-									<div id="error-username" class="form_error"></div>
+									<div class="form_error"></div>
 								</div>
 								
 							</div>
@@ -82,11 +82,11 @@ var pageData = {
 								<div class="row_block">
 									<div class="row_group">
 										<div class="row_item_col">
-											<input type="text" placeholder="郵便番号（ハイフン不要）" class="form_input" data-parsley-required="true" data-parsley-error-message="郵便番号を正しい形式で入力してください" data-parsley-type="digits" data-parsley-errors-container="#error-address" minlength="7" data-parsley-minlength="7" maxlength="7" data-parsley-maxlength="7">
+											<input type="text" placeholder="郵便番号（ハイフン不要）" class="form_input">
 										</div>
 										<div class="row_item_col">
 											<label for="prefecture" class="form_select" id="prefecture">
-												<select name="prefecture" id="prefecture" data-parsley-required="true" data-parsley-error-message="都道府県を選択してください" data-parsley-class-handler="#prefecture" data-parsley-errors-container="#error-address">
+												<select name="prefecture" id="prefecture">
 													<option value="">都道府県を選択</option>
 													<option value="1">北海道</option>
 													<option value="2">青森県</option>
@@ -140,9 +140,9 @@ var pageData = {
 										</div>
 									</div>
 									<div class="row_item_full">
-										<input type="text" placeholder="例：横浜市中区弁天通1-14 金港ビル2F" class="form_input" data-parsley-required="true" data-parsley-error-message="住所を入力してください" data-parsley-errors-container="#error-address">
+										<input type="text" placeholder="例：横浜市中区弁天通1-14 金港ビル2F" class="form_input">
 									</div>
-									<div id="error-address" class="form_error"></div>
+									<div class="form_error"></div>
 								</div>
 								
 							</div>
@@ -157,11 +157,11 @@ var pageData = {
 									</div>
 									<div class="row_group">
 										<div class="row_item_col">
-											<input type="text" id="check_zip" placeholder="郵便番号（ハイフン不要）" class="form_input" data-parsley-required="true" data-parsley-error-message="郵便番号を正しい形式で入力してください" data-parsley-type="digits" data-parsley-errors-container="#error-address_shipping" minlength="7" data-parsley-minlength="7" maxlength="7" data-parsley-maxlength="7">
+											<input type="text" id="check_zip" placeholder="郵便番号（ハイフン不要）" class="form_input">
 										</div>
 										<div class="row_item_col">
 											<label id="check_prefecture_label" for="check_prefecture" class="form_select">
-												<select name="check_prefecture" id="check_prefecture" data-parsley-required="true" data-parsley-error-message="都道府県を選択してください" data-parsley-class-handler="#check_prefecture" data-parsley-errors-container="#error-address_shipping">
+												<select name="check_prefecture" id="check_prefecture">
 													<option value="">都道府県を選択</option>
 													<option value="1">北海道</option>
 													<option value="2">青森県</option>
@@ -215,9 +215,9 @@ var pageData = {
 										</div>
 									</div>
 									<div class="row_item_full">
-										<input id="check_address" type="text" placeholder="例：横浜市中区弁天通1-14 金港ビル2F" class="form_input" data-parsley-required="true" data-parsley-error-message="住所を入力してください" data-parsley-errors-container="#error-address_shipping">
+										<input id="check_address" type="text" placeholder="例：横浜市中区弁天通1-14 金港ビル2F" class="form_input">
 									</div>
-									<div id="error-address_shipping" class="form_error"></div>
+									<div class="form_error"></div>
 								</div>
 								
 							</div>
@@ -227,9 +227,9 @@ var pageData = {
 								</div>
 								<div class="row_body">
 									<div class="row_item_full">
-										<input type="text" placeholder="例：045-222-3535（ハイフンあり）" class="form_input" data-parsley-required="true" data-parsley-error-message="電話番号を正しい形式で入力してください" data-parsley-errors-container="#error-tel" minlength="12" data-parsley-minlength="12" maxlength="12" data-parsley-maxlength="12">
+										<input type="text" placeholder="例：045-222-3535（ハイフンあり）" class="form_input">
 									</div>
-									<div id="error-tel" class="form_error"></div>
+									<div class="form_error"></div>
 								</div>
 								
 							</div>
@@ -239,9 +239,9 @@ var pageData = {
 								</div>
 								<div class="row_body">
 									<div class="row_item_full">
-										<input type="text" placeholder="例：sample@chishin-yokohama.com" class="form_input" data-parsley-type="email" data-parsley-required="true" data-parsley-error-message="メールアドレスを正しい形式で入力してください" data-parsley-errors-container="#error-mail">
+										<input type="text" placeholder="例：sample@chishin-yokohama.com" class="form_input">
 									</div>
-									<div id="error-mail" class="form_error"></div>
+									<div class="form_error"></div>
 								</div>
 								
 							</div>
@@ -251,15 +251,15 @@ var pageData = {
 								</div>
 								<div class="row_group">
 									<div class="row_item_col">
-										<input type="password" id="password1" placeholder="半角英数字で8文字以上" class="form_input" data-parsley-required="true" data-parsley-error-message="パスワードを8文字以上で入力してください" data-parsley-errors-container="#error-pass" minlength="8" data-parsley-minlength="8" data-parsley-type="alphanum">
+										<input type="password" id="password1" placeholder="半角英数字で8文字以上" class="form_input">
 										<span class="form_eye"><img src="../../images/common/ico_eyes.svg" alt=""></span>
 									</div>
 									<div class="row_item_col">
-										<input type="password" id="password2" placeholder="確認のためもう一度" class="form_input" data-parsley-required="true" data-parsley-error-message="パスワードが違います" data-parsley-errors-container="#error-pass" minlength="8" data-parsley-minlength="8" data-parsley-type="alphanum" data-parsley-equalto="#password1">
+										<input type="password" id="password2" placeholder="確認のためもう一度" class="form_input">
 										<span class="form_eye"><img src="../../images/common/ico_eyes.svg" alt=""></span>
 									</div>
 								</div>
-								<div id="error-pass" class="form_error"></div>
+								<div class="form_error"></div>
 							</div>
 							<div class="row_container">
 								<div class="row">
@@ -273,7 +273,7 @@ var pageData = {
 											<label for="file_01" class="form_file_btn">ファイルを選択</label>
 										</div>
 									</div>
-									
+									<div class="form_error"></div>
 								</div>
 								<div class="row">
 									<div class="row_head">
@@ -286,7 +286,7 @@ var pageData = {
 											<label for="file_02" class="form_file_btn">ファイルを選択</label>
 										</div>
 									</div>
-									
+									<div class="form_error"></div>
 								</div>
 								<div class="row">
 									<div class="row_head">
@@ -299,13 +299,13 @@ var pageData = {
 											<label for="file_03" class="form_file_btn">ファイルを選択</label>
 										</div>
 									</div>
-									
+									<div class="form_error"></div>
 								</div>
 							</div>
 							<div class="form_lower">
 								<div class="form_links">
-									<p><a href="#">利用規約</a></p>
-									<p><a href="#">プライバシーポリシー</a></p>
+									<p><a href="/terms/">利用規約</a></p>
+									<p><a href="/privacy/">プライバシーポリシー</a></p>
 								</div>
 								<div class="form_agree">
 									<input type="checkbox" class="form_checkbox" name="agreement" id="agreement">

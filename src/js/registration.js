@@ -5,7 +5,6 @@ window.addEventListener('load', function(){
 	var checkZip =  document.getElementById('check_zip')
 	var checkPrefecture =  document.getElementById('check_prefecture')
 	var checkAddress =  document.getElementById('check_address')
-	var submit = document.getElementById('registration_submit')
 	
 	//新規会員申請ファイルアップロード
 	if(!length){
