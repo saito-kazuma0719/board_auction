@@ -1,0 +1,111 @@
+.login{
+	@include flexbox(flex-start,flex-start);
+	&_content{
+		width: percentage(580/1240);
+		max-width: 580px;
+		&:nth-child(even){margin-left: auto;}
+		>p{
+			@include fts(15,26);
+			color: $brown-grey;
+			margin-bottom: 40px;
+		}
+		.form_submit{
+			width: 100%;
+			max-width: 360px;
+		}
+	}
+	&_reminder{
+		margin-top: 24px;
+		p{
+			a{
+				color: $black;
+				@include fts(14,25);
+				text-decoration: underline;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	&_box{
+		border: 1px solid $pale;
+		padding: percentage(60/580);
+		p{
+			@include fts(15,26);
+			color: $brown-grey;
+			margin-bottom: 32px;
+		}
+	}
+	&_title{
+		@include fts(28,39);
+		margin-bottom: 32px;
+		font-weight: 700;
+	}
+	@include for-size(phone-only){
+		flex-direction: column;
+		&_content{
+			width: 100%;
+			max-width: 100%;
+			&:nth-child(even){margin-left: 0; margin-top: 48px;}
+			>p{
+				@include fts(14,26);
+				margin-bottom: 36px;
+			}
+			.form_submit{
+				width: 100%;
+				max-width: 100%;
+			}
+			.form_agree{
+				label{
+					@include fts(15,26);
+				}
+			}
+		}
+		&_box{
+			padding: 36px
+			p{
+				@include fts(14,25);
+				color: $brown-grey;
+				margin-bottom: 28px;
+			}
+		}
+		&_title{
+			@include fts(20,28);
+			margin-bottom: 28px;
+		}
+		
+		
+		
+	}
+}
+.reset{
+	>p{
+		@include fts(15,26);
+		color: $brown-grey;
+		margin-bottom: 40px;
+	}
+	.row+.form_submit{margin-top: 60px;}
+	@include for-size(phone-only){
+		>p{
+			@include fts(14,24);
+			margin-bottom: 36px;
+		}
+		.row+.form_submit{margin-top: 44px;}
+	}
+	
+}
+.reminder{
+	>p{
+		@include fts(15,26);
+		color: $brown-grey;
+		margin-bottom: 40px;
+	}
+	.row+.form_submit{margin-top: 40px;}
+	@include for-size(phone-only){
+		>p{
+			@include fts(14,24);
+			margin-bottom: 36px;
+		}
+		.row+.form_submit{margin-top: 44px;}
+	}
+}

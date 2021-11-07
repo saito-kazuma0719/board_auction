@@ -1,0 +1,47 @@
+<%
+var pageData = {
+	path: '../../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: 'パスワードを忘れた方へ'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../../includes/_header', { data: pageData } ) %>
+			<div class="container">
+				<h2 class="title en">Forgot <span>Password</span></h2>
+				<%- include( '../../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper">
+					<div class="single_content reminder">
+						
+						<p>パスワードを再設定するためのリンクをメールで送信いたします。</p>
+						<form action="" class="reminder_form">
+							<div class="row">
+								<div class="row_head">
+									<p>メールアドレス<span>※</span></p>
+								</div>
+								<div class="row_group">
+									<div class="row_item_full">
+										<input type="text" placeholder="" class="form_input">
+									</div>
+								</div>
+								<div class="form_error"></div>
+							</div>
+							<button type="submit" id="registration_submit" class="form_submit">再設定のリンクを送信</button>
+						</form>
+						
+						
+					</div>
+				</div>
+			</div>
+			<%- include( '../../includes/_footer', { data: pageData } ) %>
+			<%- include( '../../includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>

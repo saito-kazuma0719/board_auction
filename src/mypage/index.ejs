@@ -1,0 +1,57 @@
+<%
+var pageData = {
+	path: '../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: 'アカウント'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../includes/_header', { data: pageData } ) %>
+			<div class="container mypage">
+				<h2 class="title en">Account</h2>
+				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper">
+					<div class="single_content">
+						<ul class="list_content">
+							<li>
+								<a href="/mypage/member-information/">
+									<p class="label">会員情報</p>
+									<p>登録された会員情報を確認・更新します</p>
+								</a>
+							</li>
+							<li>
+								<a href="/mypage/auction/">
+									<p class="label">予約したオークション</p>
+									<p>参加予約したオークションを確認します</p>
+								</a>
+							</li>
+							<li>
+								<a href="/mypage/bookmark/">
+									<p class="label">ブックマーク</p>
+									<p>ブックマークに追加した出品商品を確認します</p>
+								</a>
+							</li>
+							<li>
+								<a href="/mypage/history/">
+									<p class="label">取引履歴</p>
+									<p>これまで落札した商品を確認します</p>
+								</a>
+							</li>
+						</ul>
+						<p><a href="/" class="text_link">トップへ戻る</a></p>
+					</div>
+				</div>
+			</div>
+			<%- include( '../includes/_footer', { data: pageData } ) %>
+			<%- include( '../includes/_scripts', { data: pageData } ) %>
+			
+		</body>
+	</html>

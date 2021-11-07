@@ -1,0 +1,242 @@
+.list{
+	&_content{
+		border-top: 1px solid $pale;
+		border-bottom: 1px solid $pale;
+		li{
+			>a{
+				display: block;
+				text-decoration: none;
+				position: relative;
+				@include link_transition(all,.15s,linear);
+				&:hover{
+					opacity: .75;
+				}
+				&:after {
+					display: block;
+					position: absolute;
+					top: 50%;
+					right: 10px;
+					width: 7px;
+					height: 7px;
+					margin-top: -4px;
+					border-top: solid 2px $greyish;
+					border-right: solid 2px $greyish;
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+					content: "";
+				}
+				>p{
+					@include fts(14,14);
+					color: $brown-grey;
+					&.label{
+						margin-bottom: 6px;
+						@include fts(18,27);
+						font-weight: 500;	
+						color: $black;				
+					}
+				}
+			}
+		}
+		li+li{border-top: 1px solid $pale;}
+	}
+	&_row{
+		>p{
+			@include fts(15,23);
+			color: $black;				
+			&.label{
+				margin-bottom: 6px;
+				font-weight: 500;	
+			}
+		}
+	}
+	&_row+&_row{margin-top: 28px;}
+	&_card{
+		li{
+			>div{
+				@include flexbox(flex-start,flex-start);
+			}
+			.date{
+				@include fts(16,28);
+				margin-bottom: 8px;
+			}
+			.name{
+				@include fts(18,27);
+				font-weight: 500;
+				margin-bottom: 16px;
+				display: inline-block;
+				a{
+					color: $black;
+					text-decoration: none;
+					position: relative;
+					&:after{
+						@include link_transition(all,.3s,ease-in);
+						display: inline-block;
+						position: absolute;
+						bottom: -5px;
+						left: 0;
+						width: 0%;
+						height: 1px;
+						background: $black;
+						content: "";
+					}
+					&:hover{
+						&:after{width: 100%;}
+					}
+				}
+				
+				
+			}
+			.place{
+				color: $brown-grey;
+				@include fts(15,26);
+				margin-bottom: 10px;
+			}
+			.excerpt{
+				color: $brown-grey;
+				@include fts(15,26);
+			}
+		
+			
+		}
+		li+li{margin-top: percentage(80/800);}
+		&_img{
+			width: percentage(300/800);
+			max-width: 300px;
+			margin-right: 40px;
+			overflow: hidden;
+			a{
+				img{
+					@include link_transition(all,.3s,ease-in);
+					width: 100%;
+					height: auto;
+					vertical-align: bottom;
+				}
+				&:hover{
+					img{
+						transform: scale(1.2,1.2);
+					}
+				}
+			}
+		}
+		&_content{
+			position: relative;
+			width: percentage(420/800);
+			max-width: calc( 100% - 340px );
+		}
+		&_badge{
+			position: absolute;
+			right: 0;
+			top: 0;
+			cursor: pointer;
+			z-index: 10;
+			&.is-active{
+				.default{display: none;}
+				.selected{display: block;}
+			}
+			&:not(.is-active){
+				.default{display: block;}
+				.selected{display: none;}
+				&:before{
+					display: block;
+					position: absolute;
+					top: 26px;
+					left: 8px;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 0 4px 6px 4px;
+					opacity: 0;
+					@include link_transition(all,.15s,ease-in);
+					border-color: transparent transparent $black transparent;
+					content: "";
+				}
+				&:after{
+					@include link_transition(all,.15s,ease-in);
+					position: absolute;
+					top: 32px;
+					left: -16px;
+					display: block;
+					padding: 3px 10px;
+					color: #fff;
+					@include fts(12,12);
+					width: 68px;
+					box-sizing: border-box;
+					text-align: center;
+					background: $black;
+					opacity: 0;
+					content: "参加予約";
+				}
+				&:hover{
+					&:before{
+						opacity: 1;
+					}
+					&:after{
+						opacity: 1;
+					}
+				}
+			}
+		}
+		
+	}
+	@include for-size(phone-only){
+		&_content{
+			li{
+				>a{
+					text-decoration: none;
+					>p{
+						&.label{
+							@include fts(16,24);
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 960px) {
+		&_card{
+			li{
+				>div{
+					flex-direction: column;
+				}
+				.date{
+					@include fts(15,26);
+					margin-bottom: 0;
+				}
+				.name{
+					@include fts(16,24);
+					margin-bottom: 8px;
+					a{
+						color: $black;
+					}
+				}
+				.place{
+					color: $brown-grey;
+					@include fts(14,24);
+					margin-bottom: 4px;
+				}
+				.excerpt{
+					color: $brown-grey;
+					@include fts(14,24);
+				}
+			}
+			li+li{margin-top: 60px;}
+			&_img{
+				width: 100%;
+				max-width: 100%;
+				margin-right: 0;
+				margin-bottom: 16px;
+			}
+			&_content{
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.column{
+	&_row{
+		@include flexbox(flex-start,flex-start);
+	}
+	&_auto{margin-left: auto;}
+}

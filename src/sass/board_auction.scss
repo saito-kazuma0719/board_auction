@@ -1,3 +1,6 @@
+@import "~remodal/dist/remodal-default-theme.css";
+@import "~remodal/dist/remodal.css";
+
 @import "./common/_mixins";
 @import "./common/_reset";
 @import "./common/_setting";
@@ -7,5 +10,12 @@
 @import "./parts/_breadcrumb.scss";
 @import "./parts/_header.scss";
 @import "./parts/_layout.scss";
+@import "./parts/_list.scss";
+@import "./parts/_loading.scss";
 @import "./parts/_menu.scss";
+@import "./parts//_modal.scss";
 @import "./parts/_title.scss";
+
+
+@import "./pages/_login";
+@import "./pages/_mypage";

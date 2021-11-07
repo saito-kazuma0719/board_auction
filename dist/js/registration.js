@@ -6,19 +6,10 @@ window.addEventListener('load', function(){
 	var checkZip =  document.getElementById('check_zip')
 	var checkPrefecture =  document.getElementById('check_prefecture')
 	var checkAddress =  document.getElementById('check_address')
-	var passwordCheck_1 = document.getElementById('show-pass-01')
-	var passwordCheck_2 = document.getElementById('show-pass-02')
-	var elemPass_1 =  document.getElementById('password-01')
-	var elemPass_2 =  document.getElementById('password-02')
-	var eyeLine =  document.getElementsByClassName('eyes_line')
 	
-	//切り替え
-	
-	
+	//法人・個人切り替え
 	for(var element of radio) {
-
 		element.addEventListener('change',function(){
-			
 			var corporateRow = document.querySelectorAll('.is-corporation');
 			var indivisualRow = document.querySelectorAll('.is-individual');
 
@@ -80,24 +71,6 @@ window.addEventListener('load', function(){
 	checkShipping.addEventListener('click', shippingAddress, false);
 	
 	
-	//パスワード表示
-	passwordCheck_1.addEventListener('click', function(){
-		this.classList.toggle('show');
-		if(this.classList.contains('show')){
-			elemPass_1.type = "text"
-		}else{
-			elemPass_1.type = "password"
-		}
-	});
-	
-	passwordCheck_2.addEventListener('click', function(){
-		this.classList.toggle('show');
-		if(this.classList.contains('show')){
-			elemPass_2.type = "text"
-		}else{
-			elemPass_2.type = "password"
-		}
-	});
 	
 	
 });
