@@ -1,0 +1,82 @@
+<%
+var pageData = {
+	path: '../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: '運営会社'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../includes/_header', { data: pageData } ) %>
+			<div class="container company">
+				<h2 class="title en">Corporate Info</h2>
+				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper">
+					<div class="single_content">
+						<div class="company_row">
+							<p class="strong">会社名</p>
+							<p>株式会社 地新（英語社名：Chishin Co., Ltd.）</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">所在地</p>
+							<p>〒231-0007<br>
+							神奈川県横浜市中区弁天通1-14 金港ビル2F</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">TEL</p>
+							<p>045-222-3535</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">FAX</p>
+							<p>045-226-5090</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">設立</p>
+							<p>2009年09月11日</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">資本金</p>
+							<p>3百万円（2013年04月01日現在）</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">代表者</p>
+							<p>稲垣 良介</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">従業員数</p>
+							<p>10名（2015年01月31日現在、アルバイト含む）</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">事業内容</p>
+							<p>古美術品・骨董品の販売・鑑定・買取・委託販売、古美術店 良の運営</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">古物取引番号</p>
+							<p>神奈川県公安委員会 第451310003696号</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">事業者番号</p>
+							<p>S-0-14-00498</p>
+						</div>
+						<div class="company_row">
+							<p class="strong">取引銀行</p>
+							<p>横浜信用金庫</p>
+						</div>
+						<div class="company_link"><p><a href="../">トップへ戻る</a></p></div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<%- include( '../includes/_footer', { data: pageData } ) %>
+			<%- include( '../includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>
