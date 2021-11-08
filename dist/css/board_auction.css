@@ -2081,227 +2081,6 @@ body {
   opacity: .75;
 }
 
-.login {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.login_content {
-  width: 46.77419%;
-  max-width: 580px;
-}
-
-.login_content:nth-child(even) {
-  margin-left: auto;
-}
-
-.login_content > p {
-  font-size: 15px;
-  font-size: 1.5rem;
-  line-height: 1.73333;
-  color: #757473;
-  margin-bottom: 40px;
-}
-
-.login_content .form_submit {
-  width: 100%;
-  max-width: 360px;
-}
-
-.login_reminder {
-  margin-top: 24px;
-}
-
-.login_reminder p a {
-  color: #202020;
-  font-size: 14px;
-  font-size: 1.4rem;
-  line-height: 1.78571;
-  text-decoration: underline;
-}
-
-.login_reminder p a:hover {
-  text-decoration: none;
-}
-
-.login_box {
-  border: 1px solid #e5e4e3;
-  padding: 10.34483%;
-}
-
-.login_box p {
-  font-size: 15px;
-  font-size: 1.5rem;
-  line-height: 1.73333;
-  color: #757473;
-  margin-bottom: 32px;
-}
-
-.login_title {
-  font-size: 28px;
-  font-size: 2.8rem;
-  line-height: 1.39286;
-  margin-bottom: 32px;
-  font-weight: 700;
-}
-
-@media (max-width: 767px) {
-  .login {
-    flex-direction: column;
-  }
-  .login_content {
-    width: 100%;
-    max-width: 100%;
-  }
-  .login_content:nth-child(even) {
-    margin-left: 0;
-    margin-top: 48px;
-  }
-  .login_content > p {
-    font-size: 14px;
-    font-size: 1.4rem;
-    line-height: 1.85714;
-    margin-bottom: 36px;
-  }
-  .login_content .form_submit {
-    width: 100%;
-    max-width: 100%;
-  }
-  .login_content .form_agree label {
-    font-size: 15px;
-    font-size: 1.5rem;
-    line-height: 1.73333;
-  }
-  .login_box {
-    padding: 36px p;
-    padding-font-size: 14px;
-    padding-font-size: 1.4rem;
-    padding-line-height: 1.78571;
-    padding-color: #757473;
-    padding-margin-bottom: 28px;
-  }
-  .login_title {
-    font-size: 20px;
-    font-size: 2rem;
-    line-height: 1.4;
-    margin-bottom: 28px;
-  }
-}
-
-.reset > p {
-  font-size: 15px;
-  font-size: 1.5rem;
-  line-height: 1.73333;
-  color: #757473;
-  margin-bottom: 40px;
-}
-
-.reset .row + .form_submit {
-  margin-top: 60px;
-}
-
-@media (max-width: 767px) {
-  .reset > p {
-    font-size: 14px;
-    font-size: 1.4rem;
-    line-height: 1.71429;
-    margin-bottom: 36px;
-  }
-  .reset .row + .form_submit {
-    margin-top: 44px;
-  }
-}
-
-.reminder > p {
-  font-size: 15px;
-  font-size: 1.5rem;
-  line-height: 1.73333;
-  color: #757473;
-  margin-bottom: 40px;
-}
-
-.reminder .row + .form_submit {
-  margin-top: 40px;
-}
-
-@media (max-width: 767px) {
-  .reminder > p {
-    font-size: 14px;
-    font-size: 1.4rem;
-    line-height: 1.71429;
-    margin-bottom: 36px;
-  }
-  .reminder .row + .form_submit {
-    margin-top: 44px;
-  }
-}
-
-.mypage .list_content {
-  margin-bottom: 60px;
-}
-
-.mypage .list_content li a {
-  padding: 40px 0;
-}
-
-@media (max-width: 767px) {
-  .mypage .list_content {
-    margin-top: 48px;
-  }
-}
-
-.member_info .list_content {
-  margin-bottom: 60px;
-}
-
-.member_info .list_content li {
-  padding: 28px 0;
-  position: relative;
-}
-
-.member_info .list_content li .expand {
-  position: absolute;
-  right: 0;
-  top: 20px;
-}
-
-.member_info .list_content li .expand a {
-  color: #202020;
-  text-decoration: underline;
-  font-size: 14px;
-  font-size: 1.4rem;
-  line-height: 1.78571;
-}
-
-@media (max-width: 767px) {
-  .member_info .list_content {
-    margin-bottom: 48px;
-  }
-}
-
-.reservations {
-  min-height: calc(100vh - 288px);
-}
-
-.reservations_text p {
-  color: #a5a4a3;
-  font-size: 15px;
-  font-size: 1.5rem;
-  line-height: 1.66667;
-}
-
-.reservations_text p + p {
-  margin-top: 12px;
-}
-
-@media (max-width: 767px) {
-  .reservations {
-    min-height: calc(100vh - 319px);
-  }
-}
-
 .company_row {
   padding: 28px 0 27px;
   border-top: 1px solid #e5e4e3;
@@ -2592,5 +2371,226 @@ body {
 @media (max-width: 767px) {
   .terms_link {
     margin-top: 90px;
+  }
+}
+
+.login {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.login_content {
+  width: 46.77419%;
+  max-width: 580px;
+}
+
+.login_content:nth-child(even) {
+  margin-left: auto;
+}
+
+.login_content > p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  color: #757473;
+  margin-bottom: 40px;
+}
+
+.login_content .form_submit {
+  width: 100%;
+  max-width: 360px;
+}
+
+.login_reminder {
+  margin-top: 24px;
+}
+
+.login_reminder p a {
+  color: #202020;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+  text-decoration: underline;
+}
+
+.login_reminder p a:hover {
+  text-decoration: none;
+}
+
+.login_box {
+  border: 1px solid #e5e4e3;
+  padding: 10.34483%;
+}
+
+.login_box p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  color: #757473;
+  margin-bottom: 32px;
+}
+
+.login_title {
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 1.39286;
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .login {
+    flex-direction: column;
+  }
+  .login_content {
+    width: 100%;
+    max-width: 100%;
+  }
+  .login_content:nth-child(even) {
+    margin-left: 0;
+    margin-top: 48px;
+  }
+  .login_content > p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.85714;
+    margin-bottom: 36px;
+  }
+  .login_content .form_submit {
+    width: 100%;
+    max-width: 100%;
+  }
+  .login_content .form_agree label {
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.73333;
+  }
+  .login_box {
+    padding: 36px p;
+    padding-font-size: 14px;
+    padding-font-size: 1.4rem;
+    padding-line-height: 1.78571;
+    padding-color: #757473;
+    padding-margin-bottom: 28px;
+  }
+  .login_title {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 28px;
+  }
+}
+
+.reset > p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  color: #757473;
+  margin-bottom: 40px;
+}
+
+.reset .row + .form_submit {
+  margin-top: 60px;
+}
+
+@media (max-width: 767px) {
+  .reset > p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.71429;
+    margin-bottom: 36px;
+  }
+  .reset .row + .form_submit {
+    margin-top: 44px;
+  }
+}
+
+.reminder > p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  color: #757473;
+  margin-bottom: 40px;
+}
+
+.reminder .row + .form_submit {
+  margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+  .reminder > p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.71429;
+    margin-bottom: 36px;
+  }
+  .reminder .row + .form_submit {
+    margin-top: 44px;
+  }
+}
+
+.mypage .list_content {
+  margin-bottom: 60px;
+}
+
+.mypage .list_content li a {
+  padding: 40px 0;
+}
+
+@media (max-width: 767px) {
+  .mypage .list_content {
+    margin-top: 48px;
+  }
+}
+
+.member_info .list_content {
+  margin-bottom: 60px;
+}
+
+.member_info .list_content li {
+  padding: 28px 0;
+  position: relative;
+}
+
+.member_info .list_content li .expand {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.member_info .list_content li .expand a {
+  color: #202020;
+  text-decoration: underline;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+}
+
+@media (max-width: 767px) {
+  .member_info .list_content {
+    margin-bottom: 48px;
+  }
+}
+
+.reservations {
+  min-height: calc(100vh - 288px);
+}
+
+.reservations_text p {
+  color: #a5a4a3;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.66667;
+}
+
+.reservations_text p + p {
+  margin-top: 12px;
+}
+
+@media (max-width: 767px) {
+  .reservations {
+    min-height: calc(100vh - 319px);
   }
 }
