@@ -6,6 +6,7 @@
 			position: relative;
 			text-decoration: none;
 			@include fts(18,18);
+			font-weight: 500;
 			color: $black;
 			font-weight: normal;
 			@include link_transition(all,.3s,ease-out);
@@ -28,7 +29,7 @@
 		>ul{
 			@include flexbox(flex-start,flex-start);
 			flex-wrap: wrap;
-			margin-top: 23px;
+			margin-top: 16px;
 			>li{
 				margin-right: 24px;
 				>a{
@@ -63,7 +64,7 @@
 				}
 			}
 			>ul{
-				margin-top: 23px;
+				margin-top: 16px;
 				li{
 					margin-right: 20px;
 				}

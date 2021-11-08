@@ -1211,6 +1211,7 @@ body {
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1;
+  font-weight: 500;
   color: #202020;
   font-weight: normal;
   transition: all 0.3s ease-out;
@@ -1240,7 +1241,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-top: 23px;
+  margin-top: 16px;
 }
 
 .sitemap_row > ul > li {
@@ -1285,7 +1286,7 @@ body {
     background-size: 16px 16px;
   }
   .sitemap_row > ul {
-    margin-top: 23px;
+    margin-top: 16px;
   }
   .sitemap_row > ul li {
     margin-right: 20px;
@@ -1310,6 +1311,7 @@ body {
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 1.55556;
+  font-weight: 500;
   background-color: #f5f3f0;
 }
 
@@ -1327,6 +1329,7 @@ body {
   font-size: 15px;
   font-size: 1.5rem;
   line-height: 1.53333;
+  font-weight: 500;
   background-color: #f5f3f0;
   text-align: left;
   border: 1px solid #e5e4e3;
@@ -1384,4 +1387,26 @@ body {
   display: inline-block;
   margin-left: -32px;
   width: 32px;
+}
+
+.terms_link {
+  margin-top: 70px;
+}
+
+.terms_link p a {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+  color: #202020;
+  text-decoration: underline;
+}
+
+.terms_link p a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .terms_link {
+    margin-top: 90px;
+  }
 }

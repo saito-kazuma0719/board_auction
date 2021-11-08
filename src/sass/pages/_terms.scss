@@ -10,6 +10,7 @@
 			margin-bottom: 34px;
 			padding: 12px 20px;
 			@include fts(18,28);
+			font-weight: 500;
 			background-color: $off-white;
 		}
 		>table{
@@ -23,6 +24,7 @@
 				>th{
 					padding: 15px;
 					@include fts(15,23);
+					font-weight: 500;
 					background-color: $off-white;
 					text-align: left;
 					border: 1px solid $pale;
@@ -72,6 +74,24 @@
 					width: 32px;
 				}
 			}
+		}
+	}
+	&_link{
+		margin-top: 70px;
+		p{
+			a{
+				@include fts(14,25);
+				color: $black;
+				text-decoration: underline;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		&_link{
+			margin-top: 90px;
 		}
 	}
 }
