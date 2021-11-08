@@ -1,0 +1,120 @@
+<%
+var pageData = {
+	path: '../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: 'お知らせ'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../includes/_header', { data: pageData } ) %>
+			<div class="container notice">
+				<h2 class="title en">News</h2>
+				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper">
+					<div class="multi_content">
+						<div class="multi_container">
+							<div class="multi_side">
+								<ul class="list_tab">
+									<li><a href="#" class="is-current">お知らせ</a></li>
+									<li><a href="#">オークション</a></li>
+									<li><a href="#">プレスリリース</a></li>
+								</ul>
+							</div>
+							<div class="multi_main">
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.24</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">第320回 定期オークション〈古美術・茶道具〉を開催いたします。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.20</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">緊急事態宣言発出に伴うオークションの中止と延期について。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.16</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">オンラインでどこでも参加できるライブオークションが来月からスタートします。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.24</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">第320回 定期オークション〈古美術・茶道具〉を開催いたします。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.20</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">緊急事態宣言発出に伴うオークションの中止と延期について。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.16</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">オンラインでどこでも参加できるライブオークションが来月からスタートします。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.24</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">第320回 定期オークション〈古美術・茶道具〉を開催いたします。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.20</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">緊急事態宣言発出に伴うオークションの中止と延期について。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.16</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">オンラインでどこでも参加できるライブオークションが来月からスタートします。</p>
+								</a>
+								<a class="notice-list_row" href="#">
+									<div class="notice-list_head">
+										<p class="date">2021.9.24</p>
+										<p class="cat">news</p>
+									</div>
+									<p class="notice-list_title">第320回 定期オークション〈古美術・茶道具〉を開催いたします。</p>
+								</a>
+								<div class="notice-list_row">
+									<ul class="notice-list_pagenation">
+										<li><a href="#" class="is-current">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			<%- include( '../includes/_footer', { data: pageData } ) %>
+			<%- include( '../includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>
