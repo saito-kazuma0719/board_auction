@@ -1200,6 +1200,88 @@ body {
   }
 }
 
+.company_row {
+  padding: 28px 0 27px;
+  border-top: 1px solid #e5e4e3;
+}
+
+.company_row p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.46667;
+}
+
+.company_row p.strong {
+  margin-bottom: 7px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.33333;
+  font-weight: 500;
+}
+
+.company_link {
+  padding-top: 60px;
+  border-top: 1px solid #e5e4e3;
+}
+
+.company_link p a {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+  color: #202020;
+  text-decoration: underline;
+}
+
+.company_link p a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .company_link {
+    padding-top: 48px;
+  }
+}
+
+.faq_flex {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.faq_main {
+  width: 77.4%;
+  max-width: 960px;
+}
+
+.faq_sub {
+  min-width: 140px;
+}
+
+.faq_sub ul li a {
+  display: inline-block;
+  padding-bottom: 8px;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #202020;
+  text-decoration: none;
+  border-bottom: 1px solid #e5e4e3;
+  transition: all 0.3s ease-out;
+}
+
+.faq_sub ul li a.is-current {
+  border-bottom: 3px solid #202020;
+}
+
+.faq_sub ul li a:hover {
+  opacity: .8;
+}
+
+.faq_sub ul li + li {
+  margin-top: 24px;
+}
+
 .sitemap_row {
   padding: 41px 0 38px;
   border-top: 1px solid #e5e4e3;

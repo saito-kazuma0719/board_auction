@@ -1,0 +1,42 @@
+<%
+var pageData = {
+	path: '../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: 'よくあるご質問'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../includes/_header', { data: pageData } ) %>
+			<div class="container faq">
+				<h2 class="title en">FAQ</h2>
+				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper faq_flex">
+					<div class="faq_sub">
+						<ul>
+							<li><a href="#" class="is-current">オークションについて</a></li>
+							<li><a href="#">入札について</a></li>
+							<li><a href="#">お支払いについて</a></li>
+							<li><a href="#">商品の発送について</a></li>
+						</ul>
+					</div>
+					<div class="faq_main">
+						<p class="faq_qusetion">オークションに関する質問の内容が入ります</p>
+						<p class="faq_answer">質問の回答が入ります。吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<%- include( '../includes/_footer', { data: pageData } ) %>
+			<%- include( '../includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>

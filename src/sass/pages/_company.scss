@@ -1,0 +1,33 @@
+.company{
+	&_row{
+		padding: 28px 0 27px;
+		border-top: 1px solid $pale;
+		p{
+			@include fts(15,22);
+			&.strong{
+				margin-bottom: 7px;
+				@include fts(15,20);
+				font-weight: 500;
+			}
+		}
+	}
+	&_link{
+		padding-top: 60px;
+		border-top: 1px solid $pale;
+		p{
+			a{
+				@include fts(14,25);
+				color: $black;
+				text-decoration: underline;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		&_link{
+			padding-top: 48px;
+		}
+	}
+}
