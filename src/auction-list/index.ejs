@@ -1,0 +1,151 @@
+<%
+var pageData = {
+	path: '../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: 'オークション一覧',
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../includes/_header', { data: pageData } ) %>
+			<div class="container reservations">
+				<h1 class="title en">Auctions</h1>
+				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper">
+					<div class="multi_content">
+						<div class="multi_container">
+							<div class="multi_side">
+								<div class="sort">
+									<div class="sort_head"><img src="../images/common/ico_sort.svg" alt=""></div>
+									<div class="sort_body">
+										<div class="sort_select">
+											<div class="sort_selected">開催年で絞り込む</div>
+											<ul class="sort_list">
+												<li data-sort-year="">すべての開催年</li>
+												<li data-sort-year="2021">2021年</li>
+												<li data-sort-year="2020">2020年</li>
+												<li data-sort-yeart="2019">2019年</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="multi_main">
+								<ul class="list_card">
+									<li data-year-target="2021">
+										<div>
+											<div class="list_card_img"><a href="#"><img src="../images/item/ph_1.jpg" alt=""></a></div>
+											<div class="list_card_content">
+												<p class="date">2021年9月17日（金）15:00 -</p>
+												<h2 class="name"><a href="#">第320回 ボアオークション</a></h2>
+												<p class="place">会場：東京オークションA会場</p>
+												<p class="excerpt">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。</p>
+												<div class="list_card_badge">
+													<img src="../images/common/ico_reserve_off.svg" class="default" alt="">
+													<img src="../images/common/ico_reserve_on.svg" class="selected" alt="">
+												</div>
+											</div>
+										</div>
+									</li>
+									
+									<li data-year-target="2021">
+										<div>
+											<div class="list_card_img"><a href="#"><img src="../images/item/ph_2.jpg" alt=""></a></div>
+											<div class="list_card_content">
+												<p class="date">2021年9月17日（金）15:00 -</p>
+												<h2 class="name"><a href="#">第320回 ボアオークション</a></h2>
+												<p class="place">会場：東京オークションA会場</p>
+												<p class="excerpt">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。</p>
+												<div class="list_card_badge">
+													<img src="../images/common/ico_reserve_off.svg" class="default" alt="">
+													<img src="../images/common/ico_reserve_on.svg" class="selected" alt="">
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-year-target="2020">
+										<div>
+											<div class="list_card_img"><a href="#"><img src="../images/item/no_img.png" alt=""></a></div>
+											<div class="list_card_content">
+												<p class="date">2021年9月17日（金）15:00 -</p>
+												<h2 class="name"><a href="#">第320回 ボアオークション</a></h2>
+												<p class="place">会場：東京オークションA会場</p>
+												<p class="excerpt">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。</p>
+												<div class="list_card_badge">
+													<img src="../images/common/ico_reserve_off.svg" class="default" alt="">
+													<img src="../images/common/ico_reserve_on.svg" class="selected" alt="">
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-year-target="2020">
+										<div>
+											<div class="list_card_img"><a href="#" class="is-over"><img src="../images/item/ph_3.jpg" alt=""></a></div>
+											<div class="list_card_content">
+												<p class="date">2021年9月17日（金）15:00 -</p>
+												<h2 class="name">第320回 ボアオークション</h2>
+												<p class="place">会場：東京オークションA会場</p>
+												<p class="excerpt">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。</p>
+												<div class="list_card_badge">
+													<img src="../images/common/ico_reserve_off.svg" class="default" alt="">
+													<img src="../images/common/ico_reserve_on.svg" class="selected" alt="">
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div>
+											<div class="list_card_img"><a href="#" class="is-over"><img src="../images/item/ph_4.jpg" alt=""></a></div>
+											<div class="list_card_content">
+												<p class="date">2021年9月17日（金）15:00 -</p>
+												<h2 class="name">第320回 ボアオークション</h2>
+												<p class="place">会場：東京オークションA会場</p>
+												<p class="excerpt">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。</p>
+												<div class="list_card_badge">
+													<img src="../images/common/ico_reserve_off.svg" class="default" alt="">
+													<img src="../images/common/ico_reserve_on.svg" class="selected" alt="">
+												</div>
+											</div>
+										</div>
+									</li>
+									<li data-year-target="2019">
+										<div>
+											<div class="list_card_img"><a href="#" class="is-over"><img src="../images/item/ph_5.jpg" alt=""></a></div>
+											<div class="list_card_content">
+												<p class="date">2021年9月17日（金）15:00 -</p>
+												<h2 class="name">第320回 ボアオークション</h2>
+												<p class="place">会場：東京オークションA会場</p>
+												<p class="excerpt">吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。</p>
+												<div class="list_card_badge">
+													<img src="../images/common/ico_reserve_off.svg" class="default" alt="">
+													<img src="../images/common/ico_reserve_on.svg" class="selected" alt="">
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<div class="loader">Loading...</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<%- include( '../includes/_footer', { data: pageData } ) %>
+			<%- include( '../includes/mypage/member-info/_modal', { data: pageData } ) %>
+			<%- include( '../includes/_scripts', { data: pageData } ) %>
+						
+			<script>
+				$('.loader-inner').loaders()
+			</script>
+						
+			
+			
+		</body>
+	</html>

@@ -1,37 +1,54 @@
 .faq{
-	&_flex{
-		@include flexbox(space-between,flex-start);
+	&_row{
+		width: 100%;
 	}
-	&_main{
-		width: 77.4%;
-		max-width: 960px;
+	&_row+&_row{
+		margin-top: 60px;
 	}
 	&_question{
-		
+		position: relative;
+		padding-left: 32px;
+		margin-bottom: 14px;
+		@include fts(16,24);
+		font-weight: 500;
+		&:before{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			content: 'Q';
+			@include fts(20,24);
+			font-weight: 600;
+			font-family: Montserrat;
+		}
 	}
-	&_sub{
-		min-width: 140px;
-		ul{
-			li{
-				a{
-					display: inline-block;
-					padding-bottom: 8px;
-					@include fts(14,14);
-					color: $black;
-					text-decoration: none;
-					border-bottom: 1px solid $pale;
-					@include link_transition(all,.3s,ease-out);
-					&.is-current{
-						border-bottom: 3px solid $black;
-					}
-					&:hover{
-						opacity: .8;
-					}
-				}
-			}
-			li+li{
-				margin-top: 24px;
-			}
+	&_answer{
+		position: relative;
+		padding-left: 32px;
+		@include fts(15,26);
+		&:before{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			content: 'A';
+			@include fts(20,24);
+			color: $brown-grey;
+			font-weight: 300;
+			font-family: Montserrat;
+		}
+	}
+	@include for-size(phone-only){
+		&_row+&_row{
+			margin-top: 41px;
+		}
+		&_question{
+			margin-bottom: 15px;
+			@include fts(15,23);
+		}
+		&_answer{
+			@include fts(13,23);
 		}
 	}
 }
+
