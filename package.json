@@ -24,6 +24,7 @@
     "jquery-datepicker": "^1.12.3",
     "jquery-match-height": "^0.7.2",
     "jquery-migrate": "^3.3.1",
+    "loaders.css": "^0.1.2",
     "parsleyjs": "^2.9.2",
     "remodal": "^1.1.1",
     "slick": "^1.12.2",

@@ -1,0 +1,57 @@
+.mypage{
+	.list_content{
+		margin-bottom: 60px;
+		li{
+			a{
+				padding: 40px 0;
+			}
+		}
+	}
+	@include for-size(phone-only){
+		.list_content{
+			margin-top: 48px;
+		}
+	}
+}
+
+
+.member_info{
+	.list_content{
+		margin-bottom: 60px;
+		li{
+			padding: 28px 0;
+			position: relative;
+			.expand{
+				position: absolute;
+				right: 0;
+				top: 20px;
+				a{
+					color: $black;
+					text-decoration: underline;
+					@include fts(14,25);
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		.list_content{
+			margin-bottom: 48px;
+		}
+	}
+	
+	
+}
+
+.reservations{
+	min-height: calc(100vh - 288px);
+	&_text{
+		p{
+			color: $greyish;
+			@include fts(15,25);
+		}
+		p+p{margin-top: 12px;}
+	}
+	@include for-size(phone-only){
+		min-height: calc(100vh - 319px);
+	}
+}

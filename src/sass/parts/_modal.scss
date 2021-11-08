@@ -1,0 +1,16 @@
+.remodal{
+	max-width: 960px;
+	background: $very-light-pink;
+	text-align: left;
+	padding: 70px 120px;
+	box-sizing: border-box;
+	&-overlay{
+		background: rgba(0,0,0,.6);
+	}
+	.row+.row{margin-top: 24px;}
+	
+	@include for-size(phone-only){
+		padding: percentage(30/414) percentage(15/414);
+	}
+	
+}

@@ -6,8 +6,24 @@
 		letter-spacing: -1.2px;
 		margin-bottom: 20px;
 	}
+	span{display: inline;}
 	@include for-size(phone-only){
-		@include fts(44,44);
+		@include fts(44,54);
+		span{display: block;}
 	}
 	
+}
+
+
+.text{
+	&_link{
+		color: $black;
+		@include fts(14,25);
+		text-decoration: underline;
+		@include link_transition(all,.15s,linear);
+		&:hover{
+			text-decoration: none;
+			opacity: .75;
+		}
+	}
 }

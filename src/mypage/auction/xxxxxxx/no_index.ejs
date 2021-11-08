@@ -1,0 +1,62 @@
+<%
+var pageData = {
+	path: '../../../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: '予約したオークション',
+	pnkzLabel2:'会員情報'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../../../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../../../includes/_header', { data: pageData } ) %>
+			<div class="container reservations">
+				<h1 class="title en">Reservations</h1>
+				<%- include( '../../../includes/_breadcrumb', { data: pageData } ) %>
+				<div class="wrapper">
+					<div class="multi_content">
+						<div class="multi_container">
+							<div class="multi_side">
+								<div class="sort">
+									<div class="sort_head"><img src="../../../images/common/ico_sort.svg" alt=""></div>
+									<div class="sort_body">
+										<div class="sort_select">
+											<div class="sort_selected">開催年で絞り込む</div>
+											<ul class="sort_list">
+												<li data-sort-year="">すべての開催年</li>
+												<li data-sort-year="2021">2021年</li>
+												<li data-sort-year="2020">2020年</li>
+												<li data-sort-yeart="2019">2019年</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="multi_main">
+								<div class="reservations_text">
+									<p>予約したオークションはまだありません</p>
+									<p><a href="/auction-list/" class="text_link">オークション一覧</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<%- include( '../../../includes/_footer', { data: pageData } ) %>
+			<%- include( '../../../includes/mypage/member-info/_modal', { data: pageData } ) %>
+			<%- include( '../../../includes/_scripts', { data: pageData } ) %>
+						
+			<script>
+				$('.loader-inner').loaders()
+			</script>
+						
+			
+			
+		</body>
+	</html>
