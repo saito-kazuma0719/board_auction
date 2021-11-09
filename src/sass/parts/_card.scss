@@ -211,6 +211,12 @@
 				@include fts(12,18);
 			}
 		}
+		&_info{
+			span{
+				@include fts(12,18);
+			}
+			span+span{margin-left: 8px;}
+		}
 		&_bookmark{
 			&_pickup{
 				position: relative;
@@ -235,50 +241,13 @@
 			}
 			&_badge{
 				&:not(.is-active){
-					.default{display: block;}
-					.selected{display: none;}
-					position: relative;
-					cursor: pointer;
-					z-index: 10;
-					&:before{
-						display: block;
-						position: absolute;
-						top: 26px;
-						left: 8px;
-						width: 0;
-						height: 0;
-						border-style: solid;
-						border-width: 0 4px 6px 4px;
-						@include link_transition(all,.15s,ease-in);
-						border-color: transparent transparent $black transparent;
-						content: "";
-						opacity: 0;
-						z-index: 1;
-					}
 					&:after{
-						@include link_transition(all,.15s,ease-in);
-						position: absolute;
 						top: 32px;
 						left: -32px;
-						display: block;
 						padding: 3px 10px;
-						color: #fff;
 						@include fts(12,12);
 						width: 92px;
-						box-sizing: border-box;
-						text-align: center;
-						background: $black;
 						content: "ブックマーク";
-						opacity: 0;
-						z-index: 2;
-					}
-					&:hover{
-						&:before{
-							opacity: 1;
-						}
-						&:after{
-							opacity: 1;
-						}
 					}
 				}
 			}

@@ -883,6 +883,14 @@ body {
     font-size: 1.2rem;
     line-height: 1.5;
   }
+  .card_info span {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .card_info span + span {
+    margin-left: 8px;
+  }
   .card_bookmark {
     margin-left: auto;
     position: relative;
@@ -911,56 +919,15 @@ body {
     width: 18px;
     height: 18px;
   }
-  .card_bookmark_badge:not(.is-active) {
-    position: relative;
-    cursor: pointer;
-    z-index: 10;
-  }
-  .card_bookmark_badge:not(.is-active) .default {
-    display: block;
-  }
-  .card_bookmark_badge:not(.is-active) .selected {
-    display: none;
-  }
-  .card_bookmark_badge:not(.is-active):before {
-    display: block;
-    position: absolute;
-    top: 26px;
-    left: 8px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 4px 6px 4px;
-    transition: all 0.15s ease-in;
-    border-color: transparent transparent #202020 transparent;
-    content: "";
-    opacity: 0;
-    z-index: 1;
-  }
   .card_bookmark_badge:not(.is-active):after {
-    transition: all 0.15s ease-in;
-    position: absolute;
     top: 32px;
     left: -32px;
-    display: block;
     padding: 3px 10px;
-    color: #fff;
     font-size: 12px;
     font-size: 1.2rem;
     line-height: 1;
     width: 92px;
-    box-sizing: border-box;
-    text-align: center;
-    background: #202020;
     content: "ブックマーク";
-    opacity: 0;
-    z-index: 2;
-  }
-  .card_bookmark_badge:not(.is-active):hover:before {
-    opacity: 1;
-  }
-  .card_bookmark_badge:not(.is-active):hover:after {
-    opacity: 1;
   }
 }
 
