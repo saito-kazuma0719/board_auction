@@ -50,8 +50,29 @@
 			@include fts(15,25);
 		}
 		p+p{margin-top: 12px;}
+		&_noindex{
+			p{
+			color: $greyish;
+			@include fts(16,24);
+		}
+		p+p{margin-top: 20px;}
+		}
 	}
 	@include for-size(phone-only){
 		min-height: calc(100vh - 319px);
+		&_text{
+			p{
+				color: $greyish;
+				@include fts(15,25);
+			}
+			p+p{margin-top: 12px;}
+			&_noindex{
+			p{
+				color: $greyish;
+				@include fts(14,25);
+			}
+				p+p{margin-top: 16px;}
+			}
+		}
 	}
 }

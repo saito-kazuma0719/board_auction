@@ -3096,9 +3096,38 @@ body {
   margin-top: 12px;
 }
 
+.reservations_text_noindex p {
+  color: #a5a4a3;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.reservations_text_noindex p + p {
+  margin-top: 20px;
+}
+
 @media (max-width: 767px) {
   .reservations {
     min-height: calc(100vh - 319px);
+  }
+  .reservations_text p {
+    color: #a5a4a3;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.66667;
+  }
+  .reservations_text p + p {
+    margin-top: 12px;
+  }
+  .reservations_text_noindex p {
+    color: #a5a4a3;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+  }
+  .reservations_text_noindex p + p {
+    margin-top: 16px;
   }
 }
 
