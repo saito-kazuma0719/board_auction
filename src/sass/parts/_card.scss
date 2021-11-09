@@ -77,10 +77,10 @@
 			height: 20px;
 		}
 		svg{
+			position: relative;
 			&.selected{
 				display: none;
 			}
-			position: relative;
 			&:before{
 				display: block;
 				position: absolute;
