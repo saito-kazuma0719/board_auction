@@ -1,0 +1,114 @@
+.card{
+	&_list{
+		@include flexbox(flex-start,flex-start);
+		flex-wrap: wrap;
+		gap: 0 30px;
+		position: relative;
+	}
+	&_item{
+		max-width: 280px;
+		margin: 0 0 60px;
+	}
+	&_img{
+		margin-bottom: 12px;
+		overflow: hidden;
+		a{
+			img{
+				@include link_transition(all,.3s,ease-in);
+				width: 100%;
+				height: auto;
+				vertical-align: bottom;
+			}
+			&:hover{
+				img{
+					transform: scale(1.2,1.2);
+				}
+			}
+		}
+	}
+	&_content{
+		.name{
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			a{
+				color: $black;
+				text-decoration: none;
+				@include fts(15,23);
+				font-weight: 500;
+				position: relative;
+				&:after{
+					@include link_transition(all,.3s,ease-in);
+					display: block;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 0%;
+					height: 1px;
+					background: $black;
+					content: "";
+				}
+				&:hover{
+					&:after{width: 100%;}
+				}
+			}
+		}
+		.auction{
+			color: $brown-grey;
+			@include fts(14,25);
+		}
+	}
+	&_row{
+		@include flexbox(flex-start,center);
+	}
+	&_info{
+		span{
+			color: $brown-grey;
+			@include fts(14,25);
+		}
+		span+span{margin-left: 12px;}
+	}
+	&_bookmark{
+		margin-left: auto;
+		position: relative;
+		img{
+			vertical-align: middle;
+			width: 20px;
+			height: 20px;
+		}
+		svg{
+			&.selected{
+				display: none;
+			}
+			position: relative;
+			&:before{
+				display: block;
+				position: absolute;
+				top: 26px;
+				left: 8px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 4px 6px 4px;
+				@include link_transition(all,.15s,ease-in);
+				border-color: transparent transparent $black transparent;
+				content: "";
+			}
+			&:after{
+				@include link_transition(all,.15s,ease-in);
+				position: absolute;
+				top: 32px;
+				left: -16px;
+				display: block;
+				padding: 3px 10px;
+				color: #fff;
+				@include fts(12,12);
+				width: 68px;
+				box-sizing: border-box;
+				text-align: center;
+				background: $black;
+				content: "参加予約";
+			}
+		}
+	}
+}

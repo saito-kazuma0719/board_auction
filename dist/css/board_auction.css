@@ -624,6 +624,145 @@ body {
   content: "";
 }
 
+.card_list {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0 30px;
+  position: relative;
+}
+
+.card_item {
+  max-width: 280px;
+  margin: 0 0 60px;
+}
+
+.card_img {
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.card_img a img {
+  transition: all 0.3s ease-in;
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.card_img a:hover img {
+  transform: scale(1.2, 1.2);
+}
+
+.card_content .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card_content .name a {
+  color: #202020;
+  text-decoration: none;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.53333;
+  font-weight: 500;
+  position: relative;
+}
+
+.card_content .name a:after {
+  transition: all 0.3s ease-in;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: #202020;
+  content: "";
+}
+
+.card_content .name a:hover:after {
+  width: 100%;
+}
+
+.card_content .auction {
+  color: #757473;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+}
+
+.card_row {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card_info span {
+  color: #757473;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+}
+
+.card_info span + span {
+  margin-left: 12px;
+}
+
+.card_bookmark {
+  margin-left: auto;
+  position: relative;
+}
+
+.card_bookmark img {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.card_bookmark svg {
+  position: relative;
+}
+
+.card_bookmark svg.selected {
+  display: none;
+}
+
+.card_bookmark svg:before {
+  display: block;
+  position: absolute;
+  top: 26px;
+  left: 8px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 4px 6px 4px;
+  transition: all 0.15s ease-in;
+  border-color: transparent transparent #202020 transparent;
+  content: "";
+}
+
+.card_bookmark svg:after {
+  transition: all 0.15s ease-in;
+  position: absolute;
+  top: 32px;
+  left: -16px;
+  display: block;
+  padding: 3px 10px;
+  color: #fff;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1;
+  width: 68px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #202020;
+  content: "参加予約";
+}
+
 .header {
   padding-right: 6.66667%;
 }
@@ -791,7 +930,8 @@ body {
 .container {
   padding: 80px 40px 120px 120px;
   box-sizing: border-box;
-  max-width: 1200px;
+  max-width: 1240px;
+  box-sizing: border-box;
   margin: 0 auto;
 }
 
@@ -803,8 +943,8 @@ body {
 
 @media (min-width: 1400px) {
   .container {
-    max-width: 1200px;
-    padding: 80px 40px 180px 40px;
+    max-width: 1240px;
+    padding: 80px 0 180px 0;
   }
 }
 
@@ -2260,7 +2400,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
 .faq_row {
   width: 100%;
 }
@@ -2329,46 +2468,6 @@ body {
     font-size: 1.3rem;
     line-height: 1.76923;
   }
-=======
-.faq_flex {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.faq_main {
-  width: 77.4%;
-  max-width: 960px;
-}
-
-.faq_sub {
-  min-width: 140px;
-}
-
-.faq_sub ul li a {
-  display: inline-block;
-  padding-bottom: 8px;
-  font-size: 14px;
-  font-size: 1.4rem;
-  line-height: 1;
-  color: #202020;
-  text-decoration: none;
-  border-bottom: 1px solid #e5e4e3;
-  transition: all 0.3s ease-out;
-}
-
-.faq_sub ul li a.is-current {
-  border-bottom: 3px solid #202020;
-}
-
-.faq_sub ul li a:hover {
-  opacity: .8;
-}
-
-.faq_sub ul li + li {
-  margin-top: 24px;
->>>>>>> origin/main
 }
 
 .sitemap_row {
