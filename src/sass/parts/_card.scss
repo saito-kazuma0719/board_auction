@@ -24,6 +24,38 @@
 					transform: scale(1.2,1.2);
 				}
 			}
+			&.is-sold{
+				display: block;
+				position: relative;
+				background-color: $black;
+				pointer-events: none;
+				img{
+					opacity: .7;
+				}
+				&:before{
+					position: absolute;
+					@include flexbox(flex-end,flex-end);
+					content: '';
+					bottom: -3px;
+					left: 0;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 60px 0 0 60px;
+					border-color: transparent transparent transparent $black;
+					z-index: 2;
+				}
+				&:after{
+					position: absolute;
+					content: '落札済';
+					bottom: 15px;
+					left: 2px;
+					color: $very-light-pink;
+					@include fts(12,12);
+					transform: rotate(45deg);
+					z-index: 3;
+				}
+			}
 		}
 	}
 	&_content{
@@ -69,6 +101,22 @@
 		span+span{margin-left: 12px;}
 	}
 	&_bookmark{
+		&_pickup{
+			position: relative;
+			&:before{
+				@include flexbox(center,center);
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 51px;
+				height: 32px;
+				background-color: $black;
+				content: "注目";
+				@include fts(13,13);
+				color: $very-light-pink;
+				z-index: 2;
+			}
+		}
 		margin-left: auto;
 		position: relative;
 		img{
@@ -76,38 +124,163 @@
 			width: 20px;
 			height: 20px;
 		}
-		svg{
-			&.selected{
-				display: none;
+		&_badge{
+			&.is-active{
+				.default{display: none;}
+				.selected{display: block;}
 			}
+			&:not(.is-active){
+				.default{display: block;}
+				.selected{display: none;}
+				position: relative;
+				cursor: pointer;
+				z-index: 10;
+				&:before{
+					display: block;
+					position: absolute;
+					top: 26px;
+					left: 8px;
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 0 4px 6px 4px;
+					@include link_transition(all,.15s,ease-in);
+					border-color: transparent transparent $black transparent;
+					content: "";
+					opacity: 0;
+					z-index: 1;
+				}
+				&:after{
+					@include link_transition(all,.15s,ease-in);
+					position: absolute;
+					top: 32px;
+					left: -32px;
+					display: block;
+					padding: 3px 10px;
+					color: #fff;
+					@include fts(12,12);
+					width: 92px;
+					box-sizing: border-box;
+					text-align: center;
+					background: $black;
+					content: "ブックマーク";
+					opacity: 0;
+					z-index: 2;
+				}
+				&:hover{
+					&:before{
+						opacity: 1;
+					}
+					&:after{
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		&_list{
+			@include flexbox(space-between,flex-start);
+			gap: 0 5.3vw;
+		}
+		&_item{
+			max-width: 41.54vw;
+			margin: 0 0 40px;
+		}
+		&_img{
+			a{
+				&.is-sold{
+					&:before{
+						border-width: 50px 0 0 50px;
+					}
+					&:after{
+						content: '落札済';
+						bottom: 12px;
+						left: 2px;
+					}
+				}
+			}
+		}
+		&_content{
+			.name{
+				a{
+					@include fts(13,20);
+				}
+			}
+			.auction{
+				@include fts(12,18);
+			}
+		}
+		&_bookmark{
+			&_pickup{
+				position: relative;
+				&:before{
+					@include flexbox(center,center);
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 47px;
+					height: 25px;
+					background-color: $black;
+					content: "注目";
+					@include fts(11,11);
+				}
+			}
+			margin-left: auto;
 			position: relative;
-			&:before{
-				display: block;
-				position: absolute;
-				top: 26px;
-				left: 8px;
-				width: 0;
-				height: 0;
-				border-style: solid;
-				border-width: 0 4px 6px 4px;
-				@include link_transition(all,.15s,ease-in);
-				border-color: transparent transparent $black transparent;
-				content: "";
+			img{
+				vertical-align: middle;
+				width: 18px;
+				height: 18px;
 			}
-			&:after{
-				@include link_transition(all,.15s,ease-in);
-				position: absolute;
-				top: 32px;
-				left: -16px;
-				display: block;
-				padding: 3px 10px;
-				color: #fff;
-				@include fts(12,12);
-				width: 68px;
-				box-sizing: border-box;
-				text-align: center;
-				background: $black;
-				content: "参加予約";
+			&_badge{
+				&:not(.is-active){
+					.default{display: block;}
+					.selected{display: none;}
+					position: relative;
+					cursor: pointer;
+					z-index: 10;
+					&:before{
+						display: block;
+						position: absolute;
+						top: 26px;
+						left: 8px;
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 0 4px 6px 4px;
+						@include link_transition(all,.15s,ease-in);
+						border-color: transparent transparent $black transparent;
+						content: "";
+						opacity: 0;
+						z-index: 1;
+					}
+					&:after{
+						@include link_transition(all,.15s,ease-in);
+						position: absolute;
+						top: 32px;
+						left: -32px;
+						display: block;
+						padding: 3px 10px;
+						color: #fff;
+						@include fts(12,12);
+						width: 92px;
+						box-sizing: border-box;
+						text-align: center;
+						background: $black;
+						content: "ブックマーク";
+						opacity: 0;
+						z-index: 2;
+					}
+					&:hover{
+						&:before{
+							opacity: 1;
+						}
+						&:after{
+							opacity: 1;
+						}
+					}
+				}
 			}
 		}
 	}

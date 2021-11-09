@@ -260,6 +260,37 @@
 		}
 	}
 	@include for-size(phone-only){
+		&_card{
+			&_img{
+				a{
+					&.is-over{
+						&:before{
+							position: absolute;
+							@include flexbox(flex-end,flex-end);
+							content: '';
+							bottom: -3px;
+							left: 0;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 50px 0 0 50px;
+							border-color: transparent transparent transparent $black;
+							z-index: 2;
+						}
+						&:after{
+							position: absolute;
+							content: '終了';
+							bottom: 10px;
+							left: 8px;
+							color: $very-light-pink;
+							@include fts(10,10);
+							transform: rotate(45deg);
+							z-index: 3;
+						}
+					}
+				}
+			}
+		}
 		&_content{
 			li{
 				>a{

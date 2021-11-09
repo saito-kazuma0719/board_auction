@@ -556,6 +556,11 @@
 			vertical-align: bottom;
 		}
 	}
+	&_select{
+		&:nth-child(2){
+			padding-top: 20px;
+		}
+	}
 	&_selected{
 		display: block;
 		width: 100%;
