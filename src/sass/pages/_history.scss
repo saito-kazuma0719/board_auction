@@ -1,0 +1,24 @@
+.hitory{
+	&_row{
+		>p{
+			@include fts(15,26);
+			color: $black;
+			span{
+				&.label{
+					color: $brown-grey;
+				}
+				&.data{
+					color: $black;
+				}
+			}
+			&.name{
+				margin-bottom: 8px;
+				@include fts(16,24);
+				font-weight: 500;	
+			}
+			
+			
+		}
+	}
+	&_row+&_row{margin-top: 60px;}
+}

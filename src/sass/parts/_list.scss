@@ -216,7 +216,7 @@
 				position: relative;
 				margin-bottom: 24px;
 				padding-bottom: 8px;
-				@include fts(14,14);
+				@include fts(14,25);
 				color: $black;
 				text-decoration: none;
 				@include link_transition(all,.2s,ease-out);
@@ -257,6 +257,9 @@
 					}
 				}
 			}
+		}
+		+.sort{
+			margin-top: 32px;
 		}
 	}
 	@include for-size(phone-only){

@@ -2137,7 +2137,7 @@ body {
   padding-bottom: 8px;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 1;
+  line-height: 1.78571;
   color: #202020;
   text-decoration: none;
   transition: all 0.2s ease-out;
@@ -2178,6 +2178,10 @@ body {
   animation-name: fadeup;
   -webkit-animation-duration: .3s;
   animation-duration: .3s;
+}
+
+.list_tab + .sort {
+  margin-top: 32px;
 }
 
 @media (max-width: 767px) {
@@ -3252,4 +3256,31 @@ body {
     font-size: 1.5rem;
     line-height: 1.53333;
   }
+}
+
+.hitory_row > p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  color: #202020;
+}
+
+.hitory_row > p span.label {
+  color: #757473;
+}
+
+.hitory_row > p span.data {
+  color: #202020;
+}
+
+.hitory_row > p.name {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.hitory_row + .hitory_row {
+  margin-top: 60px;
 }
