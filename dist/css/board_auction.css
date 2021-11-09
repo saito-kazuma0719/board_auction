@@ -1828,7 +1828,7 @@ body {
   transition: all 0.15s ease-in;
 }
 
-.sort_list:is-active {
+.sort_list.is-active {
   display: block;
 }
 

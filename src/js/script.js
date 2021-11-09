@@ -9,6 +9,8 @@ window.addEventListener('load', function(){
 	var elemPass_3 =  document.getElementById('password-03')
 	var eyeLine =  document.getElementsByClassName('eyes_line')
 	
+	var sortSelected = document.querySelectorAll('.sort_selected')
+	
 	if(!passwordCheck_1){
 		return;
 	}
@@ -45,6 +47,25 @@ window.addEventListener('load', function(){
 			elemPass_3.type = "password"
 		}
 	});
+	
+	
+	for(var element of sortSelected) {
+		console.log(element);
+		element.addEventListener('click', function(){
+			console.log();
+			this.nextElementSibling.classList.toggle("is-active")
+		})
+	}
+	
+	
+	/****
+		
+		1.sort_listのliをクリックしたら、data-sort-yearを取得する
+		2.data-sort-yearを変数aに代入
+		3.data-year-targetの数値と変数aの数値が一致したもののみ表示する
+		
+	**/
+	
 	
 	
 	
