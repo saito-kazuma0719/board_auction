@@ -1,24 +1,126 @@
-.hitory{
+.history{
 	&_row{
-		>p{
-			@include fts(15,26);
+		@include fts(15,26);
+		color: $black;
+		.label{
+			color: $brown-grey;
+		}
+		.data{
+			margin-left: 8px;
 			color: $black;
-			span{
-				&.label{
-					color: $brown-grey;
-				}
-				&.data{
-					color: $black;
-				}
-			}
-			&.name{
-				margin-bottom: 8px;
-				@include fts(16,24);
-				font-weight: 500;	
-			}
-			
-			
+		}
+		.name{
+			margin-bottom: 8px;
+			@include fts(16,24);
+			font-weight: 500;	
+		}
+	}
+	&_detail{
+		@include flexbox(flex-start,flex-start);
+		p+p{
+			margin-left: 16px;
 		}
 	}
 	&_row+&_row{margin-top: 60px;}
+	&_list{
+		width: 100%;
+		margin-top: 27px;
+		padding: 28px 0;
+		border-top: 1px solid $pale;
+		border-bottom: 1px solid $pale;
+		&_shipping{
+			@include fts(15,23);
+			font-weight: 500;
+		}
+		&_items{
+			@include flexbox(space-between,flex-start);
+			flex-wrap: wrap;
+			width: 100%;
+			li{
+				width: 48%;
+				margin-top: 20px;
+				gap: 0 24px;
+				a{
+					@include flexbox(flex-start,flex-start);
+					color: $black;
+					text-decoration: none;
+					position: relative;
+					@include link_transition(all,.15s,linear);
+					&:hover{
+						opacity: .75;
+					}
+					.name{
+						@include fts(14,21);
+						margin-bottom: 4px;
+					}
+					.data{
+						@include fts(14,25);
+						color: $brown-grey;
+					}
+					.data+.data{
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+		&_img{
+			width: 96px;
+			height: 60px;
+			margin-right: 16px;
+			overflow: hidden;
+			img{
+				@include link_transition(all,.3s,ease-in);
+				width: 100%;
+				height: auto;
+				vertical-align: bottom;
+			}
+			&:hover{
+				img{
+					transform: scale(1.2,1.2);
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		&_row{
+			@include fts(13,23);
+			.data{
+				margin-left: 0;
+			}
+			.name{
+				margin-bottom: 9px;
+				@include fts(15,23);
+			}
+		}
+		&_detail{
+			p+p{
+				margin-left: 20px;
+			}
+		}
+		&_row+&_row{margin-top: 40px;}
+		&_list{
+			margin-top: 24px;
+			padding: 24px 0 25px;
+			&_shipping{
+				@include fts(14,21);
+			}
+			&_items{
+				li{
+					width: 100%;
+					gap: 0;
+					a{
+						.data{
+							@include fts(13,23);
+							color: $brown-grey;
+						}
+					}
+				}
+			}
+			&_img{
+				margin-right: 12px;
+			}
+		}
+	}
 }
+
+
