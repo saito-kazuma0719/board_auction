@@ -2,13 +2,6 @@
 	&_row{
 		@include fts(15,26);
 		color: $black;
-		.label{
-			color: $brown-grey;
-		}
-		.data{
-			margin-left: 8px;
-			color: $black;
-		}
 		.name{
 			margin-bottom: 8px;
 			@include fts(16,24);
@@ -19,6 +12,13 @@
 		@include flexbox(flex-start,flex-start);
 		p+p{
 			margin-left: 16px;
+		}
+		.label{
+			color: $brown-grey;
+		}
+		.data{
+			margin-left: 8px;
+			color: $black;
 		}
 	}
 	&_row+&_row{margin-top: 60px;}
@@ -84,9 +84,6 @@
 	@include for-size(phone-only){
 		&_row{
 			@include fts(13,23);
-			.data{
-				margin-left: 0;
-			}
 			.name{
 				margin-bottom: 9px;
 				@include fts(15,23);
@@ -95,6 +92,9 @@
 		&_detail{
 			p+p{
 				margin-left: 20px;
+			}
+			.data{
+				margin-left: 0;
 			}
 		}
 		&_row+&_row{margin-top: 40px;}

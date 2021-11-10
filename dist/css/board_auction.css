@@ -3265,15 +3265,6 @@ body {
   color: #202020;
 }
 
-.history_row .label {
-  color: #757473;
-}
-
-.history_row .data {
-  margin-left: 8px;
-  color: #202020;
-}
-
 .history_row .name {
   margin-bottom: 8px;
   font-size: 16px;
@@ -3291,6 +3282,15 @@ body {
 
 .history_detail p + p {
   margin-left: 16px;
+}
+
+.history_detail .label {
+  color: #757473;
+}
+
+.history_detail .data {
+  margin-left: 8px;
+  color: #202020;
 }
 
 .history_row + .history_row {
@@ -3384,9 +3384,6 @@ body {
     font-size: 1.3rem;
     line-height: 1.76923;
   }
-  .history_row .data {
-    margin-left: 0;
-  }
   .history_row .name {
     margin-bottom: 9px;
     font-size: 15px;
@@ -3395,6 +3392,9 @@ body {
   }
   .history_detail p + p {
     margin-left: 20px;
+  }
+  .history_detail .data {
+    margin-left: 0;
   }
   .history_row + .history_row {
     margin-top: 40px;
