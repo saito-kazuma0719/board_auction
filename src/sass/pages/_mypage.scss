@@ -170,6 +170,9 @@
 				@include fts(14,25);
 			}
 		}
+		&_body{
+			padding-top: 0;
+		}
 		&_excerpt{
 			margin-bottom: 28px;
 			@include fts(14,25);

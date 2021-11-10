@@ -1,0 +1,28 @@
+<%
+var pageData = {
+	path: '../../../',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: 'パスワードのリセット完了'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../../../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../../../includes/_header', { data: pageData } ) %>
+			<div class="container complete complete_reset">
+				<div class="complete_box">
+					<p class="label">パスワードをリセットしました</p>
+					<p>新しいパスワードを使って再度ログインしてください。</p>
+					<p><a href="../../login/">ログインへ戻る</a></p>
+				</div>
+			</div>
+			<%- include( '../../../includes/_footer', { data: pageData } ) %>
+			<%- include( '../../../includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>

@@ -1690,6 +1690,16 @@ body {
   }
 }
 
+.complete_reset {
+  padding-top: 100px;
+  padding-bottom: 180px;
+}
+
+.complete_reset-02 {
+  padding-top: 100px;
+  padding-bottom: 230px;
+}
+
 .complete_box {
   border: 1px solid #e5e4e3;
   padding: 60px;
@@ -1728,6 +1738,14 @@ body {
 }
 
 @media (max-width: 767px) {
+  .complete_reset {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+  .complete_reset-02 {
+    padding-top: 80px;
+    padding-bottom: 180px;
+  }
   .complete_box {
     padding: 36px;
     margin: 0;
@@ -3269,6 +3287,9 @@ body {
     font-size: 14px;
     font-size: 1.4rem;
     line-height: 1.78571;
+  }
+  .auctiondetail_body {
+    padding-top: 0;
   }
   .auctiondetail_excerpt {
     margin-bottom: 28px;
