@@ -87,7 +87,115 @@
 			}
 		}
 	}
+	&-detail{
+		padding-bottom: 220px;
+		&_data{
+			@include flexbox(space-between,center);
+			margin-bottom: 12px;
+			.date{
+				@include fts(14,14);
+				color: $brown-grey;
+			}
+			.cat{
+				@include fts(14,14);
+				color: $greyish;
+				font-family: Montserrat;
+				font-weight: 500;
+			}
+		}
+		&_title{
+			@include fts(28,39);
+			margin-bottom: 39px;
+			font-weight: bold;
+		}
+		p{
+			@include fts(15,26);
+			margin-bottom: 35px;
+		}
+		h2{
+			position: relative;
+			display: block;
+			padding-bottom: 7px;
+			margin-bottom: 36px;
+			@include fts(18,27);
+			font-weight: 500;
+			&:after{
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 1px;
+				bottom: 0;
+				left: 0;
+				background-color: $pale;
+				content: '';
+			}
+		}
+		h3{
+			position: relative;
+			padding-left: 11px;
+			margin-bottom: 37px;
+			@include fts(16,24);
+			font-weight: 500;
+			border-left: 1px solid $pale;
+		}
+		table{
+			width: 100%;
+			margin-top: 35px;
+			box-sizing: border-box;
+			border: 1px solid $pale;
+			border-collapse: collapse;
+			table-layout: fixed;
+			tr{
+				th{
+					padding: 15px;
+					@include fts(15,23);
+					font-weight: 500;
+					background-color: $off-white;
+					text-align: left;
+					border: 1px solid $pale;
+				}
+				td{
+					padding: 15px;
+					@include fts(15,26);
+					text-align: left;
+					vertical-align: middle;
+					border: 1px solid $pale;
+				}
+			}
+		}
+	}
 	@include for-size(phone-only){
+		&-detail{
+			padding-bottom: 157px;
+			&_title{
+				@include fts(20,28);
+				margin-bottom: 40px;
+			}
+			p{
+				@include fts(14,25);
+				margin-bottom: 28px;
+			}
+			h2{
+				padding-bottom: 8px;
+				margin-bottom: 28px;
+				@include fts(16,24);
+			}
+			h3{
+				margin-bottom: 28px;
+				@include fts(15,23);
+			}
+			table{
+				margin-top: 40px;
+				tr{
+					th{
+						@include fts(14,21);
+					}
+					td{
+						@include fts(14,26);
+					}
+				}
+			}
+		}
 		&-list{
 			&_row+&_row{
 				margin-top: 40px;

@@ -1,0 +1,38 @@
+<%
+var pageData = {
+	path: './',
+	title: '',
+	keywords: '',
+	description: '',
+	pnkzlabel: 'TOPページ'
+};
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( './includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body class="top">
+			<%- include( './includes/_header', { data: pageData } ) %>
+			<div class="top_lead">
+				<h1>Boar<br>Auction</h1>
+				<p class="top_lead_text">オンラインでも新しい発見を</p>
+				<p class="top_lead_detail">これまで横浜を拠点に開催されてきた〇〇オークションは、新たにオンライン入札に対応し、ボアオークションという名前で生まれ変わりました。現地で開催されるオークションをオンラインで繋ぐことでより多くの皆さまがご参加いただけるようになりました。</p>
+				<a class="top_lead_btn" href="#">会員登録する</a>
+			</div>
+			<div class="top_auctions">
+				<div class="top_auctions_inner">
+				<h2><span class="title en">Auctions</span><br>オークション一覧</h2>
+				<p>開催されるオークションや過去に開催されたオークション情報を掲載しています。</p>
+				<a href="#" class="top_link">さらに詳しく</a>
+				</div>
+			</div>
+			<div class="container">
+			</div>
+			<img class="top_footerimg only--sp" src="./images/top/img_footer-sp.jpg" alt="">
+			<img class="top_footerimg only--pc" src="./images/top/img_footer-pc.jpg" alt="">
+			<%- include( './includes/_footer', { data: pageData } ) %>
+			<%- include( './includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>
