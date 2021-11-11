@@ -56,17 +56,27 @@ window.addEventListener('load', function(){
 			this.nextElementSibling.classList.toggle("is-active")
 		})
 	}
-	
-	
-	/****
+
+
+var listElem = document.querySelectorAll('.sort_list li');
+var elem = document.querySelectorAll('.list_card li')
+for(var element of listElem) {
+	element.addEventListener('click', function(){
+		//クリックしたliタグのdata属性を取得する
+		var dataYear = this.dataset.sortYear;
+		//auction listをいったん非表示にする
+		elem.forEach(function (result) {
+			$('.list_card li').hide();
+			if(dataYear !== ""){
+				$('.list_card li[data-year-target='+dataYear+']').show();
+			}else{
+				$('.list_card li').show();
+			}
+			
+		});		
 		
-		1.sort_listのliをクリックしたら、data-sort-yearを取得する
-		2.data-sort-yearを変数aに代入
-		3.data-year-targetの数値と変数aの数値が一致したもののみ表示する
-		
-	**/
-	
-	
-	
-	
+	});
+}
+
+
 });

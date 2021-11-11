@@ -1960,6 +1960,18 @@ body {
   margin-top: 28px;
 }
 
+.list_card {
+  /* 		li+li{margin-top: percentage(80/800);} */
+}
+
+.list_card li {
+  margin-bottom: 10%;
+}
+
+.list_card li:last-child {
+  margin-bottom: 0;
+}
+
 .list_card li > div {
   display: flex;
   display: -webkit-flex;
@@ -2018,10 +2030,6 @@ body {
   font-size: 15px;
   font-size: 1.5rem;
   line-height: 1.73333;
-}
-
-.list_card li + li {
-  margin-top: 10%;
 }
 
 .list_card_img {
