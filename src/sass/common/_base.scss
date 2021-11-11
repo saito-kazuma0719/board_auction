@@ -6,7 +6,7 @@ html {
 body {
 	@include font-jp;
 	@include fts(16,30);
-	background: $very-light-pink;
+	background-color: $very-light-pink;
 }
 
 .only--pc{
