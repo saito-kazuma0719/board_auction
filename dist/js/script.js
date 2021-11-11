@@ -66,7 +66,59 @@ window.addEventListener('load', function(){
 		
 	**/
 	
+/*
+	let targets = document.getElementsByClassName("sort_list");
+	for(let i = 0; i < targets.length; i++){
+	  targets[i].addEventListener("click",() => {
+	        alert("CLASS: btn02がクリックされました。");
+	  }, false);
+	}
+*/
+
 	
-	
+/*
+	let targets = document.getElementsByClassName("sort_list");
+	for(let i = 0; i < targets.length; i++){
+	  targets[i].addEventListener("click",() => {
+	         console.log('data-sort-year');
+	  }, false);
+	}
+*/
+
+/*
+$(function() {
+    var lists = $('.list_card li');
+    $(document).on('click', '.sort_list a', function() {
+        // 絞り込みの対象を取得
+        var target = $(this).attr('href').replace('#', '');
+        lists.each(function(e) {
+            // 絞り込み対象の場合は表示
+            if($(this).hasClass(target)) {
+                $(this).fadeIn();
+            // 絞り込み対象でない場合は非表示
+            } else {
+                $(this).fadeOut();
+            }
+        });
+        return false;
+    });
+});
+*/
+
+   var lists = $('.list_card li');
+    $(document).on('click', '.sort_list a', function() {
+        var target = $(this).attr('href').replace('#', '');
+        lists.each(function(e) {
+            if($(this).hasClass(target)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+        return false;
+    });
+
+
+
 	
 });

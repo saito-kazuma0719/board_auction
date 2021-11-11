@@ -594,12 +594,17 @@
 			display: block;
 		}
 		li{
-			padding: 10px 20px;
-			@include fts(14,25);
-			cursor: pointer;
-			@include link_transition(all,.15s,ease-in);
-			&:hover{
-				background: $pale;
+			a {
+				padding: 10px 20px;
+				@include fts(14,25);
+				cursor: pointer;
+				@include link_transition(all,.15s,ease-in);
+				display: block;
+				text-decoration: none;
+				color: #000;
+				&:hover{
+					background: $pale;
+				}
 			}
 		}
 	}

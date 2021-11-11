@@ -52,6 +52,10 @@
 	&_row+&_row{margin-top: 28px;}
 	&_card{
 		li{
+			margin-bottom: percentage(80/800);
+			&:last-child {
+				margin-bottom: 0;
+			}
 			>div{
 				@include flexbox(flex-start,flex-start);
 			}
@@ -94,7 +98,7 @@
 				@include fts(15,26);
 			}
 		}
-		li+li{margin-top: percentage(80/800);}
+/* 		li+li{margin-top: percentage(80/800);} */
 		&_img{
 			width: percentage(300/800);
 			max-width: 300px;
