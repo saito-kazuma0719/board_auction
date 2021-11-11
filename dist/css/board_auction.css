@@ -1660,19 +1660,16 @@ body {
   display: block;
 }
 
-.sort_list li a {
+.sort_list li {
   padding: 10px 20px;
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.78571;
   cursor: pointer;
   transition: all 0.15s ease-in;
-  display: block;
-  text-decoration: none;
-  color: #000;
 }
 
-.sort_list li a:hover {
+.sort_list li:hover {
   background: #e5e4e3;
 }
 
