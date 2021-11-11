@@ -1,0 +1,86 @@
+.top{
+	background-image: url('../images/top/mv-pc.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 60% auto;
+	h2{
+		margin-bottom: 32px;
+		@include fts(16,28);
+		color: $brown-grey;
+		font-weight: normal;
+		span{
+			margin-bottom: 8px;
+			color: $black;
+		}
+	}
+	&_lead{
+		top: 0;
+		padding-top: 7.25vw;
+		width: 31.25vw;
+		min-width: 500px;
+		margin-right: 0;
+		margin-left: 57.3vw;
+		margin-bottom: 23.43vw;
+		h1{
+			margin-bottom: 40px;
+			@include font-en;
+			@include fts(112,112);
+			letter-spacing: -1.12px;
+			color: $black;
+			font-weight: 600;
+		}
+		img{
+			margin-bottom: 40px;
+			width: 31.25vw;
+			height: auto;
+		}
+		&_text{
+			margin-bottom: 31px;
+			@include fts(28,41);
+		}
+		&_detail{
+			margin-bottom: 39px;
+			@include fts(15,26);
+		}
+		&_btn{
+			@include flexbox(center,center);
+			width: 360px;
+			height: 60px;
+			margin: 80px 0 48px;
+			@include fts(16,16);
+			color: $very-light-pink;
+			text-decoration: none;
+			background-color: $black;
+			@include link_transition(all,.15s,linear);
+			&:hover{
+				opacity: .75;
+			}
+		}
+	}
+	&_auctions{
+		height: 500px;
+		background-image: url('../images/top/img_auctions-pc.jpg');
+		background-repeat: no-repeat;
+		background-position: right top;
+		background-size: 50vw auto;
+		&_inner{
+			width: 65vw;
+			margin: 0 auto;
+			padding-top: 80px;
+			>p{
+				width: 25vw;
+				margin-bottom: 30px;
+			}
+		}
+	}
+	&_link{
+		color: $black;
+	}
+	&_footerimg{
+		width: 100%;
+		height: auto;
+	}
+	@include for-size(phone-only){
+		background-image: url('../images/top/mv-sp.jpg');
+	}
+}
