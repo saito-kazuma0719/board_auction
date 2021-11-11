@@ -56,54 +56,6 @@ window.addEventListener('load', function(){
 			this.nextElementSibling.classList.toggle("is-active")
 		})
 	}
-	
-	
-	/****
-		
-		1.sort_listのliをクリックしたら、data-sort-yearを取得する
-		2.data-sort-yearを変数aに代入
-		3.data-year-targetの数値と変数aの数値が一致したもののみ表示する
-		
-	**/
-	
-/*
-	let targets = document.getElementsByClassName("sort_list");
-	for(let i = 0; i < targets.length; i++){
-	  targets[i].addEventListener("click",() => {
-	        alert("CLASS: btn02がクリックされました。");
-	  }, false);
-	}
-*/
-
-	
-/*
-	let targets = document.getElementsByClassName("sort_list");
-	for(let i = 0; i < targets.length; i++){
-	  targets[i].addEventListener("click",() => {
-	         console.log('data-sort-year');
-	  }, false);
-	}
-*/
-
-/*
-$(function() {
-    var lists = $('.list_card li');
-    $(document).on('click', '.sort_list a', function() {
-        // 絞り込みの対象を取得
-        var target = $(this).attr('href').replace('#', '');
-        lists.each(function(e) {
-            // 絞り込み対象の場合は表示
-            if($(this).hasClass(target)) {
-                $(this).fadeIn();
-            // 絞り込み対象でない場合は非表示
-            } else {
-                $(this).fadeOut();
-            }
-        });
-        return false;
-    });
-});
-*/
 
 
 var listElem = document.querySelectorAll('.sort_list li');
@@ -127,23 +79,4 @@ for(var element of listElem) {
 }
 
 
-/*
-
-var listElem = $('.sort_list li');
-var elem = $('.list_card li');
-
-listElem.on('click',function(){
-	var dataYear = $(this).data(sort-year);
-	elem.hide();
-	if(dataYear !== ""){
-		$('.list_card li[data-year-target='+dataYear+']').show();
-	}else{
-		elem.show();
-});
-
-*/
-
-
- 
- 
 });
