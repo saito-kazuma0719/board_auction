@@ -126,6 +126,24 @@ for(var element of listElem) {
 	});
 }
 
+
+/*
+
+var listElem = $('.sort_list li');
+var elem = $('.list_card li');
+
+listElem.on('click',function(){
+	var dataYear = $(this).data(sort-year);
+	elem.hide();
+	if(dataYear !== ""){
+		$('.list_card li[data-year-target='+dataYear+']').show();
+	}else{
+		elem.show();
+});
+
+*/
+
+
  
  
 });
