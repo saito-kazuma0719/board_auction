@@ -456,7 +456,7 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.875;
-  background: #fdfbf8;
+  background-color: #fdfbf8;
 }
 
 .only--pc {
@@ -590,6 +590,7 @@ body {
   display: -webkit-flex;
   justify-content: flex-start;
   align-items: center;
+  overflow: scroll;
 }
 
 .breadcrumb_list li {
@@ -599,6 +600,7 @@ body {
   font-size: 1.4rem;
   line-height: 1;
   color: #202020;
+  white-space: nowrap;
 }
 
 .breadcrumb_list li a img {
@@ -622,6 +624,15 @@ body {
   margin-top: -5px;
   top: 50%;
   content: "";
+}
+
+@media (max-width: 767px) {
+  .breadcrumb_list {
+    width: calc(100% + 24px);
+    margin-right: -24px;
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+  }
 }
 
 .card_list {
@@ -653,6 +664,47 @@ body {
 
 .card_img a:hover img {
   transform: scale(1.2, 1.2);
+}
+
+.card_img a.is-sold {
+  display: block;
+  position: relative;
+  background-color: #202020;
+  pointer-events: none;
+}
+
+.card_img a.is-sold img {
+  opacity: .7;
+}
+
+.card_img a.is-sold:before {
+  position: absolute;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  content: '';
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 60px 0 0 60px;
+  border-color: transparent transparent transparent #202020;
+  z-index: 2;
+}
+
+.card_img a.is-sold:after {
+  position: absolute;
+  content: '落札済';
+  bottom: 15px;
+  left: 2px;
+  color: #fdfbf8;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 1;
+  transform: rotate(45deg);
+  z-index: 3;
 }
 
 .card_content .name {
@@ -717,21 +769,58 @@ body {
   position: relative;
 }
 
+.card_bookmark_pickup {
+  position: relative;
+}
+
+.card_bookmark_pickup:before {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 51px;
+  height: 32px;
+  background-color: #202020;
+  content: "注目";
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #fdfbf8;
+  z-index: 2;
+}
+
 .card_bookmark img {
   vertical-align: middle;
   width: 20px;
   height: 20px;
 }
 
-.card_bookmark svg {
-  position: relative;
-}
-
-.card_bookmark svg.selected {
+.card_bookmark_badge.is-active .default {
   display: none;
 }
 
-.card_bookmark svg:before {
+.card_bookmark_badge.is-active .selected {
+  display: block;
+}
+
+.card_bookmark_badge:not(.is-active) {
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.card_bookmark_badge:not(.is-active) .default {
+  display: block;
+}
+
+.card_bookmark_badge:not(.is-active) .selected {
+  display: none;
+}
+
+.card_bookmark_badge:not(.is-active):before {
   display: block;
   position: absolute;
   top: 26px;
@@ -743,24 +832,114 @@ body {
   transition: all 0.15s ease-in;
   border-color: transparent transparent #202020 transparent;
   content: "";
+  opacity: 0;
+  z-index: 1;
 }
 
-.card_bookmark svg:after {
+.card_bookmark_badge:not(.is-active):after {
   transition: all 0.15s ease-in;
   position: absolute;
   top: 32px;
-  left: -16px;
+  left: -32px;
   display: block;
   padding: 3px 10px;
   color: #fff;
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 1;
-  width: 68px;
+  width: 92px;
   box-sizing: border-box;
   text-align: center;
   background: #202020;
-  content: "参加予約";
+  content: "ブックマーク";
+  opacity: 0;
+  z-index: 2;
+}
+
+.card_bookmark_badge:not(.is-active):hover:before {
+  opacity: 1;
+}
+
+.card_bookmark_badge:not(.is-active):hover:after {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .card_list {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0 5.3vw;
+  }
+  .card_item {
+    max-width: 41.54vw;
+    margin: 0 0 40px;
+  }
+  .card_img a.is-sold:before {
+    border-width: 50px 0 0 50px;
+  }
+  .card_img a.is-sold:after {
+    content: '落札済';
+    bottom: 12px;
+    left: 2px;
+  }
+  .card_content .name a {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.53846;
+  }
+  .card_content .auction {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .card_info span {
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .card_info span + span {
+    margin-left: 8px;
+  }
+  .card_bookmark {
+    margin-left: auto;
+    position: relative;
+  }
+  .card_bookmark_pickup {
+    position: relative;
+  }
+  .card_bookmark_pickup:before {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 47px;
+    height: 25px;
+    background-color: #202020;
+    content: "注目";
+    font-size: 11px;
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+  .card_bookmark img {
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+  }
+  .card_bookmark_badge:not(.is-active):after {
+    top: 32px;
+    left: -32px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1;
+    width: 92px;
+    content: "ブックマーク";
+  }
 }
 
 .header {
@@ -1522,6 +1701,16 @@ body {
   }
 }
 
+.complete_reset {
+  padding-top: 100px;
+  padding-bottom: 180px;
+}
+
+.complete_reset-02 {
+  padding-top: 100px;
+  padding-bottom: 230px;
+}
+
 .complete_box {
   border: 1px solid #e5e4e3;
   padding: 60px;
@@ -1560,6 +1749,14 @@ body {
 }
 
 @media (max-width: 767px) {
+  .complete_reset {
+    padding-top: 80px;
+    padding-bottom: 120px;
+  }
+  .complete_reset-02 {
+    padding-top: 80px;
+    padding-bottom: 180px;
+  }
   .complete_box {
     padding: 36px;
     margin: 0;
@@ -1614,6 +1811,10 @@ body {
   width: 24px;
   height: 24px;
   vertical-align: bottom;
+}
+
+.sort_select:nth-child(2) {
+  padding-top: 20px;
 }
 
 .sort_selected {
@@ -1976,7 +2177,7 @@ body {
   padding-bottom: 8px;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 1;
+  line-height: 1.78571;
   color: #202020;
   text-decoration: none;
   transition: all 0.2s ease-out;
@@ -2019,7 +2220,39 @@ body {
   animation-duration: .3s;
 }
 
+.list_tab + .sort {
+  margin-top: 32px;
+}
+
 @media (max-width: 767px) {
+  .list_card_img a.is-over:before {
+    position: absolute;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    content: '';
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 0 50px;
+    border-color: transparent transparent transparent #202020;
+    z-index: 2;
+  }
+  .list_card_img a.is-over:after {
+    position: absolute;
+    content: '終了';
+    bottom: 10px;
+    left: 8px;
+    color: #fdfbf8;
+    font-size: 10px;
+    font-size: 1rem;
+    line-height: 1;
+    transform: rotate(45deg);
+    z-index: 3;
+  }
   .list_content li > a {
     text-decoration: none;
   }
@@ -2692,6 +2925,124 @@ body {
   }
 }
 
+.top {
+  background-image: url("../images/top/mv-pc.jpg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 60% auto;
+}
+
+.top h2 {
+  margin-bottom: 32px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: #757473;
+  font-weight: normal;
+}
+
+.top h2 span {
+  margin-bottom: 8px;
+  color: #202020;
+}
+
+.top_lead {
+  top: 0;
+  padding-top: 7.25vw;
+  width: 31.25vw;
+  min-width: 500px;
+  margin-right: 0;
+  margin-left: 57.3vw;
+  margin-bottom: 23.43vw;
+}
+
+.top_lead h1 {
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 112px;
+  font-size: 11.2rem;
+  line-height: 1;
+  letter-spacing: -1.12px;
+  color: #202020;
+  font-weight: 600;
+}
+
+.top_lead img {
+  margin-bottom: 40px;
+  width: 31.25vw;
+  height: auto;
+}
+
+.top_lead_text {
+  margin-bottom: 31px;
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 1.46429;
+}
+
+.top_lead_detail {
+  margin-bottom: 39px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+}
+
+.top_lead_btn {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  height: 60px;
+  margin: 80px 0 48px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #fdfbf8;
+  text-decoration: none;
+  background-color: #202020;
+  transition: all 0.15s linear;
+}
+
+.top_lead_btn:hover {
+  opacity: .75;
+}
+
+.top_auctions {
+  height: 500px;
+  background-image: url("../images/top/img_auctions-pc.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 50vw auto;
+}
+
+.top_auctions_inner {
+  width: 65vw;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.top_auctions_inner > p {
+  width: 25vw;
+  margin-bottom: 30px;
+}
+
+.top_link {
+  color: #202020;
+}
+
+.top_footerimg {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .top {
+    background-image: url("../images/top/mv-sp.jpg");
+  }
+}
+
 .login {
   display: flex;
   display: -webkit-flex;
@@ -2907,9 +3258,195 @@ body {
   margin-top: 12px;
 }
 
+.reservations_text_noindex p {
+  color: #a5a4a3;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.reservations_text_noindex p + p {
+  margin-top: 20px;
+}
+
 @media (max-width: 767px) {
   .reservations {
     min-height: calc(100vh - 319px);
+  }
+  .reservations_text p {
+    color: #a5a4a3;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.66667;
+  }
+  .reservations_text p + p {
+    margin-top: 12px;
+  }
+  .reservations_text_noindex p {
+    color: #a5a4a3;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+  }
+  .reservations_text_noindex p + p {
+    margin-top: 16px;
+  }
+}
+
+.auctiondetail {
+  background-color: #f5f3f0;
+}
+
+.auctiondetail_wrapper {
+  width: 100%;
+  background: #fdfbf8;
+}
+
+.auctiondetail_head {
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+.auctiondetail_head h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-size: 3.6rem;
+  line-height: 1;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: bold;
+}
+
+.auctiondetail_head dl {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.auctiondetail_head dl + dl {
+  margin-top: 15px;
+}
+
+.auctiondetail_head dt {
+  width: 88px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.53333;
+  font-weight: 500;
+}
+
+.auctiondetail_head dd {
+  width: calc(100% - 88px);
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+}
+
+.auctiondetail_excerpt {
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+}
+
+.auctiondetail_listing {
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.auctiondetail_link {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+}
+
+.auctiondetail_link a {
+  position: relative;
+  text-decoration: none;
+  color: #202020;
+  transition: all 0.3s linear;
+}
+
+.auctiondetail_link a:after {
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  bottom: -8px;
+  left: 0;
+  background-color: #202020;
+  content: '';
+}
+
+.auctiondetail_link a:hover:after {
+  height: 3px;
+}
+
+.auctiondetail_btn {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  width: 360px;
+  height: 60px;
+  margin: 80px 0 48px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #fdfbf8;
+  text-decoration: none;
+  background-color: #202020;
+  transition: all 0.15s linear;
+}
+
+.auctiondetail_btn:hover {
+  opacity: .75;
+}
+
+@media (max-width: 767px) {
+  .auctiondetail_head {
+    padding-top: 100px;
+    padding-bottom: 68px;
+  }
+  .auctiondetail_head h1 {
+    margin-bottom: 16px;
+    font-size: 28px;
+    font-size: 2.8rem;
+    line-height: 1.28571;
+  }
+  .auctiondetail_head dt {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  .auctiondetail_head dd {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+  }
+  .auctiondetail_body {
+    padding-top: 0;
+  }
+  .auctiondetail_excerpt {
+    margin-bottom: 28px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+  }
+  .auctiondetail_listing {
+    margin-top: 28px;
+  }
+  .auctiondetail_btn {
+    width: 100%;
+    height: 56px;
+    margin: 60px 0 48px;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1;
   }
 }
 
@@ -3025,7 +3562,154 @@ body {
   margin-left: 16px;
 }
 
+.notice-detail {
+  padding-bottom: 220px;
+}
+
+.notice-detail_data {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.notice-detail_data .date {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #757473;
+}
+
+.notice-detail_data .cat {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #a5a4a3;
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.notice-detail_title {
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 1.39286;
+  margin-bottom: 39px;
+  font-weight: bold;
+}
+
+.notice-detail p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  margin-bottom: 35px;
+}
+
+.notice-detail h2 {
+  position: relative;
+  display: block;
+  padding-bottom: 7px;
+  margin-bottom: 36px;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.notice-detail h2:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #e5e4e3;
+  content: '';
+}
+
+.notice-detail h3 {
+  position: relative;
+  padding-left: 11px;
+  margin-bottom: 37px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 500;
+  border-left: 1px solid #e5e4e3;
+}
+
+.notice-detail table {
+  width: 100%;
+  margin-top: 35px;
+  box-sizing: border-box;
+  border: 1px solid #e5e4e3;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.notice-detail table tr th {
+  padding: 15px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.53333;
+  font-weight: 500;
+  background-color: #f5f3f0;
+  text-align: left;
+  border: 1px solid #e5e4e3;
+}
+
+.notice-detail table tr td {
+  padding: 15px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #e5e4e3;
+}
+
 @media (max-width: 767px) {
+  .notice-detail {
+    padding-bottom: 157px;
+  }
+  .notice-detail_title {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+  .notice-detail p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+    margin-bottom: 28px;
+  }
+  .notice-detail h2 {
+    padding-bottom: 8px;
+    margin-bottom: 28px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+  .notice-detail h3 {
+    margin-bottom: 28px;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.53333;
+  }
+  .notice-detail table {
+    margin-top: 40px;
+  }
+  .notice-detail table tr th {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  .notice-detail table tr td {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.85714;
+  }
   .notice-list_row + .notice-list_row {
     margin-top: 40px;
   }
@@ -3033,5 +3717,170 @@ body {
     font-size: 15px;
     font-size: 1.5rem;
     line-height: 1.53333;
+  }
+}
+
+.history_row {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  color: #202020;
+}
+
+.history_row .name {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.history_detail {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.history_detail p + p {
+  margin-left: 16px;
+}
+
+.history_detail .label {
+  color: #757473;
+}
+
+.history_detail .data {
+  margin-left: 8px;
+  color: #202020;
+}
+
+.history_row + .history_row {
+  margin-top: 60px;
+}
+
+.history_list {
+  width: 100%;
+  margin-top: 27px;
+  padding: 28px 0;
+  border-top: 1px solid #e5e4e3;
+  border-bottom: 1px solid #e5e4e3;
+}
+
+.history_list_shipping {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.53333;
+  font-weight: 500;
+}
+
+.history_list_items {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.history_list_items li {
+  width: 48%;
+  margin-top: 20px;
+  gap: 0 24px;
+}
+
+.history_list_items li a {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: #202020;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.15s linear;
+}
+
+.history_list_items li a:hover {
+  opacity: .75;
+}
+
+.history_list_items li a .name {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.history_list_items li a .data {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+  color: #757473;
+}
+
+.history_list_items li a .data + .data {
+  margin-left: 10px;
+}
+
+.history_list_img {
+  width: 96px;
+  height: 60px;
+  margin-right: 16px;
+  overflow: hidden;
+}
+
+.history_list_img img {
+  transition: all 0.3s ease-in;
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.history_list_img:hover img {
+  transform: scale(1.2, 1.2);
+}
+
+@media (max-width: 767px) {
+  .history_row {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.76923;
+  }
+  .history_row .name {
+    margin-bottom: 9px;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.53333;
+  }
+  .history_detail p + p {
+    margin-left: 20px;
+  }
+  .history_detail .data {
+    margin-left: 0;
+  }
+  .history_row + .history_row {
+    margin-top: 40px;
+  }
+  .history_list {
+    margin-top: 24px;
+    padding: 24px 0 25px;
+  }
+  .history_list_shipping {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  .history_list_items li {
+    width: 100%;
+    gap: 0;
+  }
+  .history_list_items li a .data {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1.76923;
+    color: #757473;
+  }
+  .history_list_img {
+    margin-right: 12px;
   }
 }

@@ -1,11 +1,13 @@
 .breadcrumb{
 	&_list{
 		@include flexbox(flex-start,center);
+		overflow: scroll;
 		li{
 			margin-right: 24px;
 			position: relative;
 			@include fts(14,14);
 			color: $black;
+			white-space: nowrap;
 			a{
 				img{
 					vertical-align: middle;
@@ -28,6 +30,14 @@
 				top: 50%;
 				content: "";
 			}
+		}
+	}
+	@include for-size(phone-only){
+		&_list{
+			width: calc(100% + 24px);
+			margin-right: -24px;
+			margin-bottom: -10px;
+			padding-bottom: 10px;
 		}
 	}
 }
