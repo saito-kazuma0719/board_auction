@@ -105,20 +105,27 @@ $(function() {
 });
 */
 
-   var lists = $('.list_card li');
-    $(document).on('click', '.sort_list a', function() {
-        var target = $(this).attr('href').replace('#', '');
-        lists.each(function(e) {
-            if($(this).hasClass(target)) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
-        });
-        return false;
-    });
 
+var listElem = document.querySelectorAll('.sort_list li');
+var elem = document.querySelectorAll('.list_card li')
+for(var element of listElem) {
+	element.addEventListener('click', function(){
+		//クリックしたliタグのdata属性を取得する
+		var dataYear = this.dataset.sortYear;
+		//auction listをいったん非表示にする
+		elem.forEach(function (result) {
+			$('.list_card li').hide();
+			if(dataYear !== ""){
+				$('.list_card li[data-year-target='+dataYear+']').show();
+			}else{
+				$('.list_card li').show();
+			}
+			
+		});		
+		
+	});
+}
 
-
-	
+ 
+ 
 });
