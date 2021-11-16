@@ -71,15 +71,15 @@
 		position: fixed;
 		bottom: 0;
 		left: 0;
-		width: 400px;
-		padding: 24px 28px;
-		background-color: rgba(0,0,0,0.9);
 		@include link_transition(all,.3s,linear);
 		z-index: 3;
 		box-sizing: border-box;
+		width: 400px;
+		padding: 24px 28px;
+		background-color: rgba(0,0,0,0.9);
 		a{
-			display: block;
 			position: relative;
+			display: block;
 			width: 100%;
 			text-decoration: none;
 			color: $very-light-pink;
@@ -89,20 +89,30 @@
 				@include fts(15,15);
 				font-weight: 500;
 			}
-			&:after{
-				position: absolute;
-				top: 0;
-				right: 0;
-				content: '';
-				display: block;
-				background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICAgIDxkZWZzPgogICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgLmNscy0ze2ZpbGw6I2ZkZmJmOH0KICAgICAgICA8L3N0eWxlPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IuOCsOODq+ODvOODl18xNjQ5OCIgZGF0YS1uYW1lPSLjgrDjg6vjg7zjg5cgMTY0OTgiIHN0eWxlPSJvcGFjaXR5Oi41Ij4KICAgICAgICA8ZyBpZD0i44Kw44Or44O844OXXzE0MTQwIiBkYXRhLW5hbWU9IuOCsOODq+ODvOODlyAxNDE0MCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS45MjIgMi4zNCkiPgogICAgICAgICAgICA8cGF0aCBpZD0i6ZW35pa55b2iXzI0NTAiIGRhdGEtbmFtZT0i6ZW35pa55b2iIDI0NTAiIGNsYXNzPSJjbHMtMyIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNS4yMjUgMTIuNjE0KSIgZD0iTTAgMGgxLjIzMnYxNC43NzhIMHoiLz4KICAgICAgICAgICAgPHBhdGggaWQ9IumVt+aWueW9ol8yNDUxIiBkYXRhLW5hbWU9IumVt+aWueW9oiAyNDUxIiBjbGFzcz0iY2xzLTMiIHRyYW5zZm9ybT0icm90YXRlKC00NSAxLjA1MSAuNDM1KSIgZD0iTTAgMGgxLjIzMnYxNC43NzhIMHoiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=') no-repeat 0 0;
-				background-size: 16px 16px;
-				width: 16px;
-				height: 16px;
+		}
+			&:hover{
+				background-color: rgba(0,0,0,1);
+			}
+		#btn-none {
+			position: absolute;
+			top: 24px;
+			right: 28px;
+			display: block;
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
+			z-index: 2;
+			img {
+				width: 100%;
+				height: auto;
+				vertical-align: top;
 			}
 		}
-		&:hover{
-			background-color: rgba(0,0,0,1);
+		#close:checked ~ .btn {
+		    display: none;
+		}
+		#close:checked ~ .top_fixed_content {
+		    display: none;
 		}
 	}
 	&_auctions{

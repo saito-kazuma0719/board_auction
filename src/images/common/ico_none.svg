@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-3{fill:#fdfbf8}
+        </style>
+    </defs>
+    <g id="グループ_16498" data-name="グループ 16498" style="opacity:.5">
+        <g id="グループ_14140" data-name="グループ 14140" transform="translate(1.922 2.34)">
+            <path id="長方形_2450" data-name="長方形 2450" class="cls-3" transform="rotate(45 5.225 12.614)" d="M0 0h1.232v14.778H0z"/>
+            <path id="長方形_2451" data-name="長方形 2451" class="cls-3" transform="rotate(-45 1.051 .435)" d="M0 0h1.232v14.778H0z"/>
+        </g>
+    </g>
+</svg>
