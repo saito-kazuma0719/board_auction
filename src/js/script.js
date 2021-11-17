@@ -7,9 +7,16 @@ window.addEventListener('load', function(){
 	var elemPass_1 =  document.getElementById('password-01')
 	var elemPass_2 =  document.getElementById('password-02')
 	var elemPass_3 =  document.getElementById('password-03')
-	var eyeLine =  document.getElementsByClassName('eyes_line')
+	var menuTrigger = document.getElementsByClassName('menu_trigger')
+	var navigation = document.getElementsByClassName('navigation')
+	//menu
 	
+	menuTrigger[0].addEventListener('click', function(){
+		this.classList.toggle('is-opened');
+		navigation[0].classList.toggle('expanded') 
+	});
 	
+		
 	if(!passwordCheck_1){
 		return;
 	}
@@ -50,101 +57,66 @@ window.addEventListener('load', function(){
 
 });
 
-// 年度ごとに取得
-window.addEventListener('load', function(){
-	
-	var sortSelected = document.querySelectorAll('.sort_selected')
-	for(var element of sortSelected) {
-		console.log(element);
-		element.addEventListener('click', function(){
-			console.log();
-			this.nextElementSibling.classList.toggle("is-active")
-		})
-	}
-
-var listElem = document.querySelectorAll('.sort_list li');
-var elem = document.querySelectorAll('.list_card li')
-for(var element of listElem) {
-	element.addEventListener('click', function(){
-		//クリックしたliタグのdata属性を取得する
-		var dataYear = this.dataset.sortYear;
-		//auction listをいったん非表示にする
-		elem.forEach(function (result) {
-			$('.list_card li').hide();
-			if(dataYear !== ""){
-				$('.list_card li[data-year-target='+dataYear+']').show();
-			}else{
-				$('.list_card li').show();
-			}
-		});		
-	});
-}
-
-});
 
 // カテゴリー取得
-window.addEventListener('load', function(){
-	
-var listElem = document.querySelectorAll('.sort_list li');
-var elem = document.querySelectorAll('.card_item')
-for(var element of listElem) {
-	element.addEventListener('click', function(){
-		//クリックしたliタグのdata属性を取得する
-		var dataCategory = this.dataset.sortCategory;
-		//auction listをいったん非表示にする
-		elem.forEach(function (result) {
-			$('.card_item').hide();
-			if(dataCategory !== ""){
-				$('.card_item[data-category-target='+dataCategory+']').show();
-			}else{
-				$('.card_item').show();
-			}
-		});		
-	});
-}
-
-});
-
 /*
 window.addEventListener('load', function(){
 	
-var listElem2 = document.querySelectorAll('.sort_list li');
-var elem2 = document.querySelectorAll('.card_item')
-for(var element of listElem2) {
-	element.addEventListener('click', function(){
-		//クリックしたliタグのdata属性を取得する
-		var dataYear = this.dataset.sortYear;
-		//auction listをいったん非表示にする
-		elem2.forEach(function (result) {
-			$('.card_item').hide();
-			if(dataYear !== ""){
-				$('.card_item[data-year-target='+dataYear+']').show();
-			}else{
-				$('.card_item').show();
-			}
-		});		
-	});
-}
+	var listElem = document.querySelectorAll('.sort_list li');
+	var elem = document.querySelectorAll('.card_item')
+	for(var element of listElem) {
+		element.addEventListener('click', function(){
+			//クリックしたliタグのdata属性を取得する
+			var dataCategory = this.dataset.sortCategory;
+			var dataYear = this.dataset.sortYear;
+			//auction listをいったん非表示にする
+			elem.forEach(function (result) {
+				$('.card_item').hide();
+				if(dataCategory !== ""){
+					$('.card_item[data-category-target='+dataCategory+']').show();
+					hideList();
+				}else{
+					$('.card_item').show();
+					hideList();
+				}
+			});		
+		});
+	}
+	
+	
+	
+	
+	function hideList(){
+		var elem = document.querySelectorAll('.sort_list')
+		for (var i = 0; i < elem.length; i++) {
+			elem[i].classList.remove("is-active");
+		}
+	}
+	
 
 });
 */
 
-// 	TOP FIX バツボタン
-　document.querySelector('#btn-none').addEventListener('click', () => {
-　　const element = document.getElementById('top_fixed_btn');
-　　element.remove();
-　});
 
-// 	TOP FIXボタンfooter前で消す
-	window.onscroll = function () {
-        var check = window.pageYOffset ; 
-        var docHeight = $(document).height();
-        var dispHeight = $(window).height();
- 
-        if(check > docHeight-dispHeight-500){ 
-            $('#top_fixed_btn').fadeOut(700);
- 
-        }else{
-            $('#top_fixed_btn').fadeIn(700);
-        }
-    };
+
+//お気に入り
+var favoritBadge = document.querySelectorAll('.list_card_badge');
+if(favoritBadge.length !== 0){
+	for (var i = 0; i < favoritBadge.length; i++) {
+		favoritBadge[i].addEventListener('click', function(){
+			this.classList.toggle('is-active');
+		})
+	}
+}
+
+
+//ブックマーク
+var bookmarkBadge = document.querySelectorAll('.card_bookmark_badge');
+if(bookmarkBadge !== 0){
+	for (var i = 0; i < bookmarkBadge.length; i++) {
+		bookmarkBadge[i].addEventListener('click', function(){
+			this.classList.toggle('is-active');
+		})
+	}
+}
+

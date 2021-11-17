@@ -26,15 +26,15 @@ var pageData = {
 								<div class="sort">
 									<div class="sort_head"><img src="../../../images/common/ico_sort.svg" alt=""></div>
 									<div class="sort_body">
-										<div class="sort_select">
-											<div class="sort_selected">開催年で絞り込む</div>
-											<ul class="sort_list">
-												<li data-sort-year="">すべての開催年</li>
-												<li data-sort-year="2021">2021年</li>
-												<li data-sort-year="2020">2020年</li>
-												<li data-sort-yeart="2019">2019年</li>
-											</ul>
-										</div>
+										<div id="sort-year" class="sort_select">
+											<div id="sort-year-target" class="sort_selected">開催年で絞り込む</div>
+												<ul id="sort-year-list" class="sort_list">
+													<li data-sort-year="">すべての開催年</li>
+													<li data-sort-year="2021">2021年</li>
+													<li data-sort-year="2020">2020年</li>
+													<li data-sort-year="2019">2019年</li>
+												</ul>
+											</div>
 									</div>
 								</div>
 							</div>
@@ -51,12 +51,7 @@ var pageData = {
 			<%- include( '../../../includes/_footer', { data: pageData } ) %>
 			<%- include( '../../../includes/mypage/member-info/_modal', { data: pageData } ) %>
 			<%- include( '../../../includes/_scripts', { data: pageData } ) %>
-						
-			<script>
-				$('.loader-inner').loaders()
-			</script>
-						
-			
+			<script src="../../../js/auctions.js"></script>	
 			
 		</body>
 	</html>

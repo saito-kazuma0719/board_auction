@@ -33,23 +33,10 @@
 			@include link_transition(all,.3s,ease-out);
 			position: relative;
 			text-decoration: none;
-				&:after{
-					@include link_transition(all,.3s,ease-out);
-					position: absolute;
-					left: 0;
-					bottom: 0;
-					display: block;
-					width: 0;
-					height: 1px;
-					background: $black;
-					content: "";
-				}
-				&:hover{
-					opacity: .75;
-					&:after{
-						width: 100%;
-					}
-				}
+			background: linear-gradient($black, $black) 0 100%/0 1px no-repeat;
+			&:hover{
+				background-size: 100% 1px;
+			}
 		}
 		&_pagenation{
 			@include flexbox(flex-start,center);
@@ -186,6 +173,14 @@
 		}
 	}
 	@include for-size(phone-only){
+		&-list{
+			&_title{
+				background: none;
+				&:hover{
+					background-size: 0 0;
+				}
+			}
+		}
 		&-detail{
 			padding-bottom: 157px;
 			&_title{

@@ -1,5 +1,5 @@
 .top{
-	h2{
+	&_title{
 		margin-bottom: 32px;
 		@include fts(16,28);
 		color: $brown-grey;
@@ -10,61 +10,65 @@
 			color: $black;
 		}
 	}
-	&_lead{
-		&_bg{
-			position: absolute;
-			background-image: url('../images/top/mv-pc.jpg');
-			background-repeat: no-repeat;
-			background-position: left top;
-			background-size: 60% auto;
-			width: 100%;
-			top: 0;
-			height: 70.62vw;
-			min-height: 930px;
-			z-index: -1;
-		}
-		padding-top: 12.25vw;
+	&_main{
 		position: relative;
-		max-width: 31.25vw;
-		margin-right: 0;
-		margin-left: 57.3vw;
-		margin-bottom: 0;
-		z-index: 1;
-		h1{
-			margin-bottom: 40px;
-			@include font-en;
-			@include fts(112,112);
-			letter-spacing: -1.12px;
-			color: $black;
-			font-weight: 600;
-		}
+		height: 930px;
+		margin-top: -78px;
+		margin-bottom: 200px;
+	}
+	&_visual{
+		position: absolute;
+		height: 100%;
+		left: 0;
+		top: 0;
+		width: percentage(960/1600);
+		max-width: 960px;
 		img{
+			width: 100%;
+			height: 100%;
+			object-fit:cover;
+		}
+	}
+	&_container{
+		width: percentage(500/1600);
+		position: absolute;
+		top: 50%;
+		right: percentage(180/1600);
+		z-index: 98;
+		transform: translateY(-50%);
+		>p{
 			margin-bottom: 40px;
-			width: 31.25vw;
-			height: auto;
-		}
-		&_text{
-			margin-bottom: 31px;
-			@include fts(28,41);
-		}
-		&_detail{
-			margin-bottom: 39px;
 			@include fts(15,26);
 		}
-		&_btn{
-			@include flexbox(center,center);
-			width: 360px;
-			height: 60px;
-			margin: 80px 0 23.4vw;
-			@include fts(16,16);
-			color: $very-light-pink;
-			text-decoration: none;
-			background-color: $black;
-			pointer-events: auto;
-			@include link_transition(all,.15s,linear);
-			&:hover{
-				opacity: .75;
-			}
+	}
+	&_name{
+		margin-bottom: 40px;
+		@include font-en;
+		font-size: vw(112,1600);
+		line-height: 1;
+		letter-spacing: -1.12px;
+		color: $black;
+		font-weight: 600;
+	}
+	&_sub-title{
+		margin-bottom: 30px;
+		font-weight: 500;
+		font-size: vw(28,1600);
+		line-height: vw(41,1600);
+	}
+	&_register{
+		@include flexbox(center,center);
+		width: 100%;
+		max-width: 360px;
+		height: 60px;
+		@include fts(16,16);
+		color: $very-light-pink;
+		text-decoration: none;
+		background-color: $black;
+		pointer-events: auto;
+		@include link_transition(all,.15s,linear);
+		&:hover{
+			opacity: .75;
 		}
 	}
 	&_fixed{
@@ -254,10 +258,23 @@
 					.title{
 						@include fts(16,24);
 						color: $black;
+						display: inline-block;
+						position: relative;
+						&:after{
+							@include link_transition(all,.3s,ease-in);
+							display: block;
+							margin-top: 3px;
+							height: 1px;
+							background: $black;
+							width: 0%;
+							content: "";
+						}
 					}
 					&:hover{
 						.title{
-							text-decoration: underline;
+							&:after{
+								width: 100%;
+							}
 						}
 					}
 				}
@@ -324,8 +341,8 @@
 		text-decoration: none;
 		position: relative;
 		color: $black;
-		@include link_transition(all,.15s,linear);
 		&:after{
+			@include link_transition(all,.15s,linear);
 			position: absolute;
 			display: block;
 			width: 100%;
@@ -346,52 +363,55 @@
 		height: auto;
 	}
 	@include for-size(phone-only){
-		h2{
+		&_main{
+			position: relative;
+			height: auto;
+			margin-top: -81px;
+			margin-bottom: 0;
+		}
+		&_visual{
+			position: static;
+			height: 100%;
+			left: 0;
+			top: 0;
+			width: 100%;
+			max-width: auto;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		&_container{
+			width: 100%;
+			padding: 0 60px 0 24px;
+			box-sizing: border-box;
+			position: relative;
+			top: -100px;;
+			right: auto;
+			transform: translateY(0%);
+			>p{
+				margin-bottom: 40px;
+				@include fts(15,26);
+			}
+		}
+		&_name{
+			@include fts(60,60);
+		}
+		&_sub-title{
+			margin-bottom: 32px;
+			@include fts(20,20);
+		}
+		&_fixed{
+			width: 100%;
+			z-index: 99;
+		}
+		&_title{
 			margin-bottom: 32px;
 			@include fts(14,25);
 			span{
 				@include fts(36,48);
 				margin-bottom: 4px;
 			}
-		}
-		&_lead{
-			&_bg{
-				background-image: url('../images/top/mv-sp.jpg');
-				background-position: center top;
-				background-size: cover;
-				width: 100%;
-				top: 0;
-				height: 87vw;
-				min-height: 360px;
-			}
-			padding-top: 45.4vw;
-			position: relative;
-			max-width: 80vw;
-			min-width: 80vw;
-			margin-right: 0;
-			margin-left: 24px;
-			h1{
-				@include fts(60,60);
-				letter-spacing: -0.6px;
-			}
-			&_text{
-				margin-bottom: 32px;
-				@include fts(20,29);
-			}
-			&_detail{
-				margin-bottom: 32px;
-				@include fts(14,25);
-			}
-			&_btn{
-				@include flexbox(center,center);
-				width: 80vw;
-				height: 56px;
-				margin: 0 0 100px;
-				@include fts(15,15);
-			}
-		}
-		&_fixed{
-			width: 100%;
 		}
 		&_auctions{
 			flex-direction: column-reverse;
@@ -516,6 +536,9 @@
 					margin-top: 32px;
 				}
 			}
+		}
+		&_link{
+			@include fts(14,14);
 		}
 	}
 }

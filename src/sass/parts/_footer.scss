@@ -1,6 +1,6 @@
 .footer{
 	background: $black;
-	padding: 60px 0 80px;
+	padding: 60px 0 60px;
 	&_inner{
 		padding: 0 24px;
 	}
@@ -35,7 +35,7 @@
 		@include fts(13,23);
 	}
 	@include for-size(phone-only){
-		padding: 40px 0 100px;
+		padding: 40px 0 40px;
 		&_title{
 			@include fts(24,24);
 			font-weight: 700;

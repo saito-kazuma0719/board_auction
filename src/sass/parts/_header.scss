@@ -1,5 +1,7 @@
 .header{
 	padding-right: percentage(80/1200);
+	position: relative;
+	z-index: 100;
 	&_inner{
 		@include flexbox(flex-start,flex-end);
 	}

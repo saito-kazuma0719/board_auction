@@ -13,27 +13,29 @@ var pageData = {
 			<%- include( './includes/_head', { data: pageData } ) %>
 		</head>
 		<body class="top">
-			<%- include( './includes/_header', { data: pageData } ) %>
-			<div class="top_lead_bg"></div>
-			<div class="top_lead">
-				<h1>BOAR<br>Auction</h1>
-				<p class="top_lead_text">オンラインでも新しい発見を</p>
-				<p class="top_lead_detail">これまで横浜を拠点に開催されてきた〇〇オークションは、新たにオンライン入札に対応し、ボアオークションという名前で生まれ変わりました。現地で開催されるオークションをオンラインで繋ぐことでより多くの皆さまがご参加いただけるようになりました。</p>
-				<a class="top_lead_btn" href="./member/input/">会員登録する</a>
-			</div>
 			<div class="top_fixed" id="top_fixed_btn">
 				<span id="btn-none"><img src="./images/common/ico_none.svg" alt="X"></span>
 				<a href="#"><p class="label">参加予定 受付中</p><p>9月17日（金）15:00〜｜第320回 ボアオークション</p></a>
 			</div>
+			<%- include( './includes/_header', { data: pageData } ) %>
+			<div class="top_main">
+				<div class="top_visual"><img src="./images/top/mv-pc.jpg" alt=""></div>
+				<div class="top_container">
+					<h1 class="top_name">BOAR<br>Auction</h1>
+					<h2 class="top_sub-title">オンラインでも新しい発見を</h2>
+					<p>これまで横浜を拠点に開催されてきた〇〇オークションは、新たにオンライン入札に対応し、ボアオークションという名前で生まれ変わりました。現地で開催されるオークションをオンラインで繋ぐことでより多くの皆さまがご参加いただけるようになりました。</p>
+					<a class="top_register" href="./member/input/">会員登録する</a>
+				</div>
+			</div>
+			
 			<div class="top_auctions">
 				<div class="top_auctions_inner">
-				<h2><span class="title en">Auctions</span><br>オークション一覧</h2>
+				<h2 class="top_title"><span class="title en">Auctions</span><br>オークション一覧</h2>
 				<p>開催されるオークションや過去に開催されたオークション情報を掲載しています。</p>
 				<a href="./auction-list/" class="top_link">さらに詳しく</a>
 				</div>
 				<div class="top_auctions_img">
-					<img class="only--sp" src="./images/top/img_auctions-sp.jpg" alt="">
-					<img class="only--pc" src="./images/top/img_auctions-pc.jpg" alt="">
+					<img src="./images/top/img_auctions-pc.jpg" alt="">
 				</div>
 			</div>
 			<div class="top_items">
@@ -41,25 +43,24 @@ var pageData = {
 					<img class="only--sp" src="./images/top/img_items-sp.jpg" alt="">
 				</div>
 				<div class="top_items_inner">
-				<h2><span class="title en">Items</span><br>出品アイテム一覧</h2>
+				<h2 class="top_title"><span class="title en">Items</span><br>出品アイテム一覧</h2>
 				<p>オークションに出品される商品やこれまでに落札された商品を掲載しています。</p>
 				<a href="./item/" class="top_link">さらに詳しく</a>
 				</div>
 			</div>
 			<div class="top_howtouse">
 				<div class="top_howtouse_img">
-					<img class="only--sp" src="./images/top/img_howtouse-sp.jpg" alt="">
-					<img class="only--pc" src="./images/top/img_howtouse-pc.jpg" alt="">
+					<img src="./images/top/img_howtouse-pc.jpg" alt="">
 				</div>
 				<div class="top_howtouse_inner">
-					<h2><span class="title en">How to use</span><br>ご利用方法</h2>
+					<h2 class="top_title"><span class="title en">How to use</span><br>ご利用方法</h2>
 					<p>ライブオークションや現地で開催されるオークションのご利用方法をご紹介しております。</p>
 					<a href="#" class="top_link">さらに詳しく</a>
 				</div>
 			</div>
 			<div class="top_news">
 				<div class="top_news_head">
-					<h2><span class="title en">News</span><br>お知らせ</h2>
+					<h2 class="top_title"><span class="title en">News</span><br>お知らせ</h2>
 					<div class="only--pc">
 					<a href="./notice/" class="top_link">さらに詳しく</a>
 					</div>
@@ -92,7 +93,7 @@ var pageData = {
 			</div>
 			<div class="top_faq">
 				<div class="top_faq_head">
-					<h2><span class="title en">FAQ</span><br>よくあるご質問</h2>
+					<h2 class="top_title"><span class="title en">FAQ</span><br>よくあるご質問</h2>
 					<div class="only--pc">
 					<a href="./faq/" class="top_link">さらに詳しく</a>
 					</div>
@@ -133,5 +134,6 @@ var pageData = {
 			<img class="top_footerimg only--pc" src="./images/top/img_footer-pc.jpg" alt="">
 			<%- include( './includes/_footer', { data: pageData } ) %>
 			<%- include( './includes/_scripts', { data: pageData } ) %>
+			<script src="./js/top.js"></script>
 		</body>
 	</html>

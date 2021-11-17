@@ -11,13 +11,22 @@
 		flex-direction: column;
 		width: 100%;
 		position: relative;
+		z-index: 100;
 		span{
 			display: block;
 			height: 2px;
 			width: 16px;
 			background: #fff;
+			@include link_transition(all,.15s,ease-in);
 		}
 		span+span{margin-top: 8px;}
+		&.is-opened{
+			span{
+				&:nth-of-type(1){width: 24px; transform: rotate(60deg);}
+				&:nth-of-type(2){ visibility: hidden; opacity: 0;}
+				&:nth-of-type(3){width: 24px; transform: rotate(-60deg); margin-top: -12px;}
+			}
+		}
 	}
 	&_list{
 		margin-top: 18px;
@@ -81,5 +90,128 @@
 		left: auto;
 		right: 0;
 		&_list{display: none;}
+	}
+}
+
+
+.navigation{
+	position: fixed;
+	background: $black;
+	padding: 120px 35px 30px;
+	width: 420px;
+	height: 100vh;
+	box-sizing: border-box;
+	top: -100vh;
+	left: -420px;
+	z-index: 10;
+	@include link_transition(all,.15s,ease-in);
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+	&.expanded{
+		top: 0;
+		left: 0;
+	}
+	&_list{
+		list-style-type: none;
+		li{
+			a{
+				text-decoration: none;
+				@include fts(24,24);
+				@include font-en;
+				font-weight: 600;
+				color: #fff;
+				@include link_transition(all,.15s,ease-in);
+				span{
+					display: block;
+					color: $greyish;
+					@include fts(13,13);
+					@include font-jp;
+				}
+				&:hover{
+					@include opacity(.75);
+				}
+			}
+		}
+		li+li{margin-top: 28px;}
+	}
+	&_menu{
+		margin-top: 44px;
+		padding-top: 44px;
+		border-top: 1px solid $brown-grey;
+		p{
+			a{
+				display: inline-block;
+				@include fts(15,15);
+				font-weight: 400;
+				color: #fff;
+				text-decoration: none;
+				position: relative;
+				&:after{
+					display: block;
+					@include link_transition(all,.15s,ease-in);
+					margin-top: 6px;
+					width: 0%;
+					height: 1px;
+					background: #fff;
+					content: "";
+				}
+				&:hover{
+					&:after{
+						width: 100%;
+					}
+				}
+			}
+		}
+		button{
+			margin-right: 28px;
+			display: inline-block;
+			border: 2px solid #fff;
+			height: 33px;
+			box-sizing: border-box;
+			@include border-radius(20px);
+			color: #fff;
+			position: relative;
+			padding: 0 28px 0 16px;
+			@include fts(14,14);
+			appearance: none;
+			-webkit-appearance: none;
+			background: none;
+			cursor: pointer;
+			&::after {
+				display: block;
+				position: absolute;
+				top: 50%;
+				right: 12px;
+				width: 5px;
+				height: 5px;
+				margin-top: -4px;
+				border-top: solid 1px #fff;
+				border-right: solid 1px #fff;
+				-webkit-transform: rotate(45deg);
+				transform: rotate(45deg);
+				content: "";
+			}
+		}
+	}
+	&_row{
+		@include flexbox(flex-start,flex-start);
+		flex-wrap: wrap;
+		margin-bottom: 34px;
+	}
+	@include for-size(phone-only){
+		width: 100%;
+		padding: 80px 35px 30px;
+		top: -100vh;
+		left: 100%;
+		&_list{
+			list-style-type: none;
+			li+li{margin-top: 24px;}
+		}
+		&_menu{
+			margin-top: 36px;
+			padding-top: 36px;
+		}
+		
+		
 	}
 }
