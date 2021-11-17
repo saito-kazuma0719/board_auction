@@ -9,7 +9,6 @@ window.addEventListener('load', function(){
 	var elemPass_3 =  document.getElementById('password-03')
 	var eyeLine =  document.getElementsByClassName('eyes_line')
 	
-	var sortSelected = document.querySelectorAll('.sort_selected')
 	
 	if(!passwordCheck_1){
 		return;
@@ -48,7 +47,13 @@ window.addEventListener('load', function(){
 		}
 	});
 	
+
+});
+
+// 年度ごとに取得
+window.addEventListener('load', function(){
 	
+	var sortSelected = document.querySelectorAll('.sort_selected')
 	for(var element of sortSelected) {
 		console.log(element);
 		element.addEventListener('click', function(){
@@ -56,55 +61,6 @@ window.addEventListener('load', function(){
 			this.nextElementSibling.classList.toggle("is-active")
 		})
 	}
-	
-	
-	/****
-		
-		1.sort_listのliをクリックしたら、data-sort-yearを取得する
-		2.data-sort-yearを変数aに代入
-		3.data-year-targetの数値と変数aの数値が一致したもののみ表示する
-		
-	**/
-	
-/*
-	let targets = document.getElementsByClassName("sort_list");
-	for(let i = 0; i < targets.length; i++){
-	  targets[i].addEventListener("click",() => {
-	        alert("CLASS: btn02がクリックされました。");
-	  }, false);
-	}
-*/
-
-	
-/*
-	let targets = document.getElementsByClassName("sort_list");
-	for(let i = 0; i < targets.length; i++){
-	  targets[i].addEventListener("click",() => {
-	         console.log('data-sort-year');
-	  }, false);
-	}
-*/
-
-/*
-$(function() {
-    var lists = $('.list_card li');
-    $(document).on('click', '.sort_list a', function() {
-        // 絞り込みの対象を取得
-        var target = $(this).attr('href').replace('#', '');
-        lists.each(function(e) {
-            // 絞り込み対象の場合は表示
-            if($(this).hasClass(target)) {
-                $(this).fadeIn();
-            // 絞り込み対象でない場合は非表示
-            } else {
-                $(this).fadeOut();
-            }
-        });
-        return false;
-    });
-});
-*/
-
 
 var listElem = document.querySelectorAll('.sort_list li');
 var elem = document.querySelectorAll('.list_card li')
@@ -120,30 +76,75 @@ for(var element of listElem) {
 			}else{
 				$('.list_card li').show();
 			}
-			
 		});		
-		
 	});
 }
 
+});
+
+// カテゴリー取得
+window.addEventListener('load', function(){
+	
+var listElem = document.querySelectorAll('.sort_list li');
+var elem = document.querySelectorAll('.card_item')
+for(var element of listElem) {
+	element.addEventListener('click', function(){
+		//クリックしたliタグのdata属性を取得する
+		var dataCategory = this.dataset.sortCategory;
+		//auction listをいったん非表示にする
+		elem.forEach(function (result) {
+			$('.card_item').hide();
+			if(dataCategory !== ""){
+				$('.card_item[data-category-target='+dataCategory+']').show();
+			}else{
+				$('.card_item').show();
+			}
+		});		
+	});
+}
+
+});
 
 /*
+window.addEventListener('load', function(){
+	
+var listElem2 = document.querySelectorAll('.sort_list li');
+var elem2 = document.querySelectorAll('.card_item')
+for(var element of listElem2) {
+	element.addEventListener('click', function(){
+		//クリックしたliタグのdata属性を取得する
+		var dataYear = this.dataset.sortYear;
+		//auction listをいったん非表示にする
+		elem2.forEach(function (result) {
+			$('.card_item').hide();
+			if(dataYear !== ""){
+				$('.card_item[data-year-target='+dataYear+']').show();
+			}else{
+				$('.card_item').show();
+			}
+		});		
+	});
+}
 
-var listElem = $('.sort_list li');
-var elem = $('.list_card li');
-
-listElem.on('click',function(){
-	var dataYear = $(this).data(sort-year);
-	elem.hide();
-	if(dataYear !== ""){
-		$('.list_card li[data-year-target='+dataYear+']').show();
-	}else{
-		elem.show();
 });
-
 */
 
+// 	TOP FIX バツボタン
+　document.querySelector('#btn-none').addEventListener('click', () => {
+　　const element = document.getElementById('top_fixed_btn');
+　　element.remove();
+　});
 
+// 	TOP FIXボタンfooter前で消す
+	window.onscroll = function () {
+        var check = window.pageYOffset ; 
+        var docHeight = $(document).height();
+        var dispHeight = $(window).height();
  
+        if(check > docHeight-dispHeight-500){ 
+            $('#top_fixed_btn').fadeOut(700);
  
-});
+        }else{
+            $('#top_fixed_btn').fadeIn(700);
+        }
+    };
