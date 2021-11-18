@@ -535,6 +535,27 @@ body {
   line-height: 1.76923;
 }
 
+.footer_top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 64px;
+  height: 64px;
+  transition: all 0.3s ease-out;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.footer_top:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.footer_top img {
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 767px) {
   .footer {
     padding: 40px 0 40px;
@@ -575,6 +596,10 @@ body {
     font-size: 12px;
     font-size: 1.2rem;
     line-height: 1;
+  }
+  .footer_top {
+    width: 11.6vw;
+    height: 11.6vw;
   }
 }
 
@@ -1083,6 +1108,36 @@ body {
 .header_btn a:hover:after {
   border-top: solid 2px #fff;
   border-right: solid 2px #fff;
+}
+
+.header_btn_black a {
+  background: #202020;
+  color: #fff;
+}
+
+.header_btn_black a:after {
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+}
+
+.header_btn_black a:hover {
+  background: #fff;
+  color: #202020;
+}
+
+.header_btn_black a:hover:after {
+  border-top: solid 2px #202020;
+  border-right: solid 2px #202020;
+}
+
+.header_btn_member-inner {
+  width: 116px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
 }
 
 @media (max-width: 767px) {

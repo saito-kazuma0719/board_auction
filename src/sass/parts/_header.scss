@@ -97,6 +97,35 @@
 				}
 			}
 		}
+		&_black{
+			a{
+				background: $black;
+				color: #fff;
+				&:after{
+					border-top: solid 2px #fff;
+					border-right: solid 2px #fff;
+				}
+				&:hover{
+					background: #fff;
+					color: $black;
+					&:after{
+						border-top: solid 2px $black;
+						border-right: solid 2px $black;
+					}
+				}
+			}
+		}
+		&_member{
+			&-inner{
+				width: 116px;
+				white-space: nowrap;
+				overflow-x: hidden; 
+				overflow-y: auto; 
+				text-overflow: ellipsis;  
+				-webkit-text-overflow: ellipsis;  
+				-o-text-overflow: ellipsis; 
+			}
+		}
 	}
 	@include for-size(phone-only){
 		padding: 0 0 0 24px;
