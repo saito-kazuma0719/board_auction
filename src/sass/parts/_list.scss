@@ -98,7 +98,6 @@
 				@include fts(15,26);
 			}
 		}
-/* 		li+li{margin-top: percentage(80/800);} */
 		&_img{
 			width: percentage(300/800);
 			max-width: 300px;
@@ -293,6 +292,18 @@
 							@include fts(10,10);
 							transform: rotate(45deg);
 							z-index: 3;
+						}
+					}
+				}
+			}
+			&_badge{
+				&:not(.is-active){
+					&:hover{
+						&:before{
+							display: none;
+						}
+						&:after{
+							display: none;
 						}
 					}
 				}

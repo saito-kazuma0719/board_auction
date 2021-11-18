@@ -7,10 +7,16 @@ window.addEventListener('load', function(){
 	var elemPass_1 =  document.getElementById('password-01')
 	var elemPass_2 =  document.getElementById('password-02')
 	var elemPass_3 =  document.getElementById('password-03')
-	var eyeLine =  document.getElementsByClassName('eyes_line')
+	var menuTrigger = document.getElementsByClassName('menu_trigger')
+	var navigation = document.getElementsByClassName('navigation')
+	//menu
 	
-	var sortSelected = document.querySelectorAll('.sort_selected')
+	menuTrigger[0].addEventListener('click', function(){
+		this.classList.toggle('is-opened');
+		navigation[0].classList.toggle('expanded') 
+	});
 	
+		
 	if(!passwordCheck_1){
 		return;
 	}
@@ -48,102 +54,69 @@ window.addEventListener('load', function(){
 		}
 	});
 	
+
+});
+
+
+// カテゴリー取得
+/*
+window.addEventListener('load', function(){
 	
-	for(var element of sortSelected) {
-		console.log(element);
+	var listElem = document.querySelectorAll('.sort_list li');
+	var elem = document.querySelectorAll('.card_item')
+	for(var element of listElem) {
 		element.addEventListener('click', function(){
-			console.log();
-			this.nextElementSibling.classList.toggle("is-active")
-		})
+			//クリックしたliタグのdata属性を取得する
+			var dataCategory = this.dataset.sortCategory;
+			var dataYear = this.dataset.sortYear;
+			//auction listをいったん非表示にする
+			elem.forEach(function (result) {
+				$('.card_item').hide();
+				if(dataCategory !== ""){
+					$('.card_item[data-category-target='+dataCategory+']').show();
+					hideList();
+				}else{
+					$('.card_item').show();
+					hideList();
+				}
+			});		
+		});
 	}
 	
 	
-	/****
-		
-		1.sort_listのliをクリックしたら、data-sort-yearを取得する
-		2.data-sort-yearを変数aに代入
-		3.data-year-targetの数値と変数aの数値が一致したもののみ表示する
-		
-	**/
 	
-/*
-	let targets = document.getElementsByClassName("sort_list");
-	for(let i = 0; i < targets.length; i++){
-	  targets[i].addEventListener("click",() => {
-	        alert("CLASS: btn02がクリックされました。");
-	  }, false);
+	
+	function hideList(){
+		var elem = document.querySelectorAll('.sort_list')
+		for (var i = 0; i < elem.length; i++) {
+			elem[i].classList.remove("is-active");
+		}
 	}
-*/
+	
 
-	
-/*
-	let targets = document.getElementsByClassName("sort_list");
-	for(let i = 0; i < targets.length; i++){
-	  targets[i].addEventListener("click",() => {
-	         console.log('data-sort-year');
-	  }, false);
-	}
-*/
-
-/*
-$(function() {
-    var lists = $('.list_card li');
-    $(document).on('click', '.sort_list a', function() {
-        // 絞り込みの対象を取得
-        var target = $(this).attr('href').replace('#', '');
-        lists.each(function(e) {
-            // 絞り込み対象の場合は表示
-            if($(this).hasClass(target)) {
-                $(this).fadeIn();
-            // 絞り込み対象でない場合は非表示
-            } else {
-                $(this).fadeOut();
-            }
-        });
-        return false;
-    });
 });
 */
 
 
-var listElem = document.querySelectorAll('.sort_list li');
-var elem = document.querySelectorAll('.list_card li')
-for(var element of listElem) {
-	element.addEventListener('click', function(){
-		//クリックしたliタグのdata属性を取得する
-		var dataYear = this.dataset.sortYear;
-		//auction listをいったん非表示にする
-		elem.forEach(function (result) {
-			$('.list_card li').hide();
-			if(dataYear !== ""){
-				$('.list_card li[data-year-target='+dataYear+']').show();
-			}else{
-				$('.list_card li').show();
-			}
-			
-		});		
-		
-	});
+
+//お気に入り
+var favoritBadge = document.querySelectorAll('.list_card_badge');
+if(favoritBadge.length !== 0){
+	for (var i = 0; i < favoritBadge.length; i++) {
+		favoritBadge[i].addEventListener('click', function(){
+			this.classList.toggle('is-active');
+		})
+	}
 }
 
 
-/*
+//ブックマーク
+var bookmarkBadge = document.querySelectorAll('.card_bookmark_badge');
+if(bookmarkBadge !== 0){
+	for (var i = 0; i < bookmarkBadge.length; i++) {
+		bookmarkBadge[i].addEventListener('click', function(){
+			this.classList.toggle('is-active');
+		})
+	}
+}
 
-var listElem = $('.sort_list li');
-var elem = $('.list_card li');
-
-listElem.on('click',function(){
-	var dataYear = $(this).data(sort-year);
-	elem.hide();
-	if(dataYear !== ""){
-		$('.list_card li[data-year-target='+dataYear+']').show();
-	}else{
-		elem.show();
-});
-
-*/
-
-
- 
- 
-});

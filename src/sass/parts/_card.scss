@@ -181,11 +181,13 @@
 	@include for-size(phone-only){
 		&_list{
 			@include flexbox(space-between,flex-start);
-			gap: 0 5.3vw;
+			gap: 0 0;
 		}
 		&_item{
-			max-width: 41.54vw;
+			width: 48%;
+			max-width: 100%;
 			margin: 0 0 40px;
+			&:nth-child(even){margin-left: auto;}
 		}
 		&_img{
 			a{
@@ -241,13 +243,11 @@
 			}
 			&_badge{
 				&:not(.is-active){
+					&:before{
+						display: none;
+					}
 					&:after{
-						top: 32px;
-						left: -32px;
-						padding: 3px 10px;
-						@include fts(12,12);
-						width: 92px;
-						content: "ブックマーク";
+						display: none;
 					}
 				}
 			}

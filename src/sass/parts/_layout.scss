@@ -539,7 +539,7 @@
 
 .multi{
 	&_container{
-		@include flexbox(flex-start,flex-start);
+		@include flexbox(flex-start,stretch);
 	}
 	&_side{
 		margin-right: 80px;
@@ -564,6 +564,8 @@
 }
 
 .sort{
+	position: sticky;
+	top: 0;
 	&_head{
 		margin-bottom: 20px;
 		img{

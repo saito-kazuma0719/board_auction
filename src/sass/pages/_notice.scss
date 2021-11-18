@@ -29,8 +29,13 @@
 			@include fts(16,24);
 			color: $black;
 			font-weight: 500;
+			padding-bottom: 4px;
+			@include link_transition(all,.3s,ease-out);
+			position: relative;
+			text-decoration: none;
+			background: linear-gradient($black, $black) 0 100%/0 1px no-repeat;
 			&:hover{
-				text-decoration: underline;
+				background-size: 100% 1px;
 			}
 		}
 		&_pagenation{
@@ -89,6 +94,9 @@
 	}
 	&-detail{
 		padding-bottom: 220px;
+		.wrapper {
+			padding: 80px 0 0;
+		}
 		&_data{
 			@include flexbox(space-between,center);
 			margin-bottom: 12px;
@@ -165,6 +173,14 @@
 		}
 	}
 	@include for-size(phone-only){
+		&-list{
+			&_title{
+				background: none;
+				&:hover{
+					background-size: 0 0;
+				}
+			}
+		}
 		&-detail{
 			padding-bottom: 157px;
 			&_title{
