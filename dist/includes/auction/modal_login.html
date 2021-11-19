@@ -1,24 +1,4 @@
-<%
-var pageData = {
-	path: '../../',
-	title: '',
-	keywords: '',
-	description: '',
-	pnkzlabel: 'サインイン'
-};
-%>
-<!doctype html>
-	<html lang="ja">
-		<head>
-			<%- include( '../../includes/_head', { data: pageData } ) %>
-		</head>
-	
-		<body>
-			<%- include( '../../includes/_header', { data: pageData } ) %>
-			<div class="container registration">
-				<h2 class="title en">Sign In</h2>
-				<%- include( '../../includes/_breadcrumb', { data: pageData } ) %>
-				<div class="wrapper">
+			<div class="remodal" data-remodal-id="login">
 				<div class="multi_content login">
 					<div class="login_content">
 						<p>ご登録のメールアドレスとパスワードをご入力ください。</p>
@@ -67,9 +47,4 @@ var pageData = {
 						</div>
 					</div>
 				</div>
-				</div>
 			</div>
-			<%- include( '../../includes/_footer', { data: pageData } ) %>
-			<%- include( '../../includes/_scripts', { data: pageData } ) %>
-		</body>
-	</html>
