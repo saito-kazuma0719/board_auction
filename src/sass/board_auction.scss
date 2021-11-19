@@ -1,5 +1,8 @@
 @import "~remodal/dist/remodal-default-theme.css";
 @import "~remodal/dist/remodal.css";
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
+
 
 @import "./common/_mixins";
 @import "./common/_reset";
@@ -16,6 +19,7 @@
 @import "./parts/_menu.scss";
 @import "./parts//_modal.scss";
 @import "./parts/_title.scss";
+@import "./parts/_gallery.scss";
 
 
 @import "./pages/_auctiondetail.scss";

@@ -4,6 +4,10 @@
 	text-align: left;
 	padding: 70px 120px;
 	box-sizing: border-box;
+	&[data-remodal-id^="gallery-"]{
+		padding: 48px 120px;
+	}
+
 	&-overlay{
 		background: rgba(0,0,0,.6);
 	}
@@ -11,6 +15,8 @@
 	
 	@include for-size(phone-only){
 		padding: percentage(30/414) percentage(15/414);
+		&[data-remodal-id^="gallery-"]{
+			padding:  percentage(24/414)  percentage(30/414);
+		}
 	}
-	
 }

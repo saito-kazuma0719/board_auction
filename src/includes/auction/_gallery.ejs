@@ -1,0 +1,18 @@
+
+			<% for (var i = 0; i < 12; i++) { %>
+			<div class="remodal" data-remodal-id="gallery-<%= i+1 %>">
+				<div class="gallery">
+					<div class="gallery_sldr">
+						<div><img src="<%= data.path %>images/item/ph_<%= i+1 %>_1.jpg" alt=""></div>
+						<div><img src="<%= data.path %>images/item/ph_<%= i+1 %>_2.jpg" alt=""></div>
+						<div><img src="<%= data.path %>images/item/ph_<%= i+1 %>_3.jpg" alt=""></div>
+					</div>
+					<div class="gallery_arrows"></div>
+					<div class="gallery_body">
+						<p class="gallery_name"><%= i+1 %>番目のオークション名</p>
+						<p class="gallery_auction">第<%= i+1 %>回 ボアオークション</p>
+						<p class="gallery_info"><span class="id">LOT.00<%= i+1 %></span><span class="category">陶芸</span></p>
+					</div>
+				</div>
+			</div>			
+			<% } %>		

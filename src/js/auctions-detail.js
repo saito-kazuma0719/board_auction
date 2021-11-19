@@ -32,6 +32,34 @@ window.addEventListener('load', function(){
 		});
 	}
 	
+	$('.gallery').each(function(){
+		var wrap = $(this);
+		var slidr = $('.gallery_sldr',wrap);
+		var arrows = $('.gallery_arrows',wrap);
+		
+		slidr.slick({
+			infinite: false,
+			dots: false,
+			slidesToShow: 1,
+			arrows: true,
+			appendArrows: arrows,
+			responsive: [{
+				breakpoint: 767,
+				settings: {
+					arrows: false,
+				}
+			}]
+		});
+	})
+
+
+	$(document).on('opened', '.remodal', function () {
+		var sldr = $(this).find('.gallery_sldr');
+		sldr.slick('setPosition');
+	});	
+	
+	
+	
 	
 	
 });

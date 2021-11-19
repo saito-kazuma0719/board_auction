@@ -1,0 +1,60 @@
+.gallery{
+	&_sldr{
+		margin-bottom: 12px;
+		max-width: 720px;
+		position: relative;
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+	&_name{
+		@include fts(15,20);
+		color: $black;
+		font-weight: 600;
+		margin-bottom: 8px;
+	}
+	&_auction{
+		color: $brown-grey;
+		@include fts(14,14);
+		margin-bottom: 8px;
+	}
+	&_info{
+		span{
+			color: $brown-grey;
+			@include fts(14,14);
+		}
+		span+span{margin-left: 12px;}
+	}
+	&_arrows{
+		button{
+			width: 50px;
+			height: 50px;
+			&.slick-prev{left: 46px; background: url(../images/item/btn_gallery_prev.svg) no-repeat 0 0;}
+			&.slick-next{right: 46px; background: url(../images/item/btn_gallery_next.svg) no-repeat 0 0;}
+		}
+	}
+	
+	@include for-size(phone-only){
+		&_sldr{
+			margin-bottom: 12px;
+			width: 100%;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		&_arrows{
+			button{
+				width: 25px;
+				height: 25px;
+				&.slick-prev{left: 23px; background: url(../images/item/btn_gallery_prev.svg) no-repeat 0 0; background-size: 25px 25px;}
+				&.slick-next{right: 23px; background: url(../images/item/btn_gallery_next.svg) no-repeat 0 0; background-size: 25px 25px;}
+			}
+		}
+		
+		
+		
+	}
+	
+}
