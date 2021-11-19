@@ -3328,6 +3328,7 @@ div[data-remodal-id="login"] {
   height: 930px;
   margin-top: -78px;
   margin-bottom: 200px;
+  max-width: 1600px;
 }
 
 .top_visual {
