@@ -35,20 +35,25 @@
 		@include fts(13,23);
 	}
 	&_top{
-		position: fixed;
-		right: 0;
-		bottom: 0;
-		width: 64px;
-		height: 64px;
-		@include link_transition(all,.3s,ease-out);
-		z-index: 100;
-		background-color: rgba(0,0,0,0.38);
-		&:hover{
-			@include opacity(.8);
-		}
-		img{
-			width: 100%;
-			height: auto;
+		a{
+			display: block;
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			width: 64px;
+			height: 64px;
+			@include link_transition(all,.3s,ease-out);
+			z-index: 100;
+			opacity: 0;
+			background-color: rgba(0,0,0,0.38);
+			&.is-showed{
+				opacity: 1;
+			}
+			img{
+				width: 100%;
+				height: auto;
+			}
+			
 		}
 	}
 	@include for-size(phone-only){

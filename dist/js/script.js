@@ -9,6 +9,31 @@ window.addEventListener('load', function(){
 	var elemPass_3 =  document.getElementById('password-03')
 	var menuTrigger = document.getElementsByClassName('menu_trigger')
 	var navigation = document.getElementsByClassName('navigation')
+	var pagetop = document.getElementById("pagetop");
+	
+	//pagetop
+	var pagetopScroll = function() {
+		if (window.pageYOffset > 400) {
+			pagetop.classList.add('is-showed');
+		} else {
+			pagetop.classList.remove('is-showed');
+		}
+	};	
+	
+	window.addEventListener("load", pagetopScroll);
+	window.addEventListener("scroll", pagetopScroll);
+	
+	pagetop.addEventListener('click', function(){
+		e.preventDefault();
+		window.scroll({
+			top: 0,
+			behavior: 'smooth'
+		});
+	})
+	
+	
+	
+	
 	//menu
 	
 	menuTrigger[0].addEventListener('click', function(){

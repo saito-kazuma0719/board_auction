@@ -535,7 +535,8 @@ body {
   line-height: 1.76923;
 }
 
-.footer_top {
+.footer_top a {
+  display: block;
   position: fixed;
   right: 0;
   bottom: 0;
@@ -543,15 +544,15 @@ body {
   height: 64px;
   transition: all 0.3s ease-out;
   z-index: 100;
+  opacity: 0;
   background-color: rgba(0, 0, 0, 0.38);
 }
 
-.footer_top:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
+.footer_top a.is-showed {
+  opacity: 1;
 }
 
-.footer_top img {
+.footer_top a img {
   width: 100%;
   height: auto;
 }
