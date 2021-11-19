@@ -18,8 +18,8 @@ var breadcrumb = {
 		</head>
 	
 		<body>
+			<%- include( '../../includes/_gtmBody', { data: pageData } ) %>
 			<%- include( '../../includes/_header', { data: pageData } ) %>
-			
 			<div class="container notice-detail">
 				<%- include( '../../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
