@@ -4,9 +4,13 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: '取引履歴',
-	pnkzLabel2:'会員情報'
 };
+var breadcrumb = {
+	parrentLabel:'アカウント',
+	parrentUrl:'/mypage/',
+	currentLabel: '取引履歴',
+}
+
 %>
 <!doctype html>
 	<html lang="ja">
@@ -18,7 +22,7 @@ var pageData = {
 			<%- include( '../../includes/_header-member', { data: pageData } ) %>
 			<div class="container history">
 				<h1 class="title en">Transactions</h1>
-				<%- include( '../../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="multi_content">
 						<div class="multi_container">
@@ -30,13 +34,13 @@ var pageData = {
 								<div class="sort">
 									<div class="sort_head"><img src="../../images/common/ico_sort.svg" alt=""></div>
 									<div class="sort_body">
-										<div class="sort_select">
-											<div class="sort_selected">開催年で絞り込む</div>
-											<ul class="sort_list">
+										<div id="sort-year" class="sort_select">
+											<div id="sort-year-target" class="sort_selected">開催年で絞り込む</div>
+											<ul id="sort-year-list" class="sort_list">
 												<li data-sort-year="">すべての開催年</li>
 												<li data-sort-year="2021">2021年</li>
 												<li data-sort-year="2020">2020年</li>
-												<li data-sort-yeart="2019">2019年</li>
+												<li data-sort-year="2019">2019年</li>
 											</ul>
 										</div>
 									</div>
@@ -231,7 +235,7 @@ var pageData = {
 			</div>
 			<%- include( '../../includes/_footer', { data: pageData } ) %>
 			<%- include( '../../includes/_scripts', { data: pageData } ) %>
-						
+			<script src="../../js/auctions.js"></script>
 						
 			
 			

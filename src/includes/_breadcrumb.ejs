@@ -1,6 +1,7 @@
 				<div class="breadcrumb">
 					<ul class="breadcrumb_list">
-						<li><a href="<%= data.path %>"><img src="<%= data.path %>images/common/ico_home.svg" alt="ホーム"></a></li>
-						<li><%= data.pnkzlabel %></li>
+						<li><a href="/"><img src="/images/common/ico_home.svg" alt="ホーム"></a></li>
+						<% if (data.parrentLabel) { %><li><a href="<%= data.parrentUrl %>"><%= data.parrentLabel %></a></li><% } %>
+						<li><%= data.currentLabel %></li>
 					</ul>
 				</div>

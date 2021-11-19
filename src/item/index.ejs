@@ -3,9 +3,13 @@ var pageData = {
 	path: '../',
 	title: '',
 	keywords: '',
-	description: '',
-	pnkzlabel: '出品アイテム一覧',
+	description: ''
 };
+var breadcrumb = {
+	currentLabel: '出品アイテム一覧',
+}
+
+
 %>
 <!doctype html>
 	<html lang="ja">
@@ -17,7 +21,7 @@ var pageData = {
 			<%- include( '../includes/_header', { data: pageData } ) %>
 			<div class="container">
 				<h1 class="title en">Items</h1>
-				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="multi_content">
 						<div class="multi_container">

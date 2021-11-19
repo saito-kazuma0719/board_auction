@@ -4,8 +4,10 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: '運営会社'
 };
+var breadcrumb = {
+	currentLabel: '運営会社',
+}
 %>
 <!doctype html>
 	<html lang="ja">
@@ -17,7 +19,7 @@ var pageData = {
 			<%- include( '../includes/_header', { data: pageData } ) %>
 			<div class="container company">
 				<h2 class="title en">Corporate Info</h2>
-				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="single_content">
 						<div class="company_row">

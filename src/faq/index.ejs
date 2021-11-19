@@ -4,8 +4,10 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: 'よくあるご質問'
 };
+var breadcrumb = {
+	currentLabel: 'よくあるご質問',
+}
 %>
 <!doctype html>
 	<html lang="ja">
@@ -17,7 +19,7 @@ var pageData = {
 			<%- include( '../includes/_header', { data: pageData } ) %>
 			<div class="container faq">
 				<h1 class="title en">FAQ</h1>
-				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="multi_content">
 						<div class="multi_container">

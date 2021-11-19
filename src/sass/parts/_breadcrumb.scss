@@ -9,6 +9,12 @@
 			color: $black;
 			white-space: nowrap;
 			a{
+				color: $greyish;
+				text-decoration: none;
+				@include fts(14,14);
+				&:hover{
+					text-decoration: underline;
+				}
 				img{
 					vertical-align: middle;
 					width: 18px;

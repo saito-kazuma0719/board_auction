@@ -2,12 +2,11 @@
 	&_list{
 		@include flexbox(flex-start,flex-start);
 		flex-wrap: wrap;
-		gap: 0 30px;
-		position: relative;
 	}
 	&_item{
-		max-width: 280px;
-		margin: 0 0 60px;
+		width: 48.5%;
+		margin: 0 0 30px;
+		&:nth-child(even){margin-left: auto;}
 	}
 	&_img{
 		margin-bottom: 12px;
@@ -251,6 +250,18 @@
 					}
 				}
 			}
+		}
+	}
+	@include for-size(desktop-up){
+		&_list{
+			gap: 0 30px;
+			position: relative;
+		}
+		&_item{
+			width: percentage(280/960);
+			max-width: 280px;
+			margin-bottom: 60px;
+			&:nth-child(even){margin-left: 0;}
 		}
 	}
 }

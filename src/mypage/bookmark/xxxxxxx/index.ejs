@@ -4,9 +4,13 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: 'ブックマーク',
-	pnkzLabel2:'会員情報'
 };
+var breadcrumb = {
+	parrentLabel:'アカウント',
+	parrentUrl:'/mypage/',
+	currentLabel: 'ブックマーク',
+}
+
 %>
 <!doctype html>
 	<html lang="ja">
@@ -18,7 +22,7 @@ var pageData = {
 			<%- include( '../../../includes/_header-member', { data: pageData } ) %>
 			<div class="container">
 				<h1 class="title en">Bookmarks</h1>
-				<%- include( '../../../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../../../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="multi_content">
 						<div class="multi_container">
@@ -26,19 +30,19 @@ var pageData = {
 								<div class="sort">
 									<div class="sort_head"><img src="../../../images/common/ico_sort.svg" alt=""></div>
 									<div class="sort_body">
-										<div class="sort_select">
-											<div class="sort_selected">出品年で絞り込む</div>
-											<ul class="sort_list">
+										<div id="sort-year" class="sort_select">
+											<div id="sort-year-target" class="sort_selected">出品年で絞り込む</div>
+											<ul id="sort-year-list" class="sort_list">
 												<li data-sort-year="">すべての出品年</li>
 												<li data-sort-year="2021">2021年</li>
 												<li data-sort-year="2020">2020年</li>
-												<li data-sort-yeart="2019">2019年</li>
+												<li data-sort-year="2019">2019年</li>
 											</ul>
 										</div>
-										<div class="sort_select">
-											<div class="sort_selected">カテゴリで絞り込む</div>
-											<ul class="sort_list">
-												<li data-sort-category="">すべてのカテゴリ</li>
+										<div id="sort-category" class="sort_select">
+											<div id="sort-category-target" class="sort_selected">カテゴリで絞り込む</div>
+											<ul id="sort-category-list" class="sort_list">
+												<li data-sort-category="0">すべてのカテゴリ</li>
 												<li data-sort-category="1">工芸品</li>
 												<li data-sort-category="2">美術品</li>
 												<li data-sort-category="3">家具</li>
@@ -59,7 +63,7 @@ var pageData = {
 												<p class="auction">第320回 ボアオークション</p>
 												<div class="card_row">
 													<div class="card_info"><span>LOT.001</span><span>陶芸</span></div>
-													<div class="card_bookmark card_bookmark_badge">
+													<div class="card_bookmark card_bookmark_badge is-active">
 														<img src="../../../images/common/ico_star_off.svg" class="replace-svg default" alt="">
 														<img src="../../../images/common/ico_star_on.svg" class="replace-svg selected" alt="">
 													</div>
@@ -192,7 +196,7 @@ var pageData = {
 			</div>
 			<%- include( '../../../includes/_footer', { data: pageData } ) %>
 			<%- include( '../../../includes/_scripts', { data: pageData } ) %>
-						
+			<script src="../../../js/items.js"></script>		
 						
 			
 			

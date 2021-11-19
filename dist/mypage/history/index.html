@@ -61,7 +61,8 @@
 				<h1 class="title en">Transactions</h1>
 								<div class="breadcrumb">
 					<ul class="breadcrumb_list">
-						<li><a href="../../"><img src="../../images/common/ico_home.svg" alt="ホーム"></a></li>
+						<li><a href="/"><img src="/images/common/ico_home.svg" alt="ホーム"></a></li>
+						<li><a href="/mypage/">アカウント</a></li>
 						<li>取引履歴</li>
 					</ul>
 				</div>
@@ -77,13 +78,13 @@
 								<div class="sort">
 									<div class="sort_head"><img src="../../images/common/ico_sort.svg" alt=""></div>
 									<div class="sort_body">
-										<div class="sort_select">
-											<div class="sort_selected">開催年で絞り込む</div>
-											<ul class="sort_list">
+										<div id="sort-year" class="sort_select">
+											<div id="sort-year-target" class="sort_selected">開催年で絞り込む</div>
+											<ul id="sort-year-list" class="sort_list">
 												<li data-sort-year="">すべての開催年</li>
 												<li data-sort-year="2021">2021年</li>
 												<li data-sort-year="2020">2020年</li>
-												<li data-sort-yeart="2019">2019年</li>
+												<li data-sort-year="2019">2019年</li>
 											</ul>
 										</div>
 									</div>
@@ -296,7 +297,7 @@
 <script src="../../js/desvg.js"></script>
 <script src="../../js/remodal.min.js"></script>
 <script src="../../js/script.js"></script>
-						
+			<script src="../../js/auctions.js"></script>
 						
 			
 			

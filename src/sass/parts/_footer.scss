@@ -35,11 +35,13 @@
 		@include fts(13,23);
 	}
 	&_top{
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		width: 64px;
+		height: 64px;
 		a{
 			display: block;
-			position: fixed;
-			right: 0;
-			bottom: 0;
 			width: 64px;
 			height: 64px;
 			@include link_transition(all,.3s,ease-out);
@@ -89,8 +91,12 @@
 			@include fts(12,12);
 		}
 		&_top{
-			width: 11.6vw;
-			height: 11.6vw;
+			width: 48px;
+			height: 48px;
+			a{
+				width: 48px;
+				height: 48px;
+			}
 		}
 	}
 	@include for-size(desktop-up){

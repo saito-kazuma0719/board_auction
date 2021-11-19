@@ -4,8 +4,10 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: 'サインイン'
 };
+var breadcrumb = {
+	currentLabel: 'サインイン',
+}
 %>
 <!doctype html>
 	<html lang="ja">
@@ -17,7 +19,7 @@ var pageData = {
 			<%- include( '../../includes/_header', { data: pageData } ) %>
 			<div class="container registration">
 				<h2 class="title en">Sign In</h2>
-				<%- include( '../../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 				<div class="multi_content login">
 					<div class="login_content">

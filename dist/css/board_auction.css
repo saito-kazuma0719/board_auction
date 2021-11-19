@@ -535,11 +535,16 @@ body {
   line-height: 1.76923;
 }
 
-.footer_top a {
-  display: block;
+.footer_top {
   position: fixed;
   right: 0;
   bottom: 0;
+  width: 64px;
+  height: 64px;
+}
+
+.footer_top a {
+  display: block;
   width: 64px;
   height: 64px;
   transition: all 0.3s ease-out;
@@ -599,8 +604,12 @@ body {
     line-height: 1;
   }
   .footer_top {
-    width: 11.6vw;
-    height: 11.6vw;
+    width: 48px;
+    height: 48px;
+  }
+  .footer_top a {
+    width: 48px;
+    height: 48px;
   }
 }
 
@@ -627,6 +636,18 @@ body {
   line-height: 1;
   color: #202020;
   white-space: nowrap;
+}
+
+.breadcrumb_list li a {
+  color: #a5a4a3;
+  text-decoration: none;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.breadcrumb_list li a:hover {
+  text-decoration: underline;
 }
 
 .breadcrumb_list li a img {
@@ -667,13 +688,15 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 0 30px;
-  position: relative;
 }
 
 .card_item {
-  max-width: 280px;
-  margin: 0 0 60px;
+  width: 48.5%;
+  margin: 0 0 30px;
+}
+
+.card_item:nth-child(even) {
+  margin-left: auto;
 }
 
 .card_img {
@@ -965,6 +988,21 @@ body {
   }
   .card_bookmark_badge:not(.is-active):after {
     display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card_list {
+    gap: 0 30px;
+    position: relative;
+  }
+  .card_item {
+    width: 29.16667%;
+    max-width: 280px;
+    margin-bottom: 60px;
+  }
+  .card_item:nth-child(even) {
+    margin-left: 0;
   }
 }
 

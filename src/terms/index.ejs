@@ -4,8 +4,10 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: '利用規約'
 };
+var breadcrumb = {
+	currentLabel: '利用規約',
+}
 %>
 <!doctype html>
 	<html lang="ja">
@@ -17,7 +19,7 @@ var pageData = {
 			<%- include( '../includes/_header', { data: pageData } ) %>
 			<div class="container terms">
 				<h2 class="title en">Terms of Use</h2>
-				<%- include( '../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="single_content terms_content">
 						<p>この規約（以下「本規約」といいます。）は、株式会社 地新（以下「当社」といいます。）が提供するすべての製品およびサービス（以下「本サービス」といいます。）の利用に関する条件を、本サービスを利用するお客様（以下「お客様」といいます。）と当社との間で定めるものです。</p>

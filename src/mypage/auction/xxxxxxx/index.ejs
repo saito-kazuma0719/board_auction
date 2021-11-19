@@ -4,9 +4,15 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: '予約したオークション',
-	pnkzLabel2:'会員情報'
+	pnkzlabel: '',
+	pnkzLabel2:''
 };
+var breadcrumb = {
+	parrentLabel:'アカウント',
+	parrentUrl:'/mypage/',
+	currentLabel: '予約したオークション',
+}
+
 %>
 <!doctype html>
 	<html lang="ja">
@@ -18,7 +24,7 @@ var pageData = {
 			<%- include( '../../../includes/_header-member', { data: pageData } ) %>
 			<div class="container reservations">
 				<h1 class="title en">Reservations</h1>
-				<%- include( '../../../includes/_breadcrumb', { data: pageData } ) %>
+				<%- include( '../../../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="multi_content">
 						<div class="multi_container">

@@ -4,8 +4,13 @@ var pageData = {
 	title: '',
 	keywords: '',
 	description: '',
-	pnkzlabel: 'オークション詳細',
 };
+
+var breadcrumb = {
+	parrentLabel:'オークション一覧',
+	parrentUrl:'/auction-list/',
+	currentLabel: '第320回 ボアオークション',
+}
 %>
 <!doctype html>
 	<html lang="ja">
@@ -18,7 +23,7 @@ var pageData = {
 				<%- include( '../../../includes/_header', { data: pageData } ) %>
 				<div class="container auctiondetail_head">
 					<h1 class="auctiondetail_title">第320回 ボアオークション</h1>
-					<%- include( '../../../includes/_breadcrumb', { data: pageData } ) %>
+					<%- include( '../../../includes/_breadcrumb', { data: breadcrumb } ) %>
 					<a href="javascript:void(0);" data-remodal-target="login" class="auctiondetail_btn">ライブに参加する</a>
 					<div class="auctiondetail_excerpt">
 						<p>吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</p>
