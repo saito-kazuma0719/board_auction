@@ -1,10 +1,11 @@
-.terms{
+.privacy{
 	&_content{
+		margin-bottom: 60px;
 		color: $black;
 		>p{
 			@include fts(15,26);
-			&.omit{
-				margin: 40px 0;
+			&.privacy-contact{
+				margin: 15px 0 0;
 			}
 		}
 		>h3{
@@ -46,14 +47,6 @@
 				}
 			}
 		}
-		&:nth-child(2){
-			margin-bottom: 60px;
-		}
-	}
-	&_content+&_content{
-		margin-top: 60px;
-		padding-top: 27px;
-		border-top: 1px solid $pale;
 	}
 	&_list{
 		&-num{
@@ -109,13 +102,7 @@
 	}
 	@include for-size(phone-only){
 		&_content{
-			&:nth-child(2){
-				margin-bottom: 0;
-			}
-		}
-		&_content+&_content{
-			margin-top: 40px;
-			padding-top: 7px;
+			margin-bottom: 0;
 		}
 		&_link{
 			margin-top: 90px;
