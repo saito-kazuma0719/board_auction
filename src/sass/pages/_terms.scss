@@ -3,6 +3,9 @@
 		color: $black;
 		>p{
 			@include fts(15,26);
+			&.omit{
+				margin: 40px 0;
+			}
 		}
 		>h3{
 			display: block;
@@ -12,6 +15,12 @@
 			@include fts(18,28);
 			font-weight: 500;
 			background-color: $off-white;
+		}
+		>h4{
+			margin-top: 28px;
+			margin-bottom: 15px;
+			@include fts(18,27);
+			font-weight: 500;
 		}
 		>table{
 			width: 100%;
@@ -37,17 +46,25 @@
 				}
 			}
 		}
+		&:nth-child(2){
+			margin-bottom: 60px;
+		}
+	}
+	&_content+&_content{
+		margin-top: 60px;
+		padding-top: 27px;
+		border-top: 1px solid $pale;
 	}
 	&_list{
 		&-num{
 			margin-left: 32px;
 			li{
-				margin-top: 22px;
+				margin-top: 15px;
 				list-style-type: none;
 				counter-increment: cnt;
 				@include fts(15,26);
 				&:before{
-					content: "(" counter(cnt) ")";
+					content: counter(cnt) ".";
 					display:inline-block;
 					margin-left:-32px;
 					width: 32px;
@@ -68,7 +85,7 @@
 				counter-increment:item;
 				@include fts(15,26);
 				&:before{
-					content: "(" counter(item,lower-latin) ")";
+					content: counter(item,lower-latin) ".";
 					display:inline-block;
 					margin-left:-32px;
 					width: 32px;
@@ -90,6 +107,15 @@
 		}
 	}
 	@include for-size(phone-only){
+		&_content{
+			&:nth-child(2){
+				margin-bottom: 0;
+			}
+		}
+		&_content+&_content{
+			margin-top: 40px;
+			padding-top: 7px;
+		}
 		&_link{
 			margin-top: 90px;
 		}
