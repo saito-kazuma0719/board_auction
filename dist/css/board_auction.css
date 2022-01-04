@@ -1290,6 +1290,11 @@ body {
   margin: 46px 0 0 120px;
 }
 
+.header_title img {
+  width: 160px;
+  height: 40px;
+}
+
 .header_title a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -1464,6 +1469,10 @@ body {
   }
   .header_title {
     margin: 40px 0 11px 0px;
+  }
+  .header_title img {
+    width: 140px;
+    height: 35px;
   }
   .header_title a {
     font-size: 24px;
