@@ -3396,6 +3396,186 @@ div[data-remodal-id="login"] {
   padding: 35px;
 }
 
+.buy {
+  padding-bottom: 180px;
+  counter-reset: title;
+}
+
+.buy_content {
+  color: #202020;
+  margin-right: 0;
+  margin-left: auto;
+  max-width: 960px;
+}
+
+.buy_content h3 {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 35px;
+  margin-bottom: 20px;
+  padding-left: 50px;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.buy_content h3:before {
+  position: absolute;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  counter-increment: title;
+  content: counter(title);
+  width: 35px;
+  height: 35px;
+  background-color: #202020;
+  border-radius: 100%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  color: #fdfbf8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.buy_content h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  font-weight: 500;
+}
+
+.buy_content p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  padding-left: 50px;
+}
+
+.buy_content + .buy_content {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid #e5e4e3;
+}
+
+.buy_box {
+  width: auto;
+  margin-left: 50px;
+  margin-top: 20px;
+  padding: 24px;
+  background-color: #f5f3f0;
+  box-sizing: border-box;
+}
+
+.buy_box p {
+  padding-left: 0;
+}
+
+.buy_box + .buy_video {
+  margin-top: 20px;
+}
+
+.buy_video {
+  width: 600px;
+  height: 375px;
+  margin-left: 50px;
+}
+
+.buy_video video {
+  width: 100%;
+  height: 100%;
+}
+
+.buy_link {
+  margin-top: 20px;
+}
+
+.buy_link p a {
+  position: relative;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #202020;
+  text-decoration: none;
+  padding-bottom: 8px;
+}
+
+.buy_link p a:after {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #202020;
+  content: '';
+}
+
+.buy_link p a:hover:after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .buy_content h3 {
+    height: 28px;
+    margin-bottom: 16px;
+    padding-left: 40px;
+    font-size: 17px;
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+  .buy_content h3:before {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+  .buy_content h4 {
+    margin-bottom: 11px;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.73333;
+  }
+  .buy_content p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+    padding-left: 40px;
+  }
+  .buy_content + .buy_content {
+    margin-top: 48px;
+    padding-top: 48px;
+  }
+  .buy_box {
+    margin-left: 40px;
+    padding: 20px;
+  }
+  .buy_box p {
+    padding-left: 0;
+  }
+  .buy_video {
+    width: calc(100% - 40px);
+    height: 49.27vw;
+    margin-left: 40px;
+  }
+  .buy_link {
+    margin-top: 16px;
+  }
+}
+
 .company_row {
   padding: 28px 0 27px;
   border-top: 1px solid #e5e4e3;
@@ -5237,5 +5417,168 @@ div[data-remodal-id="login"] {
   }
   .history_list_img {
     margin-right: 12px;
+  }
+}
+
+.sell {
+  padding-bottom: 180px;
+  counter-reset: title;
+}
+
+.sell_content {
+  color: #202020;
+  margin-right: 0;
+  margin-left: auto;
+  max-width: 960px;
+}
+
+.sell_content h3 {
+  position: relative;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 35px;
+  margin-bottom: 20px;
+  padding-left: 50px;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.sell_content h3:before {
+  position: absolute;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  counter-increment: title;
+  content: counter(title);
+  width: 35px;
+  height: 35px;
+  background-color: #202020;
+  border-radius: 100%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  color: #fdfbf8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.sell_content p {
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
+  padding-left: 50px;
+}
+
+.sell_content + .sell_content {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid #e5e4e3;
+}
+
+.sell_box {
+  width: auto;
+  margin-left: 50px;
+  margin-top: 20px;
+  padding: 28px;
+  box-sizing: border-box;
+  border: 1px solid #e5e4e3;
+}
+
+.sell_box p {
+  padding-left: 0;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.78571;
+}
+
+.sell_box p span.number {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.sell_link {
+  margin-top: 20px;
+}
+
+.sell_link p a {
+  position: relative;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #202020;
+  text-decoration: none;
+  padding-bottom: 8px;
+}
+
+.sell_link p a:after {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #202020;
+  content: '';
+}
+
+.sell_link p a:hover:after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sell_content h3 {
+    height: 28px;
+    margin-bottom: 16px;
+    padding-left: 40px;
+    font-size: 17px;
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+  .sell_content h3:before {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+  .sell_content p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.78571;
+    padding-left: 40px;
+  }
+  .sell_content + .sell_content {
+    margin-top: 48px;
+    padding-top: 48px;
+  }
+  .sell_box {
+    width: auto;
+    margin-left: 40px;
+    padding: 20px;
+  }
+  .sell_box p {
+    padding-left: 0;
+  }
+  .sell_box p span.number {
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  .sell_link {
+    margin-top: 16px;
   }
 }

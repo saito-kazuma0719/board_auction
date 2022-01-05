@@ -1,0 +1,78 @@
+<%
+var pageData = {
+	path: '../',
+	title: '',
+	keywords: '',
+	description: '',
+};
+var breadcrumb = {
+	currentLabel: 'オークション参加方法',
+}
+%>
+<!doctype html>
+	<html lang="ja">
+		<head>
+			<%- include( '../includes/_head', { data: pageData } ) %>
+		</head>
+	
+		<body>
+			<%- include( '../includes/_gtmBody', { data: pageData } ) %>
+			<%- include( '../includes/_header', { data: pageData } ) %>
+			<div class="container buy">
+				<h2 class="title en">How to Buy</h2>
+				<%- include( '../includes/_breadcrumb', { data: breadcrumb } ) %>
+				<div class="wrapper">
+					<div class="single_content buy_content">
+						<h3>オークション情報を確認する</h3>
+						<p>オークション一覧より近日に開催されるオークションの情報を掲載しております。<br>
+						オークションの開催場所や日時をご確認ください。またオークション一覧では過去に開催されたオークション情報もご確認いただけます。</p>
+						<div class="buy_link"><p><a href="../">オークション一覧</a></p></div>
+					</div>
+					<div class="single_content buy_content">
+						<h3>出品アイテムを探す</h3>
+						<p>開催の数日前になると出品アイテム一覧、または各オークション詳細ページにて出品アイテムが掲載されます。当日はロットナンバー順にオークションが進行されます。事前にアイテムをご確認ください。また出品アイテム一覧では過去に出品されたアイテムもご確認いただいます。</p>
+						<div class="buy_link"><p><a href="../">出品アイテム一覧</a></p></div>
+					</div>
+					<div class="single_content buy_content">
+						<h3>会員の申請をする（初めての方）</h3>
+						<p>はじめてオークションに参加する方は、会員の申請が必要になります。申請は以下の会員申請からまたは、オークション会場でもお申し込みを受け付けております。<br>
+						※申請には古物商免許と本人確認書類の提示をお願いしております。</p>
+						<div class="buy_link"><p><a href="../">会員申請</a></p></div>
+					</div>
+					<div class="single_content buy_content">
+						<h3>オークション参加方法</h3>
+						<p>ボアオークションでは会場入札とオンライン入札のいずれかをご利用いただけます。</p>
+						<div class="buy_box">
+							<h4>●会場入札の場合</h4>
+							<p>オークション当日、会場の受付にて登録番号が記載された札（パドル）を受け取り競りにご参加ください。<br>
+							オークションは当サイトに記載されているロットナンバー順に一点ずつ進行されます。入札される方は競売人に対してパドルをわかりやすく挙げてください。</p>
+						</div>
+						<div class="buy_box">
+							<h4>●オンライン入札の場合</h4>
+							<p>ボアオークションでは会場オークションの様子をライブ配信し、オンラインにて同時参加することができます。<br>
+							当サイトの会員登録されているお客様はどなたでもご参加可能です。当日はオークション開催15分前を目安にオンライン入札ページが開場され、当サイトの各オークションの詳細ページまたは、トップページより入室することができます。<br>
+							オンラインでの入札方法については以下の動画をご覧ください。</p>
+						</div>
+						<div class="buy_video">
+							<video src="" controls></video>
+						</div>
+					</div>
+					<div class="single_content buy_content">
+						<h3>お支払いと商品のお引渡し</h3>
+						<p>ボアオークションでは「落札価額」と落札価額に対して5％の「落札手数料」を合計した額が購入代金となります。また消費税は購入代金に含まれております。</p>
+						<div class="buy_box">
+							<h4>●会場でのご参加の場合</h4>
+							<p>オークションを退場される際に請求書を発行いたします。お支払い方法は、その場での現金支払いと銀行振込からお選びいただけます。<br>
+							現金支払いの場合、商品の引渡しは配送の他にその場での受け取りが可能です。銀行振込の場合、オークション開催日から10営業日以内に請求書に記載する銀行口座へお振り込みください。代金のお支払いが確認でき次第、配送いたします。なお、送料はお客様のご負担となります。</p>
+						</div>
+						<div class="buy_box">
+							<h4>●オンラインでのご参加の場合</h4>
+							<p>オークション終了後にメールにて請求書を送付いたします。オークション開催日から10営業日以内に請求書に記載する銀行口座へお振り込みください。代金のお支払いが確認でき次第、配送いたします。なお、送料はお客様のご負担となります。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<%- include( '../includes/_footer', { data: pageData } ) %>
+			<%- include( '../includes/_scripts', { data: pageData } ) %>
+		</body>
+	</html>
