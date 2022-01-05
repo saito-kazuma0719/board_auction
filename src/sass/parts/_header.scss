@@ -6,7 +6,9 @@
 		@include flexbox(flex-start,flex-end);
 	}
 	&_title{
-		margin: 46px 0 0 120px;
+		position: absolute;
+		top: 32px;
+		left: 120px;
 		img{
 			width: 160px;
 			height: 40px;
@@ -24,6 +26,7 @@
 		}
 	}
 	&_utility{
+		padding-top: 46px;
 		margin-left: auto;
 		@include flexbox(flex-start,flex-end);
 	}
@@ -95,12 +98,12 @@
 				display: block;
 				position: absolute;
 				top: 50%;
-				right: 10px;
-				width: 7px;
-				height: 7px;
-				margin-top: -4px;
-				border-top: solid 2px $black;
-				border-right: solid 2px $black;
+				right: 12px;
+				width: 5px;
+				height: 5px;
+				margin-top: -3px;
+				border-top: solid 1px $black;
+				border-right: solid 1px $black;
 				-webkit-transform: rotate(45deg);
 				transform: rotate(45deg);
 				content: "";
@@ -147,7 +150,8 @@
 	@include for-size(phone-only){
 		padding: 0 0 0 24px;
 		&_title{
-			margin: 40px 0 11px 0px;
+			top: 23px;
+			left: 20px;
 			img{
 				width: 140px;
 				height: 35px;

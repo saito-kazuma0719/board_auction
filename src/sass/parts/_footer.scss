@@ -10,22 +10,26 @@
 		font-weight: 700;
 		margin-bottom: 16px;
 		@include fts(24,24);
+		img{
+			width: 140px;
+			height: 35px;
+		}
 	}
 	&_row{
 		@include flexbox(flex-start,flex-end);
 	}
 	&_menu{
 		@include flexbox(flex-start,flex-end);
-		width: 50%;
+		flex-wrap: wrap;
+		width: 68%;
 		li{
+			margin-right: 16px;
 			a{
 				color: #fff;
 				@include fts(13,23);
+				white-space: nowrap;
 				text-decoration: none;
 			}
-		}
-		li+li{
-			margin-left: 16px;
 		}
 	}
 	&_copy{
@@ -74,14 +78,12 @@
 			margin-bottom: 16px;
 			width: 100%;
 			li{
+				margin-right: percentage(16/414);
 				a{
 					color: #fff;
 					@include fts(12,12);
 					text-decoration: none;
 				}
-			}
-			li+li{
-				margin-left: percentage(16/414);
 			}
 		}
 		&_copy{
