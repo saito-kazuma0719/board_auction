@@ -1,0 +1,127 @@
+.sell{
+	padding-bottom: 180px;
+	counter-reset: title;
+	&_content{
+		color: $black;
+		margin-right: 0;
+		margin-left: auto;
+		max-width: 960px;
+		h3{
+			position: relative;
+			@include flexbox(flex-start,center);
+			height: 35px;
+			margin-bottom: 20px;
+			padding-left: 50px;
+			@include fts(20,20);
+			font-weight: 500;
+			&:before{
+				position: absolute;
+				@include flexbox(center,center);
+			    top: 0;
+			    left: 0;
+				counter-increment: title;
+			    content: counter(title);
+			    width: 35px;
+			    height: 35px;
+			    background-color: $black;
+			    @include border-radius(100%);
+			    color: $very-light-pink;
+			    @include font-en;
+			    @include fts(16,16);
+			    font-weight: 600;
+			}
+		}
+		p{
+			@include fts(15,26);
+			padding-left: 50px;
+		}
+	}
+	&_content+&_content{
+		margin-top: 60px;
+		padding-top: 60px;
+		border-top: 1px solid $pale;
+	}
+	&_box{
+		width: auto;
+		margin-left: 50px;
+		margin-top: 20px;
+		padding: 28px;
+		box-sizing: border-box;
+		border: 1px solid $pale;
+		p{
+			padding-left: 0;
+			@include fts(15,26);
+			&.number{
+				margin-top: 3px;
+				@include fts(18,26);
+				font-weight: 500;
+			}
+		}
+	}
+	&_link{
+		margin-top: 20px;
+		p{
+			a{
+				position: relative;
+				@include fts(14,14);
+				color: $black;
+				text-decoration: none;
+				padding-bottom: 8px;
+				&:after{
+					@include link_transition(all,.15s,linear);
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: 1px;
+					bottom: 0;
+					left: 0;
+					background-color: $black;
+					content: '';
+				}
+				&:hover{
+					&:after{
+						height: 3px;
+					}
+				}
+			}
+		}
+	}
+	@include for-size(phone-only){
+		&_content{
+			h3{
+				height: 28px;
+				margin-bottom: 16px;
+				padding-left: 40px;
+				@include fts(17,17);
+				&:before{
+				    width: 28px;
+				    height: 28px;
+				    @include fts(13,13);
+				}
+			}
+			p{
+				@include fts(14,25);
+				padding-left: 40px;
+			}
+		}
+		&_content+&_content{
+			margin-top: 48px;
+			padding-top: 48px;
+		}
+		&_box{
+			width: auto;
+			margin-left: 40px;
+			padding: 20px;
+			p{
+				padding-left: 0;
+				span.number{
+					@include fts(16,24);
+					font-weight: 500;
+				}
+			}
+		}
+		&_link{
+			margin-top: 16px;
+		}
+	}
+}

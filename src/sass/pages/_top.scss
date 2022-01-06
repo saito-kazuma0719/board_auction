@@ -13,7 +13,7 @@
 	&_main{
 		position: relative;
 		height: 930px;
-		margin-top: -78px;
+		margin-top: -80px;
 		margin-bottom: 200px;
 		max-width: 1600px;
 	}
@@ -357,6 +357,9 @@
 			&:after{
 				height: 3px;
 			}
+		}
+		&-outer+&-outer{
+			margin-top: 0.8em;
 		}
 	}
 	&_footerimg{
