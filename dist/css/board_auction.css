@@ -3435,8 +3435,8 @@ div[data-remodal-id="login"] {
   height: 35px;
   margin-bottom: 20px;
   padding-left: 50px;
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1;
   font-weight: 500;
 }
@@ -5464,8 +5464,8 @@ div[data-remodal-id="login"] {
   height: 35px;
   margin-bottom: 20px;
   padding-left: 50px;
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 20px;
+  font-size: 2rem;
   line-height: 1;
   font-weight: 500;
 }
@@ -5520,15 +5520,16 @@ div[data-remodal-id="login"] {
 
 .sell_box p {
   padding-left: 0;
-  font-size: 14px;
-  font-size: 1.4rem;
-  line-height: 1.78571;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.73333;
 }
 
-.sell_box p span.number {
+.sell_box p.number {
+  margin-top: 3px;
   font-size: 18px;
   font-size: 1.8rem;
-  line-height: 1;
+  line-height: 1.44444;
   font-weight: 500;
 }
 

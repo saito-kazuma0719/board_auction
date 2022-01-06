@@ -12,7 +12,7 @@
 			height: 35px;
 			margin-bottom: 20px;
 			padding-left: 50px;
-			@include fts(18,18);
+			@include fts(20,20);
 			font-weight: 500;
 			&:before{
 				position: absolute;
@@ -50,9 +50,10 @@
 		border: 1px solid $pale;
 		p{
 			padding-left: 0;
-			@include fts(14,25);
-			span.number{
-				@include fts(18,18);
+			@include fts(15,26);
+			&.number{
+				margin-top: 3px;
+				@include fts(18,26);
 				font-weight: 500;
 			}
 		}
