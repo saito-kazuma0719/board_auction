@@ -1745,6 +1745,10 @@ body {
   color: #a5a4a3;
 }
 
+.form_input.is-passed {
+  border-color: #a5a4a3;
+}
+
 .form_input.is-error {
   border-color: #d10000;
   color: #d10000;

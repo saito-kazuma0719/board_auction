@@ -181,6 +181,9 @@
 			border-color: $pale;
 			color: $greyish;
 		}
+		&.is-passed{
+			border-color: $greyish
+		}
 		&.is-error{
 			border-color: $red;
 			color: $red;

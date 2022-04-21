@@ -24,16 +24,16 @@ var breadcrumb = {
 				<%- include( '../../includes/_breadcrumb', { data: breadcrumb } ) %>
 				<div class="wrapper">
 					<div class="single_content">
-						<form action="">
+						<form action="" id="contact-form" data-parsley-validate data-parsley-trigger="focusout change">
 							<div class="row">
 								<div class="row_head">
 									<p>お名前<span>※</span></p>
 								</div>
 								<div class="row_body">
 									<div class="row_item_full">
-										<input type="text" placeholder="例：山田 太郎" class="form_input">
+										<input type="text" placeholder="例：山田 太郎" class="form_input" data-parsley-required data-parsley-error-message="名前を入力してください"   data-parsley-errors-container="#error-name">
 									</div>
-									<div class="form_error"></div>
+									<div id="error-name" class="form_error"></div>
 								</div>
 								
 							</div>
@@ -43,19 +43,20 @@ var breadcrumb = {
 								</div>
 								<div class="row_body">
 									<div class="row_item_full">
-										<input type="text" placeholder="例：045-222-3535（ハイフンあり）" class="form_input">
+										<input type="text" placeholder="例：045-222-3535（ハイフンあり）" class="form_input" data-parsley-required data-parsley-error-message="電話番号を入力してください"  data-parsley-errors-container="#error-tel" data-parsley-length="[10, 13]">
 									</div>
-									<divclass="form_error"></div>
+									<div id="error-tel" class="form_error"></div>
 								</div>
+							</div>
 							<div class="row">
 								<div class="row_head">
 									<p>メールアドレス<span>※</span></p>
 								</div>
 								<div class="row_body">
 									<div class="row_item_full">
-										<input type="text" placeholder="例：sample@chishin-yokohama.com" class="form_input">
+										<input type="email" placeholder="例：sample@chishin-yokohama.com" class="form_input" data-parsley-required data-parsley-error-message="メールアドレスを入力してください"  data-parsley-errors-container="#error-email" data-parsley-type="email">
 									</div>
-									<div class="form_error"></div>
+									<div id="error-email" class="form_error"></div>
 								</div>
 							</div>
 							<div class="row">
@@ -63,9 +64,9 @@ var breadcrumb = {
 									<p>お問い合わせ内容<span>※</span></p>
 								</div>
 								<div class="row_body">
-									<div class="row_item_full"><textarea rows="4" placeholder="ご質問の内容を入力してください" class="form_input form_input-textarea"></textarea>
+									<div class="row_item_full"><textarea rows="4" placeholder="ご質問の内容を入力してください" class="form_input form_input-textarea" data-parsley-required data-parsley-error-message="お問い合わせ内容を入力してください" data-parsley-errors-container="#error-note"></textarea>
 									</div>
-									<div class="form_error"></div>
+									<div id="error-note" class="form_error"></div>
 								</div>
 							</div>
 							<div class="form_lower">
@@ -74,18 +75,32 @@ var breadcrumb = {
 									<p><a href="/privacy/">プライバシーポリシー</a></p>
 								</div>
 								<div class="form_agree">
-									<input type="checkbox" class="form_checkbox" name="agreement" id="agreement">
+									<input type="checkbox" class="form_checkbox" name="agreement" id="agreement" data-parsley-required data-parsley-mincheck="1" data-parsley-error-message="利用規約、プライバシーポリシーに同意してください" data-parsley-errors-container="#error-checks">
 									<label for="agreement" class="form_label">利用規約、プライバシーポリシーに同意する</label>
+									<div id="error-checks" class="form_error"></div>
 								</div>
+								
 								<button type="submit" id="registration_submit" class="form_submit" disabled>入力内容を確認</button>
 							</div>
 						</form>
-						
 					</div>
 				</div>
 			</div>
 			<%- include( '../../includes/_footer', { data: pageData } ) %>
 			<%- include( '../../includes/_scripts', { data: pageData } ) %>
+			<script src="../../js/parsley.min.js"></script>
+			<script>
+				var form = $('#contact-form');
+				form.on('change',function(){
+					var passedElem = $('.parsley-success');
+					if(passedElem.length == 5){
+						$('#registration_submit').prop('disabled',false);
+					}else{
+						$('#registration_submit').prop('disabled',true);
+					}
+				})
+				
+			</script>
 			
 		</body>
 	</html>
