@@ -15,7 +15,8 @@
 			img{
 				@include link_transition(all,.3s,ease-in);
 				width: 100%;
-				height: auto;
+				height: vw(175,960);
+				object-fit:cover;
 				vertical-align: bottom;
 			}
 			&:hover{
@@ -190,6 +191,9 @@
 		}
 		&_img{
 			a{
+				img{
+					height: vw(100,414);
+				}
 				&.is-sold{
 					&:before{
 						border-width: 50px 0 0 50px;
@@ -262,6 +266,13 @@
 			max-width: 280px;
 			margin-bottom: 60px;
 			&:nth-child(even){margin-left: 0;}
+		}
+		&_img{
+			a{
+				img{
+					max-height: 175px;
+				}
+			}
 		}
 	}
 }

@@ -981,7 +981,9 @@ body {
 .card_img a img {
   transition: all 0.3s ease-in;
   width: 100%;
-  height: auto;
+  height: 18.22917vw;
+  -o-object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 
@@ -1203,6 +1205,9 @@ body {
   .card_item:nth-child(even) {
     margin-left: auto;
   }
+  .card_img a img {
+    height: 24.15459vw;
+  }
   .card_img a.is-sold:before {
     border-width: 50px 0 0 50px;
   }
@@ -1277,6 +1282,9 @@ body {
   }
   .card_item:nth-child(even) {
     margin-left: 0;
+  }
+  .card_img a img {
+    max-height: 175px;
   }
 }
 
@@ -1749,7 +1757,7 @@ body {
   border-color: #a5a4a3;
 }
 
-.form_input.is-error {
+.form_input.is-error, .form_input.parsley-error {
   border-color: #d10000;
   color: #d10000;
 }
@@ -1889,10 +1897,6 @@ body {
   line-height: 1.78571;
   color: #757473;
   margin-bottom: 16px;
-}
-
-.form_file {
-  display: none;
 }
 
 .form_file + label {
@@ -2443,7 +2447,9 @@ body {
 .list_card_img a img {
   transition: all 0.3s ease-in;
   width: 100%;
-  height: auto;
+  height: 19.27083vw;
+  -o-object-fit: cover;
+  object-fit: cover;
   vertical-align: bottom;
 }
 
@@ -2651,6 +2657,10 @@ body {
     transform: rotate(45deg);
     z-index: 3;
   }
+  .list_card_img a img {
+    height: 48.30918vw;
+    max-height: 220px;
+  }
   .list_card_badge:not(.is-active):hover:before {
     display: none;
   }
@@ -2731,6 +2741,12 @@ body {
   .list_card_content {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .list_card_img a img {
+    height: 185px;
   }
 }
 

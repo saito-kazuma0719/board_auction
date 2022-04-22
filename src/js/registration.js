@@ -2,6 +2,10 @@ window.addEventListener('load', function(){
 	var radio = document.querySelectorAll("input[name=category]");
 	var formInputs = document.getElementsByClassName("form_file");
 	var length = formInputs.length;
+	
+	var form = document.getElementById('registration-form');
+	
+	
 	var checkShipping = document.getElementById('check_shipping')
 	var checkZip =  document.getElementById('check_zip')
 	var checkPrefecture =  document.getElementById('check_prefecture')
@@ -37,6 +41,7 @@ window.addEventListener('load', function(){
 	
 
 	//新規会員申請ファイルアップロード
+/*
 	if(!length){
 		return false;
 	}
@@ -54,23 +59,29 @@ window.addEventListener('load', function(){
 	  };
 	}
 	
+*/
 	
 	//発送先処理
 	var shippingAddress = function(){
 		if(checkShipping.checked){
-			checkZip.disabled = true;
-			checkPrefecture.disabled = true;
-			checkAddress.disabled = true;
-		}else{
-			checkZip.disabled = false;
-			checkPrefecture.disabled = false;
-			checkAddress.disabled = false;
+			checkZip.value = zip.value;
+			checkPrefecture.value = prefecture.value;
+			checkAddress.value = address.value;
 		}
 	}
 	
-	checkShipping.addEventListener('click', shippingAddress, false);
 	
 	
 	
+	checkShipping.addEventListener('change', function(){
+		
+		var zip = document.getElementById('zip');
+		var prefecture = document.getElementById('prefecture');
+		var address = document.getElementById('address');
+		
+		shippingAddress();
+		checkAddress.focus();
+		
+	})
 	
 });

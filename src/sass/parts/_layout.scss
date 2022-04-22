@@ -184,7 +184,7 @@
 		&.is-passed{
 			border-color: $greyish
 		}
-		&.is-error{
+		&.is-error,&.parsley-error{
 			border-color: $red;
 			color: $red;
 		}
@@ -311,7 +311,7 @@
 		margin-bottom: 16px;
 	}
 	&_file{
-		display: none;
+		//display: none;
 		&+label{
 			position: relative;
 			left: 0;
