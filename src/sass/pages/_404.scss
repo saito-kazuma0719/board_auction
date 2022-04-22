@@ -1,0 +1,59 @@
+.np{
+	&_container{
+		height: calc( 100vh - 285px);
+		@include flexbox(center,center); 
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 80px 40px 120px 120px;
+	}
+	&_box{
+		border: 1px solid $pale;
+		padding: 60px;
+		p{
+			@include fts(15,26);
+			color: $brown-grey;
+			&.title{
+				@include font-en;
+				font-weight: 600;
+				margin-bottom: 28px;
+				@include fts(60,74);
+				color: $black;
+			}
+			&+p{
+				margin-top: 28px;
+				a{
+					color: $black;
+				}
+			}
+		}
+		
+		
+	}
+	@include for-size(phone-only){
+		&_container{
+			height: auto;
+			padding: 120px 24px 80px;
+		}
+		&_box{
+			border: 1px solid $pale;
+			padding: 36px;
+			p{
+				@include fts(14,24);
+				color: $brown-grey;
+				&.title{
+					@include fts(36,48);
+					letter-spacing: .1
+				}
+				&+p{
+					margin-top: 28px;
+					a{
+						color: $black;
+					}
+				}
+			}
+			
+			
+		}
+		
+	}
+}
